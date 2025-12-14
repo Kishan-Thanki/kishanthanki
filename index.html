@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kishan Thanki - Backend Software Engineer Portfolio - Cloud Infrastructure & Distributed Systems">
+    <title>Kishan Thanki | Backend Engineer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        bg: '#FAFAFA',       
+                        ink: '#171717',      
+                        sub: '#525252',      
+                        accent: '#2563EB',   
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a3a3a3; }
+        
+        /* Fade In Animation */
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-bg text-ink font-sans antialiased selection:bg-blue-100 selection:text-blue-900 leading-relaxed">
+
+    <div class="max-w-3xl mx-auto px-6 py-20 md:py-24 fade-in">
+        
+        <header class="mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-black">
+                KISHAN THANKI
+            </h1>
+            <h2 class="text-xl md:text-2xl text-sub font-medium mb-6">
+                Backend Software Engineer & Cloud Architect
+            </h2>
+            
+            <div class="flex flex-wrap gap-6 text-sm text-sub items-center mb-10 font-medium">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Ahmedabad, India</span>
+                </div>
+                
+                <a href="https://github.com/Kishan-Thanki" target="_blank" class="hover:text-accent transition-colors flex items-center gap-2">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-4 h-4 opacity-60" alt="GitHub" />
+                    github.com/Kishan-Thanki
+                </a>
+
+                <a href="https://www.linkedin.com/in/kishanthanki/" target="_blank" class="hover:text-accent transition-colors flex items-center gap-2">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" class="w-4 h-4 opacity-60" alt="LinkedIn" />
+                    linkedin.com/in/kishanthanki
+                </a>
+                
+                <a href="mailto:kishanthanki10@gmail.com" class="hover:text-accent transition-colors flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    kishanthanki10@gmail.com
+                </a>
+            </div>
+        </header>
+
+        <nav class="sticky top-0 z-50 bg-bg/95 backdrop-blur-sm pt-4 pb-4 mb-16 border-b border-gray-200 flex gap-8 text-sm font-mono font-medium text-gray-400">
+            <a href="#about" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1">01. ABOUT</a>
+            <a href="#projects" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1">02. PROJECTS</a>
+            <a href="#skills" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1">03. STACK</a>
+            <a href="#education" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1">04. EDUCATION</a>
+        </nav>
+
+        <section id="about" class="mb-24 scroll-mt-32">
+            <h3 class="font-mono text-xs font-bold text-gray-400 mb-6 tracking-wider">01 // THE PROFILE</h3>
+            <p class="text-xl text-ink leading-relaxed max-w-2xl font-light">
+                I specialize in building <strong class="font-semibold text-black">scalable distributed systems</strong> and cloud infrastructure. 
+                My focus is on backend architecture, DevOps automation, and system design patterns. 
+                Currently ensuring high availability on <span class="font-mono text-base bg-gray-100 px-1 rounded">AWS</span> and building developer tooling.
+            </p>
+        </section>
+
+        <section id="projects" class="mb-24 scroll-mt-24">
+            <h3 class="font-mono text-xs font-bold text-gray-400 mb-10 tracking-wider">02 // PROOF OF WORK</h3>
+            <div id="projects-container" class="space-y-20">
+                </div>
+        </section>
+
+        <section id="skills" class="mb-24 scroll-mt-24">
+            <h3 class="font-mono text-xs font-bold text-gray-400 mb-10 tracking-wider">03 // TECHNICAL STACK</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="p-6 bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow">
+                    <h4 class="font-bold text-black mb-6 flex items-center gap-3">Languages & Frameworks</h4>
+                    <ul class="space-y-4 font-mono text-sm text-sub">
+                        <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="w-5 h-5"/> Python (Advanced)</li>
+                        <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" class="h-5 w-auto"/> Go</li>
+                        <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" class="w-5 h-5"/> C++</li>
+                        <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" class="w-5 h-5"/> Django</li>
+                        <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" class="w-5 h-5"/> FastAPI</li>
+                        <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" class="w-5 h-5"/> Flask</li>
+                        <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" class="w-5 h-5"/> Pandas</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow">
+                    <h4 class="font-bold text-black mb-6 flex items-center gap-3">Infrastructure & DBs</h4>
+                    <ul class="space-y-4 font-mono text-sm text-sub">
+                        <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" class="w-5 h-5"/> Linux</li>
+                        <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="h-5 w-auto"/> AWS (Lambda, S3)</li>
+                        <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" class="w-5 h-5"/> Docker & Containers</li>
+                        <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" class="w-5 h-5"/> Terraform</li>
+                        <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" class="w-5 h-5"/> Oracle Cloud</li>
+                        <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="w-5 h-5"/> PostgreSQL</li>
+                        <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" class="w-5 h-5"/> MySQL</li>
+                        <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" class="w-5 h-5"/> Supabase</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="mb-24 scroll-mt-24">
+            <h3 class="font-mono text-xs font-bold text-gray-400 mb-10 tracking-wider">04 // EDUCATION</h3>
+            
+            <div class="grid grid-cols-1 gap-6">
+                <div class="p-6 bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2">
+                        <h4 class="font-bold text-black text-lg">Master of Science in Information Technology (M.Sc. IT)</h4>
+                        <span class="font-mono text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded">2024 — 2025</span>
+                    </div>
+                    <p class="text-sub font-medium leading-relaxed">DAU (Dhirubhai Ambani University)</p>
+                    <p class="text-xs text-gray-400 mt-1">Formerly known as DA-IICT • Gandhinagar, India</p>
+                </div>
+
+                <div class="p-6 bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2">
+                        <h4 class="font-bold text-black text-lg">Bachelor of Computer Applications (BCA)</h4>
+                        <span class="font-mono text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded">2021 — 2024</span>
+                    </div>
+                    <p class="text-sub font-medium">GLS (Gujarat Law Society) University</p>
+                    <p class="text-xs text-gray-400 mt-1">Ahmedabad, India</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="pt-10 border-t border-gray-200 flex justify-between items-center text-xs font-mono text-gray-400">
+            <p>&copy; 2025 Kishan Thanki. Architecture First.</p>
+            <a href="#" class="hover:text-black transition-colors">BACK TO TOP ↑</a>
+        </footer>
+
+    </div>
+
+    <script>
+        // ==========================================
+        //  PROJECT DATA
+        // ==========================================
+        const projects = [
+            {
+                name: "CloudLens",
+                type: "Serverless Content Moderation Pipeline",
+                summary: "CloudLens is a fully serverless, event-driven application for securely uploading, moderating, and processing images. It utilizes AWS managed services (Rekognition, Lambda) to handle heavy lifting with zero server management.",
+                tech: ["AWS Lambda", "Rekognition", "S3", "Python"],
+                wins: ["Stateless Design", "Cost Optimization", "Automated Quarantine"],
+                links: {
+                    github: "https://github.com/Kishan-Thanki/cloudlens", 
+                    demo: "", 
+                    docker: ""
+                }
+            },
+            {
+                name: "Placemate",
+                type: "Campus Placement Management System",
+                summary: "A comprehensive web application designed to streamline the campus placement process. It acts as a bridge between the Student Placement Cell, Students, and Companies, digitizing the workflow of tracking drives.",
+                tech: ["Django", "React", "PostgreSQL", "Redis"],
+                wins: ["Role-Based Access", "Automated Eligibility", "Decoupled Architecture"],
+                links: {
+                    github: "https://github.com/Kishan-Thanki/placemate",
+                    demo: "https://placemate-demo.com",
+                    docker: ""
+                }
+            },
+            {
+                name: "Resume Ranker",
+                type: "AI-Powered Candidate Screening",
+                summary: "An automated recruitment utility that leverages NLP to parse resumes and Job Descriptions, calculating a similarity score to rank candidates based on relevance using Vector Space Modeling.",
+                tech: ["FastAPI", "Streamlit", "Scikit-learn", "Spacy"],
+                wins: ["Modular NLP Pipeline", "Async Processing", "Privacy-Centric"],
+                links: {
+                    github: "https://github.com/Kishan-Thanki/resume-ranker",
+                    demo: "",
+                    docker: ""
+                }
+            },
+            {
+                name: "E-commerce Microservices",
+                type: "Distributed Platform",
+                summary: "A microservices-based application demonstrating decoupled architecture. Separates concerns into User and Product services orchestrated behind an Nginx API Gateway, fully containerized.",
+                tech: ["Flask", "Docker", "Nginx", "SQLAlchemy"],
+                wins: ["Separation of Concerns", "Full Containerization", "Modular Frontend"],
+                links: {
+                    github: "https://github.com/Kishan-Thanki/ecommerce-microservices",
+                    demo: "",
+                    docker: "https://hub.docker.com/u/kishanthanki"
+                }
+            },
+            {
+                name: "DepCycle",
+                type: "Static Analysis Tool",
+                summary: "A Python utility that parses Abstract Syntax Trees (AST) to detect and visualize dependency cycles in Python projects, helping developers maintain clean architecture.",
+                tech: ["Python (AST)", "Graphviz", "Argparse"],
+                wins: ["Zero Runtime Dependencies", "Import Resolution", "Pipe-and-Filter"],
+                links: {
+                    github: "https://github.com/Kishan-Thanki/depcycle",
+                    // PyPI Link
+                    pypi: "https://pypi.org/project/depcycle/",
+                    docker: ""
+                }
+            },
+            {
+                name: "ChronoBank",
+                type: "Digital Banking Simulation",
+                summary: "A conceptual banking platform where 'Time Units' replace currency. Designed to demonstrate robust OOP principles and complex design patterns like Command, Factory, and Singleton.",
+                tech: ["Python OOP", "Design Patterns", "CLI", "In-Memory DB"],
+                wins: ["Transaction Undo", "Strategy Pattern", "Factory Validation"],
+                links: {
+                    github: "https://github.com/Kishan-Thanki/chronobank",
+                    demo: "",
+                    docker: ""
+                }
+            }
+        ];
+
+        // ==========================================
+        //  RENDER LOGIC
+        // ==========================================
+        const container = document.getElementById('projects-container');
+        
+        projects.forEach(project => {
+            // 1. Tech Pills
+            const techHTML = project.tech.map(t => 
+                `<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded border border-gray-200 text-xs">${t}</span>`
+            ).join('');
+
+            // 2. Wins List
+            const winsHTML = project.wins.map(w => `<li>${w}</li>`).join('');
+
+            // 3. Links (Conditional Rendering)
+            let linksHTML = '';
+            
+            // GitHub Icon
+            if (project.links && project.links.github) {
+                linksHTML += `
+                    <a href="${project.links.github}" target="_blank" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-4 h-4 opacity-60" />
+                        CODE
+                    </a>`;
+            }
+            
+            // PyPI Icon
+            if (project.links && project.links.pypi) {
+                linksHTML += `
+                    <a href="${project.links.pypi}" target="_blank" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="w-4 h-4 opacity-60" />
+                        PyPI
+                    </a>`;
+            }
+
+            // Live Demo Icon
+            if (project.links && project.links.demo) {
+                linksHTML += `
+                    <a href="${project.links.demo}" target="_blank" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        LIVE
+                    </a>`;
+            }
+
+            // Docker Icon
+            if (project.links && project.links.docker) {
+                linksHTML += `
+                    <a href="${project.links.docker}" target="_blank" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" class="w-4 h-4" />
+                        IMAGE
+                    </a>`;
+            }
+
+            // 4. Final HTML Card
+            const html = `
+                <div class="group relative pl-6 border-l-2 border-gray-200 hover:border-accent transition-colors duration-300">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-3">
+                        <h4 class="text-2xl font-bold text-black group-hover:text-accent transition-colors cursor-pointer">
+                            ${project.name}
+                        </h4>
+                        <div class="flex gap-4 mt-2 sm:mt-0">
+                            ${linksHTML}
+                        </div>
+                    </div>
+                    <p class="font-mono text-sm text-gray-500 mb-4">${project.type}</p>
+                    <p class="text-sub mb-5 leading-relaxed max-w-2xl">
+                        ${project.summary}
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 font-mono text-xs mb-4">
+                        ${techHTML}
+                    </div>
+
+                    <ul class="list-disc pl-4 space-y-1 text-sm text-gray-600 font-mono opacity-80">
+                        ${winsHTML}
+                    </ul>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', html);
+        });
+    </script>
+</body>
+</html>
