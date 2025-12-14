@@ -95,13 +95,27 @@
     </div>
 
     <script>
+        // --- 1. BIG TRANSPARENT FAVICON ---
+        const faviconTag = document.querySelector('link[rel="icon"]') || document.createElement('link');
+        faviconTag.rel = 'icon';
+        document.head.appendChild(faviconTag);
+
+        const svg = `
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+            <text x='50' y='80' font-family='monospace' font-size='85' font-weight='bold' fill='#171717' text-anchor='middle'>KT</text>
+        </svg>`.trim();
+
+        faviconTag.href = `data:image/svg+xml,${encodeURIComponent(svg)}`;
+
+
+        // --- 2. DATA LOADER ---
         fetch('data.json')
             .then(response => {
                 if (!response.ok) throw new Error("Could not load data.json");
                 return response.json();
             })
             .then(data => {
-                // --- 1. POPULATE HEADER ---
+                // HEADER
                 document.title = `${data.profile.name} | Backend Engineer`;
                 document.getElementById('profile-name').textContent = data.profile.name;
                 document.getElementById('profile-title').textContent = data.profile.title;
@@ -109,10 +123,10 @@
                 const contactDiv = document.getElementById('profile-contact');
                 // Location
                 contactDiv.innerHTML += `
-                    <div class="flex items-center gap-2">
+                    <a href="${data.profile.mapUrl}" target="_blank" class="hover:text-accent transition-colors flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
                         <span>${data.profile.location}</span>
-                    </div>`;
+                    </a>`;
                 // GitHub
                 if(data.profile.social.github) {
                     contactDiv.innerHTML += `
@@ -138,10 +152,10 @@
                         </a>`;
                 }
 
-                // --- 2. POPULATE ABOUT ---
+                // ABOUT
                 document.getElementById('about-text').innerHTML = data.about;
 
-                // --- 3. POPULATE SKILLS ---
+                // SKILLS
                 const renderSkills = (skillList, containerId) => {
                     const list = document.getElementById(containerId);
                     skillList.forEach(item => {
@@ -156,19 +170,13 @@
                 renderSkills(data.skills.languages, 'skills-languages');
                 renderSkills(data.skills.infrastructure, 'skills-infrastructure');
 
-                // --- 4. POPULATE PROJECTS ---
+                // PROJECTS
                 const projContainer = document.getElementById('projects-container');
                 projContainer.innerHTML = '';
                 data.projects.forEach(project => {
-                    // Tech Pills
-                    const techHTML = project.tech.map(t => 
-                        `<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded border border-gray-200 text-xs">${t}</span>`
-                    ).join('');
-                    
-                    // Wins
+                    const techHTML = project.tech.map(t => `<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded border border-gray-200 text-xs">${t}</span>`).join('');
                     const winsHTML = project.wins.map(w => `<li>${w}</li>`).join('');
 
-                    // Links
                     let linksHTML = '';
                     if (project.links.github) linksHTML += `<a href="${project.links.github}" target="_blank" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-4 h-4 opacity-60" />CODE</a>`;
                     if (project.links.pypi) linksHTML += `<a href="${project.links.pypi}" target="_blank" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="w-4 h-4 opacity-60" />PyPI</a>`;
@@ -188,7 +196,7 @@
                         </div>`;
                 });
 
-                // --- 5. POPULATE EDUCATION ---
+                // EDUCATION
                 const eduContainer = document.getElementById('education-container');
                 data.education.forEach(edu => {
                     eduContainer.innerHTML += `
@@ -202,7 +210,7 @@
                         </div>`;
                 });
 
-                // --- 6. POPULATE FOOTER ---
+                // FOOTER
                 document.getElementById('footer-copy').textContent = data.profile.copyright;
             })
             .catch(error => {
