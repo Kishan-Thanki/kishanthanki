@@ -155,33 +155,59 @@
                 document.getElementById('profile-title').textContent = data.profile.title;
                 
                 const contactDiv = document.getElementById('profile-contact');
-                // Maps: Icon marked decorative (aria-hidden) to prevent redundant reading
-                contactDiv.innerHTML += `
-                    <a href="${data.profile.mapUrl}" target="_blank" aria-label="View Location on Google Maps" class="hover:text-accent transition-colors flex items-center gap-2">
-                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                        <span>${data.profile.location}</span>
-                    </a>`;
                 
-                // Socials: Icons marked alt="" and aria-hidden="true" to fix Accessibility 
+                // --- CUSTOM COLORED ICONS ON HOVER ---
+                // Location: Red Icon
+                contactDiv.innerHTML += `
+                    <a href="${data.profile.mapUrl}" target="_blank" aria-label="View Location on Google Maps" 
+                    class="group flex items-center gap-2 transition-all duration-300">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-sub transition-all duration-300 group-hover:text-red-600">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span class="text-sub transition-all duration-300 group-hover:text-black group-hover:[text-shadow:_0_0_0.75px_rgb(0,0,0)]">
+                            ${data.profile.location}
+                        </span>
+                    </a>`;
+
+                // GitHub: Black Icon 
                 if(data.profile.social.github) {
                     contactDiv.innerHTML += `
-                        <a href="${data.profile.social.github}" target="_blank" aria-label="GitHub Profile" class="hover:text-accent transition-colors flex items-center gap-2">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-4 h-4 opacity-60" width="16" height="16" alt="" aria-hidden="true" />
-                            GitHub
+                        <a href="${data.profile.social.github}" target="_blank" aria-label="GitHub Profile" 
+                        class="group flex items-center gap-2 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" width="16" height="16" alt="" aria-hidden="true" 
+                                class="w-4 h-4 opacity-60 transition-all duration-300 group-hover:opacity-100" />
+                            <span class="text-sub transition-all duration-300 group-hover:text-black group-hover:[text-shadow:_0_0_0.75px_rgb(0,0,0)]">
+                                GitHub
+                            </span>
                         </a>`;
                 }
+
+                // LinkedIn: Blue Icon
                 if(data.profile.social.linkedin) {
                     contactDiv.innerHTML += `
-                        <a href="${data.profile.social.linkedin}" target="_blank" aria-label="LinkedIn Profile" class="hover:text-accent transition-colors flex items-center gap-2">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" class="w-4 h-4 opacity-60" width="16" height="16" alt="" aria-hidden="true" />
-                            LinkedIn
+                        <a href="${data.profile.social.linkedin}" target="_blank" aria-label="LinkedIn Profile" 
+                        class="group flex items-center gap-2 transition-all duration-300">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" width="16" height="16" alt="" aria-hidden="true" 
+                                class="w-4 h-4 opacity-60 transition-all duration-300 group-hover:opacity-100" />
+                            <span class="text-sub transition-all duration-300 group-hover:text-black group-hover:[text-shadow:_0_0_0.75px_rgb(0,0,0)]">
+                                LinkedIn
+                            </span>
                         </a>`;
                 }
+
+                // Email: Gold/Amber Icon
                 if(data.profile.social.email) {
                     contactDiv.innerHTML += `
-                        <a href="mailto:${data.profile.social.email}" aria-label="Email Me" class="hover:text-accent transition-colors flex items-center gap-2">
-                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                            Email
+                        <a href="mailto:${data.profile.social.email}" aria-label="Email Me" 
+                        class="group flex items-center gap-2 transition-all duration-300">
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="text-sub transition-all duration-300 group-hover:text-amber-500">
+                                <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                            </svg>
+                            <span class="text-sub transition-all duration-300 group-hover:text-black group-hover:[text-shadow:_0_0_0.75px_rgb(0,0,0)]">
+                                Email
+                            </span>
                         </a>`;
                 }
 
@@ -189,16 +215,36 @@
                 document.getElementById('about-text').innerHTML = data.about;
 
                 // --- 4. SKILLS ---
-                // Icons marked decorative (alt="")
                 const renderSkills = (skillList, containerId) => {
                     const list = document.getElementById(containerId);
+                    // Clear list to prevent duplicates
+                    list.innerHTML = ''; 
+                    
                     skillList.forEach(item => {
                         const iconClass = item.class ? item.class : "w-5 h-5";
-                        list.innerHTML += `
-                            <li class="flex items-center gap-3">
-                                <img src="${item.icon}" class="${iconClass}" width="20" height="20" alt="" aria-hidden="true" loading="lazy" />
-                                ${item.name}
-                            </li>`;
+                        
+                        // Check if URL exists, otherwise render plain list item
+                        if(item.url) {
+                            list.innerHTML += `
+                                <li>
+                                    <a href="${item.url}" target="_blank" rel="noopener noreferrer" 
+                                       class="group flex items-center gap-3 transition-colors hover:text-black">
+                                        <img src="${item.icon}" 
+                                             class="${iconClass} transition-transform duration-300 group-hover:scale-110" 
+                                             width="20" height="20" alt="" aria-hidden="true" loading="lazy" />
+                                        <span class="transition-all duration-300 group-hover:text-black group-hover:[text-shadow:_0_0_0.75px_rgb(0,0,0)]">
+                                            ${item.name}
+                                        </span>
+                                    </a>
+                                </li>`;
+                        } else {
+                            // Fallback if no URL is provided in JSON
+                            list.innerHTML += `
+                                <li class="flex items-center gap-3">
+                                    <img src="${item.icon}" class="${iconClass}" width="20" height="20" alt="" aria-hidden="true" loading="lazy" />
+                                    ${item.name}
+                                </li>`;
+                        }
                     });
                 };
                 renderSkills(data.skills.languages, 'skills-languages');
@@ -211,7 +257,6 @@
                     const techHTML = project.tech.map(t => `<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded border border-gray-200 text-xs">${t}</span>`).join('');
                     const winsHTML = project.wins.map(w => `<li>${w}</li>`).join('');
 
-                    // Links with unique aria-labels for SEO/A11y
                     let linksHTML = '';
                     if (project.links.github) linksHTML += `<a href="${project.links.github}" target="_blank" aria-label="Source code for ${project.name}" class="text-xs font-mono font-medium text-gray-500 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-4 h-4 opacity-60" width="16" height="16" alt="" aria-hidden="true" />CODE</a>`;
                     if (project.links.pypi) linksHTML += `<a href="${project.links.pypi}" target="_blank" aria-label="PyPI package for ${project.name}" class="text-xs font-mono font-medium text-gray-500 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="w-4 h-4 opacity-60" width="16" height="16" alt="" aria-hidden="true" />PyPI</a>`;
