@@ -16,7 +16,9 @@
     <meta property="og:url" content="https://kishanthanki.dev/">
     <meta property="og:title" content="Kishan Thanki | Backend Software Engineer">
     <meta property="og:description" content="Specializing in scalable distributed systems and cloud infrastructure. View my projects and technical stack.">
-    <meta property="og:image" content="https://kishanthanki.dev/og-image.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://kishanthanki.dev/og-image.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://kishanthanki.dev/">
     <meta property="twitter:title" content="Kishan Thanki | Backend Software Engineer">
     <meta property="twitter:description" content="Specializing in scalable distributed systems and cloud infrastructure.">
@@ -54,7 +56,7 @@
 </head>
 <body class="bg-bg text-ink font-sans antialiased selection:bg-blue-100 selection:text-blue-900 leading-relaxed">
 
-    <div class="max-w-3xl mx-auto px-6 py-20 md:py-24 fade-in">
+    <main class="max-w-3xl mx-auto px-6 py-20 md:py-24 fade-in">
         
         <header class="mb-12">
             <h1 id="profile-name" class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-black">
@@ -110,7 +112,7 @@
             <p id="footer-copy">&copy; 2025 Architecture First.</p>
             <a href="#" class="hover:text-black transition-colors" aria-label="Back to Top">BACK TO TOP ↑</a>
         </footer>
-    </div>
+    </main>
 
     <script>
         fetch('data.json')
@@ -122,7 +124,7 @@
                 // --- 1. DYNAMIC SEO & SCHEMA INJECTION ---
                 document.title = `${data.profile.name} | ${data.profile.title}`;
                 
-                // Inject JSON-LD Schema (Crucial for Google Knowledge Graph)
+                // Inject JSON-LD Schema (Google Knowledge Graph)
                 const schemaData = {
                     "@context": "https://schema.org",
                     "@type": "Person",
@@ -160,7 +162,7 @@
                 if(data.profile.social.github) {
                     contactDiv.innerHTML += `
                         <a href="${data.profile.social.github}" target="_blank" aria-label="GitHub Profile" class="hover:text-accent transition-colors flex items-center gap-2">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-4 h-4 opacity-60" alt="GitHub" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-4 h-4 opacity-60" width="16" height="16" alt="GitHub Logo" />
                             GitHub
                         </a>`;
                 }
@@ -168,7 +170,7 @@
                 if(data.profile.social.linkedin) {
                     contactDiv.innerHTML += `
                         <a href="${data.profile.social.linkedin}" target="_blank" aria-label="LinkedIn Profile" class="hover:text-accent transition-colors flex items-center gap-2">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" class="w-4 h-4 opacity-60" alt="LinkedIn" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" class="w-4 h-4 opacity-60" width="16" height="16" alt="LinkedIn Logo" />
                             LinkedIn
                         </a>`;
                 }
@@ -207,10 +209,10 @@
                     const winsHTML = project.wins.map(w => `<li>${w}</li>`).join('');
 
                     let linksHTML = '';
-                    if (project.links.github) linksHTML += `<a href="${project.links.github}" target="_blank" aria-label="View Source Code" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-4 h-4 opacity-60" alt="GitHub" />CODE</a>`;
-                    if (project.links.pypi) linksHTML += `<a href="${project.links.pypi}" target="_blank" aria-label="View PyPI Package" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="w-4 h-4 opacity-60" alt="PyPI" />PyPI</a>`;
+                    if (project.links.github) linksHTML += `<a href="${project.links.github}" target="_blank" aria-label="View Source Code" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-4 h-4 opacity-60" alt="GitHub" width="16" height="16" />CODE</a>`;
+                    if (project.links.pypi) linksHTML += `<a href="${project.links.pypi}" target="_blank" aria-label="View PyPI Package" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="w-4 h-4 opacity-60" alt="PyPI" width="16" height="16" />PyPI</a>`;
                     if (project.links.demo) linksHTML += `<a href="${project.links.demo}" target="_blank" aria-label="View Live Demo" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>LIVE</a>`;
-                    if (project.links.docker) linksHTML += `<a href="${project.links.docker}" target="_blank" aria-label="View Docker Container" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" class="w-4 h-4" alt="Docker" />IMAGE</a>`;
+                    if (project.links.docker) linksHTML += `<a href="${project.links.docker}" target="_blank" aria-label="View Docker Container" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" class="w-4 h-4" alt="Docker" width="16" height="16" />IMAGE</a>`;
 
                     projContainer.innerHTML += `
                         <div class="group relative pl-6 border-l-2 border-gray-200 hover:border-accent transition-colors duration-300">
