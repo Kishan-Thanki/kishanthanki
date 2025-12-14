@@ -11,7 +11,7 @@
     },
     "copyright": "© 2025 Kishan Thanki. Architecture First."
   },
-  "about": "I specialize in building <strong class=\"font-semibold text-black\">scalable distributed systems</strong> and cloud infrastructure. My focus is on backend architecture, DevOps automation, and system design patterns. Currently ensuring high availability on <span class=\"font-mono text-base bg-gray-100 px-1 rounded\">AWS</span> and building developer tooling.",
+  "about": "I specialize in building <strong class=\"font-semibold text-black\">scalable distributed systems</strong> and cloud infrastructure. My focus is on backend architecture, DevOps automation, and system design patterns. Currently ensuring high availability on <span class=\"font-mono text-base bg-gray-100 px-1 rounded\">Cloud</span> and building developer tooling.",
   "skills": {
     "languages": [
       { "name": "Python", "url": "https://www.python.org/", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
@@ -37,7 +37,7 @@
   "education": [
     {
       "degree": "Master of Science in Information Technology (M.Sc. IT)",
-      "year": "2024 — 2025",
+      "year": "2024 — 2026",
       "university": "DAU (Dhirubhai Ambani University)",
       "details": "Formerly known as DA-IICT • Gandhinagar, India"
     },
