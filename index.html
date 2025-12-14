@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Software Engineer Portfolio">
-    <title>Portfolio | Backend Engineer</title>
+    
+    <title>Kishan Thanki | Backend Software Engineer & Cloud Architect</title>
+    <meta name="title" content="Kishan Thanki | Backend Software Engineer & Cloud Architect">
+    <meta name="description" content="Portfolio of Kishan Thanki - Backend Engineer specializing in scalable distributed systems, Cloud Infrastructure (AWS), Python, and DevOps automation.">
+    <meta name="keywords" content="Kishan Thanki, Backend Engineer, Cloud Architect, AWS, Python, Django, DevOps, Software Engineer Portfolio">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="author" content="Kishan Thanki">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kishanthanki.dev/">
+    <meta property="og:title" content="Kishan Thanki | Backend Software Engineer">
+    <meta property="og:description" content="Specializing in scalable distributed systems and cloud infrastructure. View my projects and technical stack.">
+    <meta property="og:image" content="https://kishanthanki.dev/og-image.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kishanthanki.dev/">
+    <meta property="twitter:title" content="Kishan Thanki | Backend Software Engineer">
+    <meta property="twitter:description" content="Specializing in scalable distributed systems and cloud infrastructure.">
+    <meta property="twitter:image" content="https://kishanthanki.dev/og-image.jpg">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='80' font-family='monospace' font-size='85' font-weight='bold' fill='%23171717' text-anchor='middle'>KT</text></svg>">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,10 +67,10 @@
         </header>
 
         <nav class="sticky top-0 z-50 bg-bg/95 backdrop-blur-sm pt-4 pb-4 mb-16 border-b border-gray-200 flex gap-8 text-sm font-mono font-medium text-gray-400">
-            <a href="#about" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1">01. ABOUT</a>
-            <a href="#projects" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1">02. PROJECTS</a>
-            <a href="#skills" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1">03. STACK</a>
-            <a href="#education" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1">04. EDUCATION</a>
+            <a href="#about" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1" aria-label="Go to About section">01. ABOUT</a>
+            <a href="#projects" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1" aria-label="Go to Projects section">02. PROJECTS</a>
+            <a href="#skills" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1" aria-label="Go to Stack section">03. STACK</a>
+            <a href="#education" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1" aria-label="Go to Education section">04. EDUCATION</a>
         </nav>
 
         <section id="about" class="mb-24 scroll-mt-32">
@@ -90,79 +108,90 @@
 
         <footer class="pt-10 border-t border-gray-200 flex justify-between items-center text-xs font-mono text-gray-400">
             <p id="footer-copy">&copy; 2025 Architecture First.</p>
-            <a href="#" class="hover:text-black transition-colors">BACK TO TOP ↑</a>
+            <a href="#" class="hover:text-black transition-colors" aria-label="Back to Top">BACK TO TOP ↑</a>
         </footer>
     </div>
 
     <script>
-        // --- 1. BIG TRANSPARENT FAVICON ---
-        const faviconTag = document.querySelector('link[rel="icon"]') || document.createElement('link');
-        faviconTag.rel = 'icon';
-        document.head.appendChild(faviconTag);
-
-        const svg = `
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-            <text x='50' y='80' font-family='monospace' font-size='85' font-weight='bold' fill='#171717' text-anchor='middle'>KT</text>
-        </svg>`.trim();
-
-        faviconTag.href = `data:image/svg+xml,${encodeURIComponent(svg)}`;
-
-
-        // --- 2. DATA LOADER ---
         fetch('data.json')
             .then(response => {
                 if (!response.ok) throw new Error("Could not load data.json");
                 return response.json();
             })
             .then(data => {
-                // HEADER
-                document.title = `${data.profile.name} | Backend Engineer`;
+                // --- 1. DYNAMIC SEO & SCHEMA INJECTION ---
+                document.title = `${data.profile.name} | ${data.profile.title}`;
+                
+                // Inject JSON-LD Schema (Crucial for Google Knowledge Graph)
+                const schemaData = {
+                    "@context": "https://schema.org",
+                    "@type": "Person",
+                    "name": data.profile.name,
+                    "jobTitle": data.profile.title,
+                    "url": "https://kishanthanki.dev",
+                    "sameAs": [
+                        data.profile.social.github,
+                        data.profile.social.linkedin
+                    ],
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Ahmedabad",
+                        "addressCountry": "India"
+                    }
+                };
+                const script = document.createElement('script');
+                script.type = 'application/ld+json';
+                script.text = JSON.stringify(schemaData);
+                document.head.appendChild(script);
+
+
+                // --- 2. POPULATE HEADER ---
                 document.getElementById('profile-name').textContent = data.profile.name;
                 document.getElementById('profile-title').textContent = data.profile.title;
                 
                 const contactDiv = document.getElementById('profile-contact');
                 // Location
                 contactDiv.innerHTML += `
-                    <a href="${data.profile.mapUrl}" target="_blank" class="hover:text-accent transition-colors flex items-center gap-2">
+                    <a href="${data.profile.mapUrl}" target="_blank" aria-label="View Location on Google Maps" class="hover:text-accent transition-colors flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
                         <span>${data.profile.location}</span>
                     </a>`;
                 // GitHub
                 if(data.profile.social.github) {
                     contactDiv.innerHTML += `
-                        <a href="${data.profile.social.github}" target="_blank" class="hover:text-accent transition-colors flex items-center gap-2">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-4 h-4 opacity-60" />
+                        <a href="${data.profile.social.github}" target="_blank" aria-label="GitHub Profile" class="hover:text-accent transition-colors flex items-center gap-2">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-4 h-4 opacity-60" alt="GitHub" />
                             GitHub
                         </a>`;
                 }
                 // LinkedIn
                 if(data.profile.social.linkedin) {
                     contactDiv.innerHTML += `
-                        <a href="${data.profile.social.linkedin}" target="_blank" class="hover:text-accent transition-colors flex items-center gap-2">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" class="w-4 h-4 opacity-60" />
+                        <a href="${data.profile.social.linkedin}" target="_blank" aria-label="LinkedIn Profile" class="hover:text-accent transition-colors flex items-center gap-2">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" class="w-4 h-4 opacity-60" alt="LinkedIn" />
                             LinkedIn
                         </a>`;
                 }
                 // Email
                 if(data.profile.social.email) {
                     contactDiv.innerHTML += `
-                        <a href="mailto:${data.profile.social.email}" class="hover:text-accent transition-colors flex items-center gap-2">
+                        <a href="mailto:${data.profile.social.email}" aria-label="Send Email" class="hover:text-accent transition-colors flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                             Email
                         </a>`;
                 }
 
-                // ABOUT
+                // --- 3. POPULATE ABOUT ---
                 document.getElementById('about-text').innerHTML = data.about;
 
-                // SKILLS
+                // --- 4. POPULATE SKILLS ---
                 const renderSkills = (skillList, containerId) => {
                     const list = document.getElementById(containerId);
                     skillList.forEach(item => {
                         const iconClass = item.class ? item.class : "w-5 h-5";
                         list.innerHTML += `
                             <li class="flex items-center gap-3">
-                                <img src="${item.icon}" class="${iconClass}" alt="${item.name}" />
+                                <img src="${item.icon}" class="${iconClass}" alt="${item.name} Logo" loading="lazy" width="20" height="20" />
                                 ${item.name}
                             </li>`;
                     });
@@ -170,7 +199,7 @@
                 renderSkills(data.skills.languages, 'skills-languages');
                 renderSkills(data.skills.infrastructure, 'skills-infrastructure');
 
-                // PROJECTS
+                // --- 5. POPULATE PROJECTS ---
                 const projContainer = document.getElementById('projects-container');
                 projContainer.innerHTML = '';
                 data.projects.forEach(project => {
@@ -178,10 +207,10 @@
                     const winsHTML = project.wins.map(w => `<li>${w}</li>`).join('');
 
                     let linksHTML = '';
-                    if (project.links.github) linksHTML += `<a href="${project.links.github}" target="_blank" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-4 h-4 opacity-60" />CODE</a>`;
-                    if (project.links.pypi) linksHTML += `<a href="${project.links.pypi}" target="_blank" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="w-4 h-4 opacity-60" />PyPI</a>`;
-                    if (project.links.demo) linksHTML += `<a href="${project.links.demo}" target="_blank" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>LIVE</a>`;
-                    if (project.links.docker) linksHTML += `<a href="${project.links.docker}" target="_blank" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" class="w-4 h-4" />IMAGE</a>`;
+                    if (project.links.github) linksHTML += `<a href="${project.links.github}" target="_blank" aria-label="View Source Code" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-4 h-4 opacity-60" alt="GitHub" />CODE</a>`;
+                    if (project.links.pypi) linksHTML += `<a href="${project.links.pypi}" target="_blank" aria-label="View PyPI Package" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="w-4 h-4 opacity-60" alt="PyPI" />PyPI</a>`;
+                    if (project.links.demo) linksHTML += `<a href="${project.links.demo}" target="_blank" aria-label="View Live Demo" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>LIVE</a>`;
+                    if (project.links.docker) linksHTML += `<a href="${project.links.docker}" target="_blank" aria-label="View Docker Container" class="text-xs font-mono font-medium text-gray-400 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" class="w-4 h-4" alt="Docker" />IMAGE</a>`;
 
                     projContainer.innerHTML += `
                         <div class="group relative pl-6 border-l-2 border-gray-200 hover:border-accent transition-colors duration-300">
@@ -196,7 +225,7 @@
                         </div>`;
                 });
 
-                // EDUCATION
+                // --- 6. POPULATE EDUCATION ---
                 const eduContainer = document.getElementById('education-container');
                 data.education.forEach(edu => {
                     eduContainer.innerHTML += `
@@ -210,7 +239,7 @@
                         </div>`;
                 });
 
-                // FOOTER
+                // --- 7. POPULATE FOOTER ---
                 document.getElementById('footer-copy').textContent = data.profile.copyright;
             })
             .catch(error => {
