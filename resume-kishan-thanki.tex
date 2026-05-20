@@ -1,0 +1,181 @@
+%-------------------------
+% Resume in Latex
+% Author : Kishan Thanki
+% Inspired by: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+%----------PACKAGES----------%
+\usepackage{fontawesome5}
+\usepackage{latexsym}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage[default]{lato}
+\usepackage{geometry}
+
+\geometry{left=1.2cm, top=0.5cm, right=1.2cm, bottom=0.5cm}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+    \vspace{-2pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+%----------CUSTOM COMMANDS----------%
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-10pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-10pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{4pt}
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-10pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\newcommand{\listOfSkills}[2]{
+    \vspace{0.1em}
+    \hspace{1em}
+    \small
+    \textbf{#1}: {#2}
+    \\
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\vspace{4pt}\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7pt}}
+
+\definecolor{Black}{RGB}{0, 0, 0}
+\newcommand{\seticon}[1]{\textcolor{Black}{\csname #1\endcsname}}
+
+%-------------------------------------------%
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%
+%-------------------------------------------%
+
+\begin{document}
+
+%----------HEADING----------%
+\begin{tabularx}{\textwidth}{@{} X r @{}}
+    \begin{minipage}[t]{\linewidth}
+        \textbf{\Huge \scshape Kishan Thanki} \\[0.5em]
+        \href{mailto:kishanthanki10@gmail.com}{\seticon{faEnvelope} \underline{kishanthanki10@gmail.com}} \quad
+        \href{https://www.linkedin.com/in/kishanthanki8}{\seticon{faLinkedin} \underline{in/kishanthanki8}} \quad
+        \href{https://github.com/Kishan-Thanki}{\seticon{faGithub} \underline{github.com/Kishan-Thanki}} \quad
+        \href{https://kishanthanki.dev/}{\seticon{faGlobe} \underline{kishanthanki.dev}}
+    \end{minipage}
+\end{tabularx}
+
+%-----------EDUCATION-----------%
+\section{Education}
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+        {Dhirubhai Ambani Institute of Information and Communication Technology}{2024 -- 2026}
+        {M.Sc. Information Technology \quad \textbf{CPI}: 7.23}{Gandhinagar, Gujarat}
+
+    \resumeSubheading
+        {GLS University}{2021 -- 2024}
+        {Bachelor of Computer Applications \quad \textbf{CGPA}: 8.24}{Ahmedabad, Gujarat}
+
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------%
+\section{Experience}
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+        {Software Engineer Intern}{Jan 2026 -- Apr 2026}
+        {Oizom}{Ahmedabad, India}
+        \resumeItemListStart
+            \resumeItem{Built \textbf{Envizom}, an SVG charting library with a dual-runtime renderer producing identical output in the browser and on the server via Node.js.}
+            \resumeItem{Designed a declarative, config-driven API that decouples chart configuration from rendering logic, enabling consistent cross-environment behavior.}
+            \resumeItem{Implemented data-reduction strategies to keep large time-series datasets performant at render time without sacrificing visual fidelity.}
+        \resumeItemListEnd
+
+    \resumeSubheading
+        {Software Development Intern}{Jul 2023 -- Feb 2024}
+        {Inexture Solutions LLP}{Ahmedabad, Gujarat}
+        \resumeItemListStart
+            \resumeItem{Developed \textbf{SoleStore}, a full-stack e-commerce footwear platform as part of a 3-member team under industry mentorship.}
+            \resumeItem{Conducted requirements gathering, system analysis, and designed UML diagrams for system architecture and workflows.}
+            \resumeItem{Implemented product catalog, authentication, and order management modules following SDLC best practices.}
+        \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------%
+\section{Projects}
+\resumeSubHeadingListStart
+
+   \resumeProjectHeading
+    {\textbf{Resume Ranker} $|$ \emph{SvelteKit, FastAPI, PostgreSQL, Redis, Docker}}
+    {\href{https://resume-ranker.kishanthanki.dev}{\faGlobe}}
+    \resumeItemListStart
+        \resumeItem{Built a resume-screening tool that produces section-by-section match analyses with side-by-side evidence quotes from both the resume and the job description — no single top-line score.}
+        \resumeItem{Designed a three-step LLM pipeline (JD extraction → resume extraction → scoring) with typed, validated outputs via \textbf{instructor + Pydantic}, and SHA-256-keyed \textbf{Redis} caching to eliminate redundant API calls.}
+        \resumeItem{Decoupled the API from LLM inference using \textbf{arq} task queues — the FastAPI server validates, persists to \textbf{PostgreSQL}, and enqueues; a separate worker process handles all model calls.}
+        \resumeItem{Containerized both stacks independently (4-container backend compose, standalone frontend image) with resource caps, sliding-window rate limiting, and a stub mode for offline development.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------%
+\section{Technical Skills}
+
+\listOfSkills{Languages}{C / C++, Go, Linux, Python}
+\listOfSkills{Frameworks}{FastAPI, Django REST Framework}
+\listOfSkills{Cloud \& Infra}{AWS, Docker, Terraform}
+\listOfSkills{Databases}{PostgreSQL, MySQL, Redis}
+\listOfSkills{Developer Tools}{Git, GitHub Actions}
+\listOfSkills{Interests}{Backend Engineering, Cloud Infrastructure, System Design}
+
+\vspace{-1em}
+%-------------------------------------------%
+\end{document}

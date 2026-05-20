@@ -1,302 +1,720 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Kishan Thanki | Backend Software Engineer & Cloud Architect</title>
-    <meta name="title" content="Kishan Thanki | Backend Software Engineer & Cloud Architect">
-    <meta name="description" content="Portfolio of Kishan Thanki - Backend Engineer specializing in scalable distributed systems, Cloud Infrastructure (AWS), Python, and DevOps automation.">
-    <meta name="keywords" content="Kishan Thanki, Backend Engineer, Cloud Architect, AWS, Python, Django, DevOps, Software Engineer Portfolio">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="author" content="Kishan Thanki">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kishanthanki.dev/">
-    <meta property="og:title" content="Kishan Thanki | Backend Software Engineer">
-    <meta property="og:description" content="Specializing in scalable distributed systems and cloud infrastructure. View my projects and technical stack.">
-    <meta property="og:image" content="https://kishanthanki.dev/og-image.jpg">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://kishanthanki.dev/">
-    <meta property="twitter:title" content="Kishan Thanki | Backend Software Engineer">
-    <meta property="twitter:description" content="Specializing in scalable distributed systems and cloud infrastructure.">
-    <meta property="twitter:image" content="https://kishanthanki.dev/og-image.jpg">
-
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='80' font-family='monospace' font-size='85' font-weight='bold' fill='%23171717' text-anchor='middle'>KT</text></svg>">
-    
-    <link rel="preload" href="data.json" as="fetch" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-    <script defer src="https://cdn.vercel-insights.com/v1/speed-insights/script.js"></script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: { bg: '#FAFAFA', ink: '#171717', sub: '#525252', accent: '#2563EB' }
-                }
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kishan Thanki — Backend / Cloud Engineer</title>
+  <meta name="title" content="Kishan Thanki — Backend / Cloud Engineer" />
+  <meta name="description"
+    content="Kishan Thanki — backend and cloud engineer based in Ahmedabad, India. Go, Python, and cloud infrastructure, with a focus on the platform layer." />
+  <meta name="keywords"
+    content="Kishan Thanki, Backend Engineer, Cloud Engineer, Platform Engineer, Go, Python, AWS, System Design, Distributed Systems" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Kishan Thanki" />
+  <link rel="canonical" href="https://kishanthanki.dev/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kishanthanki.dev/" />
+  <meta property="og:title" content="Kishan Thanki — Backend / Cloud Engineer" />
+  <meta property="og:description"
+    content="Backend and cloud engineer. Go, Python, and the platform layer that products are built on." />
+  <meta property="og:image" content="https://kishanthanki.dev/universal-image-dark.jpg" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://kishanthanki.dev/" />
+  <meta property="twitter:title" content="Kishan Thanki — Backend / Cloud Engineer" />
+  <meta property="twitter:description"
+    content="Backend and cloud engineer. Go, Python, and the platform layer that products are built on." />
+  <meta property="twitter:image" content="https://kishanthanki.dev/universal-image-dark.jpg" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='80' font-family='monospace' font-size='85' font-weight='bold' fill='%23171717' text-anchor='middle'>KT</text></svg>" />
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+  <!-- JSON-LD is static here, NOT injected by JS, so crawlers always see it -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kishan Thanki",
+        "jobTitle": "Backend / Cloud Engineer",
+        "url": "https://kishanthanki.dev",
+        "sameAs": [
+          "https://github.com/Kishan-Thanki",
+          "https://www.linkedin.com/in/kishanthanki8/"
+        ],
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "DA-IICT, Gandhinagar"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ahmedabad",
+          "addressCountry": "India"
         }
+      }
     </script>
+  <script>
+    if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+      const s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://cdn.vercel-insights.com/v1/speed-insights/script.js';
+      document.head.appendChild(s);
+    }
+  </script>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #232323;
+      --sub: #6b6b6b;
+      --rule: #e5e5e5;
+      --accent: #1f66f5;
+      --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
 
-    <style>
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #a3a3a3; }
-        .fade-in { animation: fadeIn 0.8s ease-out; }
-    </style>
+    html[data-theme="dark"] {
+      --bg: #0b0b0c;
+      --ink: #f5f5f5;
+      --sub: #8a8a8a;
+      --rule: #2a2a2c;
+      --accent: #5b8cff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 24px 128px;
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-color: var(--rule);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.15s ease, color 0.15s ease;
+    }
+
+    a:hover {
+      text-decoration-color: var(--accent);
+      color: var(--accent);
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /* --- header --- */
+    header {
+      margin-bottom: 36px;
+    }
+
+    .name {
+      font-family: var(--font);
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .headline {
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ink);
+      margin: 6px 0 0;
+    }
+
+    .meta {
+      margin-top: 24px;
+      font-family: var(--font);
+      font-size: 13px;
+      color: var(--sub);
+      line-height: 1.7;
+    }
+
+    .meta p {
+      margin: 0;
+    }
+
+    .meta a {
+      color: var(--sub);
+      text-decoration: none;
+    }
+
+    .meta a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: currentColor;
+      text-underline-offset: 3px;
+    }
+
+    .meta a[href^="mailto:"]:hover {
+      color: #ea4335;
+    }
+
+    .meta a[href*="linkedin"]:hover {
+      color: #0a66c2;
+    }
+
+    .meta a[href*="github"]:hover {
+      color: #2da44e;
+    }
+
+    .meta .sep {
+      color: var(--rule);
+      margin: 0 8px;
+    }
+
+    /* --- nav --- */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      padding: 14px 0;
+      margin-bottom: 24px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
+      font-family: var(--font);
+      font-size: 12px;
+      letter-spacing: 0.03em;
+    }
+
+    .nav a {
+      color: var(--sub);
+      text-decoration: none;
+      text-transform: lowercase;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: var(--font);
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      color: var(--sub);
+      cursor: pointer;
+      margin-left: auto;
+    }
+
+    .theme-toggle:hover {
+      color: var(--accent);
+    }
+
+    /* --- sections --- */
+    section {
+      margin-top: 56px;
+      scroll-margin-top: 64px;
+    }
+
+    h2 {
+      font-family: var(--font);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: lowercase;
+      letter-spacing: 0.04em;
+      color: var(--sub);
+      margin: 0 0 20px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .prose {
+      font-family: var(--font);
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .prose+.prose {
+      margin-top: 14px;
+    }
+
+    /* --- entries --- */
+    .entry {
+      margin-top: 30px;
+    }
+
+    .entry:first-of-type {
+      margin-top: 0;
+    }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .entry-title {
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    a.entry-title {
+      text-decoration: underline;
+      text-decoration-color: var(--rule);
+      text-underline-offset: 3px;
+    }
+
+    a.entry-title:hover {
+      color: var(--accent);
+    }
+
+    .entry-year {
+      font-family: var(--font);
+      font-size: 13px;
+      color: var(--sub);
+      white-space: nowrap;
+    }
+
+    .entry-meta {
+      font-family: var(--font);
+      font-size: 13px;
+      color: var(--sub);
+      margin: 4px 0 0;
+    }
+
+    .entry .prose {
+      margin-top: 10px;
+    }
+
+    /* --- tech tags --- */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      font-family: var(--font);
+      font-size: 11px;
+      color: var(--sub);
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      padding: 2px 7px;
+    }
+
+    /* --- project bullets --- */
+    .wins {
+      margin: 12px 0 0;
+      padding-left: 17px;
+      font-family: var(--font);
+      font-size: 12.5px;
+      color: var(--sub);
+      line-height: 1.6;
+    }
+
+    .wins li {
+      margin-top: 3px;
+    }
+
+    /* --- project links --- */
+    .proj-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .proj-links a {
+      font-family: var(--font);
+      font-size: 12px;
+      color: var(--sub);
+      text-decoration: none;
+    }
+
+    .proj-links a:hover {
+      color: var(--accent);
+    }
+
+    /* --- projects (tailwind port) --- */
+    .project-entry {
+      position: relative;
+      padding-left: 24px;
+      border-left: 2px solid var(--rule);
+      transition: border-color 0.3s ease;
+      margin-top: 30px;
+    }
+
+    .project-entry:hover {
+      border-color: var(--accent);
+    }
+
+    .project-head {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 12px;
+    }
+
+    @media (min-width: 480px) {
+      .project-head {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+    }
+
+    .project-title {
+      font-family: var(--font);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 8px 0;
+      transition: color 0.3s ease;
+    }
+
+    .project-entry:hover .project-title {
+      color: var(--accent);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .project-links a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--sub);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.15s ease;
+    }
+
+    .project-links a:hover {
+      color: var(--ink);
+    }
+
+    .project-links svg {
+      width: 15px;
+      height: 15px;
+      opacity: 0.7;
+    }
+
+    .project-subtitle {
+      font-family: var(--font);
+      font-size: 13.5px;
+      color: var(--sub);
+      margin: 0 0 16px 0;
+    }
+
+    .project-entry .prose {
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .project-tag {
+      font-family: var(--font);
+      font-size: 11.5px;
+      color: var(--ink);
+      background: rgba(128, 128, 128, 0.08);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 4px 8px;
+    }
+
+    .project-bullets {
+      margin: 0;
+      padding-left: 18px;
+      font-family: var(--font);
+      font-size: 13.5px;
+      color: var(--sub);
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+
+    .project-bullets li {
+      margin-top: 4px;
+    }
+
+    /* --- skills --- */
+    .skill-label {
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+
+    .skill-list {
+      font-family: var(--font);
+      font-size: 13px;
+      color: var(--sub);
+      line-height: 1.9;
+      margin: 0;
+    }
+
+    .skill-list img {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: text-bottom;
+      margin-right: 6px;
+    }
+
+    html[data-theme="dark"] .icon-dark-sensitive {
+      filter: invert(1);
+    }
+
+    /* --- footer --- */
+    footer {
+      margin-top: 96px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font);
+      font-size: 12px;
+      color: var(--sub);
+    }
+
+    footer a {
+      color: var(--sub);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding: 56px 20px 96px;
+      }
+
+      .prose {
+        font-size: 16px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
 </head>
-<body class="bg-bg text-ink font-sans antialiased selection:bg-blue-100 selection:text-blue-900 leading-relaxed">
 
-    <main class="max-w-3xl mx-auto px-6 py-20 md:py-24 fade-in">
-        
-        <header class="mb-12 min-h-[160px]">
-            <h1 id="profile-name" class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-black">
-                </h1>
-            <h2 id="profile-title" class="text-xl md:text-2xl text-sub font-medium mb-6">
-                </h2>
-            
-            <div id="profile-contact" class="flex flex-wrap gap-6 text-sm text-sub items-center mb-10 font-medium">
-                </div>
-        </header>
+<body>
+  <main id="top">
+    <header>
+      <h1 class="name">Kishan Thanki</h1>
+      <p class="headline">Backend / Cloud Engineer</p>
+      <div class="meta">
+        <p>
+          <a href="https://www.google.com/maps/place/Ahmedabad,+Gujarat,+India" target="_blank"
+            rel="noopener noreferrer">Ahmedabad, India</a>
+        </p>
+        <p>
+          <a href="mailto:kishanthankiat10@gmail.com">email</a>
+          <span class="sep">·</span>
+          <a href="https://www.linkedin.com/in/kishanthanki8/" target="_blank" rel="me noopener noreferrer">linkedin</a>
+          <span class="sep">·</span>
+          <a href="https://github.com/Kishan-Thanki" target="_blank" rel="me noopener noreferrer">github</a>
+          <span class="sep">·</span>
+          <!-- drop your compiled resume-kishan-thanki.pdf at the site root -->
+          <a href="/resume-kishan-thanki.pdf" target="_blank" rel="noopener noreferrer">resume</a>
+        </p>
+      </div>
+    </header>
 
-        <nav class="sticky top-0 z-50 bg-bg/95 backdrop-blur-sm pt-4 pb-4 mb-16 border-b border-gray-200 flex gap-8 text-sm font-mono font-medium text-gray-600">
-            <a href="#about" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1" aria-label="Go to About section">01. ABOUT</a>
-            <a href="#projects" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1" aria-label="Go to Projects section">02. PROJECTS</a>
-            <a href="#skills" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1" aria-label="Go to Stack section">03. STACK</a>
-            <a href="#education" class="hover:text-black hover:border-black border-b-2 border-transparent transition-all pb-1" aria-label="Go to Education section">04. EDUCATION</a>
-        </nav>
+    <nav class="nav" aria-label="Section navigation">
+      <a href="#about">about</a>
+      <a href="#experience">experience</a>
+      <a href="#work">work</a>
+      <a href="#stack">stack</a>
+      <a href="#education">education</a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">theme</button>
+    </nav>
 
-        <section id="about" class="mb-24 scroll-mt-32 min-h-[100px]">
-            <h3 class="font-mono text-xs font-bold text-gray-500 mb-6 tracking-wider">01 // THE PROFILE</h3>
-            <p id="about-text" class="text-xl text-ink leading-relaxed max-w-2xl font-light">
-                </p>
-        </section>
+    <section id="about">
+      <h2>about</h2>
+      <p class="prose">
+        I build backend systems and cloud infrastructure. What pulls me is
+        the platform layer &mdash; the services, tooling, and reliability
+        work everything else runs on.
+      </p>
+    </section>
 
-        <section id="projects" class="mb-24 scroll-mt-24 min-h-[300px]">
-            <h3 class="font-mono text-xs font-bold text-gray-500 mb-10 tracking-wider">02 // PROOF OF WORK</h3>
-            <div id="projects-container" class="space-y-20">
-                <div class="animate-pulse space-y-4">
-                    <div class="h-6 bg-gray-200 rounded w-1/3"></div>
-                    <div class="h-4 bg-gray-200 rounded w-3/4"></div>
-                    <div class="h-4 bg-gray-200 rounded w-1/2"></div>
-                </div>
-            </div>
-        </section>
+    <section id="experience">
+      <h2>experience</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Software Engineer Intern</span>
+          <span class="entry-year">Jan &mdash; Apr 2026</span>
+        </div>
+        <p class="entry-meta">Oizom &middot; Ahmedabad, India</p>
+        <p class="prose">
+          Built Envizom, an SVG charting library with a dual-runtime renderer
+          that produces the same output in the browser and on the server.
+          Designed a declarative, config-driven API and data-reduction
+          strategies to keep large datasets fast to render.
+        </p>
+      </div>
+    </section>
 
-        <section id="skills" class="mb-24 scroll-mt-24 min-h-[200px]">
-            <h3 class="font-mono text-xs font-bold text-gray-500 mb-10 tracking-wider">03 // TECHNICAL STACK</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="p-6 bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow">
-                    <h4 class="font-bold text-black mb-6 flex items-center gap-3">Languages & Frameworks</h4>
-                    <ul id="skills-languages" class="space-y-4 font-mono text-sm text-sub"></ul>
-                </div>
-                <div class="p-6 bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow">
-                    <h4 class="font-bold text-black mb-6 flex items-center gap-3">Infrastructure & DBs</h4>
-                    <ul id="skills-infrastructure" class="space-y-4 font-mono text-sm text-sub"></ul>
-                </div>
-            </div>
-        </section>
+    <section id="work">
+      <h2>my work</h2>
+      <div class="project-entry">
+        <div class="project-head">
+          <h4 class="project-title">Resume Ranker</h4>
+          <div class="project-links">
+            <a href="https://resume-ranker.kishanthanki.dev" target="_blank" aria-label="Live demo for Resume Ranker">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              LIVE
+            </a>
+          </div>
+        </div>
+        <p class="project-subtitle">AI-Powered Candidate Screening</p>
+        <p class="prose">
+          An automated tool that analyzes resumes against job descriptions, providing a section-by-section breakdown
+          with evidence-based quotes. Features a decoupled two-stack architecture with a SvelteKit frontend and an
+          asynchronous FastAPI backend.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">SvelteKit</span>
+          <span class="project-tag">FastAPI</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Redis</span>
+          <span class="project-tag">Docker</span>
+        </div>
+        <ul class="project-bullets">
+          <li>LLM-Powered Matching</li>
+          <li>Asynchronous Queues</li>
+          <li>Independent Stack Architecture</li>
+        </ul>
+      </div>
+    </section>
 
-        <section id="education" class="mb-24 scroll-mt-24 min-h-[150px]">
-            <h3 class="font-mono text-xs font-bold text-gray-500 mb-10 tracking-wider">04 // EDUCATION</h3>
-            <div id="education-container" class="grid grid-cols-1 gap-6">
-                </div>
-        </section>
+    <section id="stack">
+      <h2>what i usually use</h2>
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; margin-top: 16px;">
+        <div>
+          <p class="skill-label">Languages</p>
+          <p class="skill-list">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="">C / C++<br />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" alt="">Go<br />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="">Linux<br />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="">Python
+          </p>
+        </div>
+        <div>
+          <p class="skill-label">Frameworks &amp; APIs</p>
+          <p class="skill-list">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="">FastAPI<br />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-original.svg" alt="">Django REST Framework
+          </p>
+        </div>
+        <div>
+          <p class="skill-label">Cloud &amp; Infra</p>
+          <p class="skill-list">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="" style="height: 12px; width: auto; vertical-align: middle;">AWS<br />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="">Docker<br />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="">Terraform
+          </p>
+        </div>
 
-        <footer class="pt-10 border-t border-gray-200 flex justify-between items-center text-xs font-mono text-gray-500">
-            <p id="footer-copy">&copy; 2025 Architecture First.</p>
-            <a href="#" class="hover:text-black transition-colors" aria-label="Back to Top">BACK TO TOP ↑</a>
-        </footer>
-    </main>
+      </div>
+    </section>
 
-    <script>
-        fetch('data.json')
-            .then(response => {
-                if (!response.ok) throw new Error("Could not load data.json");
-                return response.json();
-            })
-            .then(data => {
-                // --- 1. SCHEMA (JSON-LD) ---
-                const schemaData = {
-                    "@context": "https://schema.org",
-                    "@type": "Person",
-                    "name": data.profile.name,
-                    "jobTitle": data.profile.title,
-                    "url": "https://kishanthanki.dev",
-                    "sameAs": [
-                        data.profile.social.github,
-                        data.profile.social.linkedin
-                    ],
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressLocality": "Ahmedabad",
-                        "addressCountry": "India"
-                    }
-                };
-                const script = document.createElement('script');
-                script.type = 'application/ld+json';
-                script.text = JSON.stringify(schemaData);
-                document.head.appendChild(script);
+    <section id="education">
+      <h2>education</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">M.Sc. Information Technology</span>
+          <span class="entry-year">2024 &mdash; 2026</span>
+        </div>
+        <p class="entry-meta">DAIICT &middot; Gandhinagar, India</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Bachelor of Computer Applications</span>
+          <span class="entry-year">2021 &mdash; 2024</span>
+        </div>
+        <p class="entry-meta">GLS University &middot; Ahmedabad, India</p>
+      </div>
+    </section>
 
-                // --- 2. HEADER ---
-                document.title = `${data.profile.name} | ${data.profile.title}`;
-                document.getElementById('profile-name').textContent = data.profile.name;
-                document.getElementById('profile-title').textContent = data.profile.title;
-                
-                const contactDiv = document.getElementById('profile-contact');
-                
-                // --- CUSTOM COLORED ICONS ON HOVER ---
-                // Location: Red Icon
-                contactDiv.innerHTML += `
-                    <a href="${data.profile.mapUrl}" target="_blank" aria-label="View Location on Google Maps" 
-                    class="group flex items-center gap-2 transition-all duration-300">
-                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="text-sub transition-all duration-300 group-hover:text-red-600">
-                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
-                        </svg>
-                        <span class="text-sub transition-all duration-300 group-hover:text-black group-hover:[text-shadow:_0_0_0.75px_rgb(0,0,0)]">
-                            ${data.profile.location}
-                        </span>
-                    </a>`;
-
-                // GitHub: Black Icon 
-                if(data.profile.social.github) {
-                    contactDiv.innerHTML += `
-                        <a href="${data.profile.social.github}" target="_blank" aria-label="GitHub Profile" 
-                        class="group flex items-center gap-2 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" width="16" height="16" alt="" aria-hidden="true" 
-                                class="w-4 h-4 opacity-60 transition-all duration-300 group-hover:opacity-100" />
-                            <span class="text-sub transition-all duration-300 group-hover:text-black group-hover:[text-shadow:_0_0_0.75px_rgb(0,0,0)]">
-                                GitHub
-                            </span>
-                        </a>`;
-                }
-
-                // LinkedIn: Blue Icon
-                if(data.profile.social.linkedin) {
-                    contactDiv.innerHTML += `
-                        <a href="${data.profile.social.linkedin}" target="_blank" aria-label="LinkedIn Profile" 
-                        class="group flex items-center gap-2 transition-all duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" width="16" height="16" alt="" aria-hidden="true" 
-                                class="w-4 h-4 opacity-60 transition-all duration-300 group-hover:opacity-100" />
-                            <span class="text-sub transition-all duration-300 group-hover:text-black group-hover:[text-shadow:_0_0_0.75px_rgb(0,0,0)]">
-                                LinkedIn
-                            </span>
-                        </a>`;
-                }
-
-                // Email: Gold/Amber Icon
-                if(data.profile.social.email) {
-                    contactDiv.innerHTML += `
-                        <a href="mailto:${data.profile.social.email}" aria-label="Email Me" 
-                        class="group flex items-center gap-2 transition-all duration-300">
-                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="text-sub transition-all duration-300 group-hover:text-amber-500">
-                                <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                            </svg>
-                            <span class="text-sub transition-all duration-300 group-hover:text-black group-hover:[text-shadow:_0_0_0.75px_rgb(0,0,0)]">
-                                Email
-                            </span>
-                        </a>`;
-                }
-
-                // --- 3. ABOUT ---
-                document.getElementById('about-text').innerHTML = data.about;
-
-                // --- 4. SKILLS ---
-                const renderSkills = (skillList, containerId) => {
-                    const list = document.getElementById(containerId);
-                    // Clear list to prevent duplicates
-                    list.innerHTML = ''; 
-                    
-                    skillList.forEach(item => {
-                        const iconClass = item.class ? item.class : "w-5 h-5";
-                        
-                        // Check if URL exists, otherwise render plain list item
-                        if(item.url) {
-                            list.innerHTML += `
-                                <li>
-                                    <a href="${item.url}" target="_blank" rel="noopener noreferrer" 
-                                       class="group flex items-center gap-3 transition-colors hover:text-black">
-                                        <img src="${item.icon}" 
-                                             class="${iconClass} transition-transform duration-300 group-hover:scale-110" 
-                                             width="20" height="20" alt="" aria-hidden="true" loading="lazy" />
-                                        <span class="transition-all duration-300 group-hover:text-black group-hover:[text-shadow:_0_0_0.75px_rgb(0,0,0)]">
-                                            ${item.name}
-                                        </span>
-                                    </a>
-                                </li>`;
-                        } else {
-                            // Fallback if no URL is provided in JSON
-                            list.innerHTML += `
-                                <li class="flex items-center gap-3">
-                                    <img src="${item.icon}" class="${iconClass}" width="20" height="20" alt="" aria-hidden="true" loading="lazy" />
-                                    ${item.name}
-                                </li>`;
-                        }
-                    });
-                };
-                renderSkills(data.skills.languages, 'skills-languages');
-                renderSkills(data.skills.infrastructure, 'skills-infrastructure');
-
-                // --- 5. PROJECTS ---
-                const projContainer = document.getElementById('projects-container');
-                projContainer.innerHTML = '';
-                data.projects.forEach(project => {
-                    const techHTML = project.tech.map(t => `<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded border border-gray-200 text-xs">${t}</span>`).join('');
-                    const winsHTML = project.wins.map(w => `<li>${w}</li>`).join('');
-
-                    let linksHTML = '';
-                    if (project.links.github) linksHTML += `<a href="${project.links.github}" target="_blank" aria-label="Source code for ${project.name}" class="text-xs font-mono font-medium text-gray-500 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-4 h-4 opacity-60" width="16" height="16" alt="" aria-hidden="true" />CODE</a>`;
-                    if (project.links.pypi) linksHTML += `<a href="${project.links.pypi}" target="_blank" aria-label="PyPI package for ${project.name}" class="text-xs font-mono font-medium text-gray-500 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="w-4 h-4 opacity-60" width="16" height="16" alt="" aria-hidden="true" />PyPI</a>`;
-                    if (project.links.demo) linksHTML += `<a href="${project.links.demo}" target="_blank" aria-label="Live demo for ${project.name}" class="text-xs font-mono font-medium text-gray-500 hover:text-black flex items-center gap-1 transition-colors"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>LIVE</a>`;
-                    if (project.links.docker) linksHTML += `<a href="${project.links.docker}" target="_blank" aria-label="Docker image for ${project.name}" class="text-xs font-mono font-medium text-gray-500 hover:text-black flex items-center gap-1 transition-colors"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" class="w-4 h-4" width="16" height="16" alt="" aria-hidden="true" />IMAGE</a>`;
-
-                    projContainer.innerHTML += `
-                        <div class="group relative pl-6 border-l-2 border-gray-200 hover:border-accent transition-colors duration-300">
-                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-3">
-                                <h4 class="text-2xl font-bold text-black group-hover:text-accent transition-colors cursor-pointer">${project.name}</h4>
-                                <div class="flex gap-4 mt-2 sm:mt-0">${linksHTML}</div>
-                            </div>
-                            <p class="font-mono text-sm text-gray-500 mb-4">${project.type}</p>
-                            <p class="text-sub mb-5 leading-relaxed max-w-2xl">${project.summary}</p>
-                            <div class="flex flex-wrap gap-2 font-mono text-xs mb-4">${techHTML}</div>
-                            <ul class="list-disc pl-4 space-y-1 text-sm text-gray-600 font-mono opacity-80">${winsHTML}</ul>
-                        </div>`;
-                });
-
-                // --- 6. EDUCATION ---
-                const eduContainer = document.getElementById('education-container');
-                data.education.forEach(edu => {
-                    eduContainer.innerHTML += `
-                        <div class="p-6 bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2">
-                                <h4 class="font-bold text-black text-lg">${edu.degree}</h4>
-                                <span class="font-mono text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded">${edu.year}</span>
-                            </div>
-                            <p class="text-sub font-medium leading-relaxed">${edu.university}</p>
-                            <p class="text-xs text-gray-400 mt-1">${edu.details}</p>
-                        </div>`;
-                });
-
-                // --- 7. FOOTER ---
-                document.getElementById('footer-copy').textContent = data.profile.copyright;
-            })
-            .catch(error => {
-                console.error("Error loading data:", error);
-                document.body.innerHTML = `<div class="p-10 text-red-500">Error loading data.json. Ensure files are in the same directory and you are using a local server.</div>`;
-            });
-    </script>
+    <footer>
+      <p>&copy; 2026 Kishan Thanki</p>
+      <a href="#top">back to top &uarr;</a>
+    </footer>
+  </main>
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        html.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
 </body>
+
 </html>
