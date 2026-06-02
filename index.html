@@ -496,6 +496,8 @@
     }
 
     .media-card {
+      display: flex;
+      flex-direction: column;
       flex: 0 0 calc(100% - 32px);
       scroll-snap-align: start;
       border: 1px solid var(--rule);
@@ -545,13 +547,14 @@
     .media-card-media video,
     .media-card-media img {
       width: 100%;
-      /* height: 100%; */
-      /* object-fit: cover; */
+      height: 100%;
+      object-fit: cover;
       display: block;
       border-bottom: 1px solid var(--rule);
     }
 
     .media-card-content {
+      flex: 1;
       padding: 12px 16px;
       display: flex;
       flex-direction: column;
@@ -794,9 +797,8 @@
       <a href="#about">about</a>
       <a href="#experience">experience</a>
       <a href="#work">work</a>
-      <a href="#stack">stack</a>
       <a href="#education">education</a>
-      <a href="#other-things">other things</a>
+      <a href="#others">others</a>
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">theme</button>
     </nav>
 
@@ -831,7 +833,7 @@
         <div class="project-head">
           <h3 class="project-title">Resume Ranker</h3>
           <div class="project-links">
-            <a href="https://resume-ranker.kishanthanki.dev" target="_blank" aria-label="Live demo for Resume Ranker">
+            <a href="https://resumeranker.kishanthanki.dev" target="_blank" aria-label="Live demo for Resume Ranker">
               <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -863,48 +865,6 @@
       </div>
     </section>
 
-    <section id="stack">
-      <h2>what i work with</h2>
-      <div
-        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; margin-top: 16px;">
-        <div>
-          <p class="skill-label">Languages</p>
-          <p class="skill-list">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt=""
-              width="14" height="14">C / C++<br />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" alt="" width="14"
-              height="14">Go<br />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt=""
-              width="14" height="14">Linux<br />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt=""
-              width="14" height="14">Python
-          </p>
-        </div>
-        <div>
-          <p class="skill-label">Frameworks &amp; APIs</p>
-          <p class="skill-list">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt=""
-              width="14" height="14">FastAPI<br />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-original.svg"
-              alt="" width="14" height="14">Django REST Framework
-          </p>
-        </div>
-        <div>
-          <p class="skill-label">Cloud &amp; Infra</p>
-          <p class="skill-list">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-              alt="" width="40" height="12" style="height: 12px; width: auto; vertical-align: middle;">AWS<br />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt=""
-              width="14" height="14">Docker<br />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt=""
-              width="14" height="14">Terraform
-          </p>
-        </div>
-
-      </div>
-    </section>
-
     <section id="education">
       <h2>education</h2>
       <div class="entry">
@@ -923,8 +883,8 @@
       </div>
     </section>
 
-    <section id="other-things">
-      <h2>experiments</h2>
+    <section id="others">
+      <h2>Others</h2>
       <div class="carousel-container">
         <button class="carousel-btn prev" aria-label="Previous card">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
@@ -951,6 +911,31 @@
                     <line x1="10" y1="14" x2="21" y2="3"></line>
                   </svg>
                   FIND OUT
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Card: Resume Ranker -->
+          <div class="media-card">
+            <div class="media-card-media">
+              <!-- Temporarily using the Discord bot video until we have one for Resume Ranker -->
+              <video src="https://raw.githubusercontent.com/Kishan-Thanki/go-discord-ping/main/discord-bot-demo.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="media-card-content">
+              <h3 class="media-card-title">Resume Ranker</h3>
+              <p class="media-card-desc">
+                AI-powered resume screening that scores a resume against a job description
+                section by section, with evidence quotes from both — no black-box match
+                percentage. SvelteKit + async FastAPI, fully Dockerized.
+              </p>
+              <div class="project-links">
+                <a href="https://resumeranker.kishanthanki.dev" target="_blank" rel="noopener noreferrer" aria-label="Live demo for Resume Ranker">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  LIVE
                 </a>
               </div>
             </div>
