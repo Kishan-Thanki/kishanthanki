@@ -93,6 +93,11 @@
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7pt}}
 
 \definecolor{Black}{RGB}{0, 0, 0}
+\definecolor{PythonColor}{RGB}{55, 118, 171}
+\definecolor{GlobeColor}{RGB}{0, 102, 204}
+\definecolor{LinkedInColor}{RGB}{10, 102, 194}
+\definecolor{GmailColor}{RGB}{234, 67, 53}
+\definecolor{GithubColor}{RGB}{36, 41, 46}
 \newcommand{\seticon}[1]{\textcolor{Black}{\csname #1\endcsname}}
 
 %-------------------------------------------%
@@ -105,10 +110,10 @@
 \begin{tabularx}{\textwidth}{@{} X r @{}}
     \begin{minipage}[t]{\linewidth}
         \textbf{\Huge \scshape Kishan Thanki} \\[0.5em]
-        \href{mailto:kishanthanki10@gmail.com}{\seticon{faEnvelope} \underline{kishanthanki10@gmail.com}} \quad
-        \href{https://www.linkedin.com/in/kishanthanki8}{\seticon{faLinkedin} \underline{in/kishanthanki8}} \quad
-        \href{https://github.com/Kishan-Thanki}{\seticon{faGithub} \underline{github.com/Kishan-Thanki}} \quad
-        \href{https://kishanthanki.dev/}{\seticon{faGlobe} \underline{kishanthanki.dev}}
+        \href{mailto:kishanthanki10@gmail.com}{\textcolor{GmailColor}{\faEnvelope} \underline{kishanthanki10@gmail.com}} \quad
+        \href{https://www.linkedin.com/in/kishanthanki8}{\textcolor{LinkedInColor}{\faLinkedin} \underline{in/kishanthanki8}} \quad
+        \href{https://github.com/Kishan-Thanki}{\textcolor{GithubColor}{\faGithub} \underline{github.com/Kishan-Thanki}} \quad
+        \href{https://kishanthanki.dev/}{\textcolor{GlobeColor}{\faGlobe} \underline{kishanthanki.dev}}
     \end{minipage}
 \end{tabularx}
 
@@ -156,7 +161,7 @@
 
    \resumeProjectHeading
     {\textbf{Resume Ranker} $|$ \emph{SvelteKit, FastAPI, PostgreSQL, Redis, Docker}}
-    {\href{https://resume-ranker.kishanthanki.dev}{\faGlobe}}
+    {\href{https://resume-ranker.kishanthanki.dev}{\textcolor{GlobeColor}{\faLink}}}
     \resumeItemListStart
         \resumeItem{Built a resume-screening tool that produces section-by-section match analyses with side-by-side evidence quotes from both the resume and the job description — no single top-line score.}
         \resumeItem{Designed a three-step LLM pipeline (JD extraction → resume extraction → scoring) with typed, validated outputs via \textbf{instructor + Pydantic}, and SHA-256-keyed \textbf{Redis} caching to eliminate redundant API calls.}
@@ -164,14 +169,23 @@
         \resumeItem{Containerized both stacks independently (4-container backend compose, standalone frontend image) with resource caps, sliding-window rate limiting, and a stub mode for offline development.}
     \resumeItemListEnd
 
+   \resumeProjectHeading
+    {\textbf{DepCycle} $|$ \emph{Python, AST, Graphviz}}
+    {\href{https://pypi.org/project/depcycle/}{\includegraphics[height=1em]{python-logo.png}}}
+    \resumeItemListStart
+        \resumeItem{Developed a CLI utility for visualizing Python project dependencies and detecting circular architectural coupling.}
+        \resumeItem{Implemented an AST-based parser to precisely extract import statements across entire codebases without executing them.}
+        \resumeItem{Engineered a cycle detection engine using depth-first search to identify dependency loops, generating interactive maps in PNG, SVG, and HTML formats.}
+    \resumeItemListEnd
+
 \resumeSubHeadingListEnd
 
 %-----------TECHNICAL SKILLS-----------%
 \section{Technical Skills}
 
-\listOfSkills{Languages}{C / C++, Go, Linux, Python}
+\listOfSkills{Languages}{C / C++, Go, Python}
 \listOfSkills{Frameworks}{FastAPI, Django REST Framework}
-\listOfSkills{Cloud \& Infra}{AWS, Docker, Terraform}
+\listOfSkills{Cloud \& Infra}{AWS, Docker, Linux, Terraform}
 \listOfSkills{Databases}{PostgreSQL, MySQL, Redis}
 \listOfSkills{Developer Tools}{Git, GitHub Actions}
 \listOfSkills{Interests}{Backend Engineering, Cloud Infrastructure, System Design}
