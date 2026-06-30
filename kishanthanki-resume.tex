@@ -139,9 +139,9 @@
         {Software Engineer Intern}{Jan 2026 -- Apr 2026}
         {Oizom}{Ahmedabad, India}
         \resumeItemListStart
-            \resumeItem{Built \textbf{Envizom}, an SVG charting library with a dual-runtime renderer producing identical output in the browser and on the server via Node.js.}
-            \resumeItem{Designed a declarative, config-driven API that decouples chart configuration from rendering logic, enabling consistent cross-environment behavior.}
-            \resumeItem{Implemented data-reduction strategies to keep large time-series datasets performant at render time without sacrificing visual fidelity.}
+            \resumeItem{Built \textbf{Envizom}, a dual-engine SVG charting library utilizing \textbf{D3.js} in \textbf{TypeScript} for interactive client-side rendering, and a pure \textbf{Go} port of D3 for generating static server-side reports and exports.}
+            \resumeItem{Architected a declarative, config-driven API that guarantees absolute pixel parity and mathematically identical SVG outputs across both the interactive frontend and the static Go backend using the exact same configuration.}
+            \resumeItem{Implemented deterministic data-reduction and downsampling algorithms to maintain rendering performance and visual fidelity for massive time-series datasets.}
         \resumeItemListEnd
 
     \resumeSubheading
@@ -160,13 +160,13 @@
 \resumeSubHeadingListStart
 
    \resumeProjectHeading
-    {\textbf{Resume Ranker} $|$ \emph{SvelteKit, FastAPI, PostgreSQL, Redis, Docker}}
+    {\textbf{Resume Ranker} $|$ \emph{FastAPI, Python, Docker, LLMs}}
     {\href{https://resume-ranker.kishanthanki.dev}{\textcolor{GlobeColor}{\faLink}}}
     \resumeItemListStart
-        \resumeItem{Built a resume-screening tool that produces section-by-section match analyses with side-by-side evidence quotes from both the resume and the job description — no single top-line score.}
-        \resumeItem{Designed a three-step LLM pipeline (JD extraction → resume extraction → scoring) with typed, validated outputs via \textbf{instructor + Pydantic}, and SHA-256-keyed \textbf{Redis} caching to eliminate redundant API calls.}
-        \resumeItem{Decoupled the API from LLM inference using \textbf{arq} task queues — the FastAPI server validates, persists to \textbf{PostgreSQL}, and enqueues; a separate worker process handles all model calls.}
-        \resumeItem{Containerized both stacks independently (4-container backend compose, standalone frontend image) with resource caps, sliding-window rate limiting, and a stub mode for offline development.}
+        \resumeItem{Engineered a stateless microservice that extracts and scores candidate resumes against job descriptions, eliminating black-box AI algorithms by producing side-by-side verbatim evidence quotes.}
+        \resumeItem{Designed a deterministic, three-step LLM pipeline (JD extraction → resume extraction → scoring) enforcing strict JSON schema boundaries via \textbf{instructor} and \textbf{Pydantic}.}
+        \resumeItem{Implemented robust PDF processing using \textbf{pdfplumber} to parse uploaded documents synchronously in-flight, entirely eliminating the need for persistent storage or caching.}
+        \resumeItem{Containerized the service using Docker with a multi-stage \textbf{uv}-accelerated build, enforcing hard resource limits (1GB RAM, 1 CPU core) and anti-fingerprinting configurations.}
     \resumeItemListEnd
 
    \resumeProjectHeading
@@ -176,6 +176,15 @@
         \resumeItem{Developed a CLI utility for visualizing Python project dependencies and detecting circular architectural coupling.}
         \resumeItem{Implemented an AST-based parser to precisely extract import statements across entire codebases without executing them.}
         \resumeItem{Engineered a cycle detection engine using depth-first search to identify dependency loops, generating interactive maps in PNG, SVG, and HTML formats.}
+    \resumeItemListEnd
+
+   \resumeProjectHeading
+    {\textbf{Placemate} $|$ \emph{Django, REST Framework, PostgreSQL, Cloudinary}}
+    {\href{https://placemate-coral.vercel.app/}{\textcolor{GlobeColor}{\faLink}}}
+    \resumeItemListStart
+        \resumeItem{Engineered the backend for a campus recruitment platform using Django REST Framework, centralizing data management and automated workflows for students, companies, and placement officers.}
+        \resumeItem{Implemented secure, stateless authentication using HTTP-only cookies and JWTs to prevent XSS attacks, alongside a robust Role-Based Access Control (RBAC) and object-level permissions system.}
+        \resumeItem{Designed a standardized, globally consistent JSON response and exception handling architecture via custom BaseViewSets and middleware.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd

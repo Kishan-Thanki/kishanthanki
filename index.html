@@ -500,17 +500,41 @@
           Live
         </a>
       </div>
-      <p class="pc-sub">AI-Powered Candidate Screening</p>
-      <p class="pc-desc">Analyzes resumes against job descriptions to provide transparent, section-by-section breakdowns and direct evidence quotes. Eliminates black-box scoring to help recruiters and hiring managers make faster, unbiased screening decisions.</p>
+      <p class="pc-sub">Stateless AI Microservice</p>
+      <p class="pc-desc">A lightweight FastAPI microservice that extracts and scores resumes against job descriptions. Designed as a strict, synchronous API utilizing LLMs to provide structured, section-by-section breakdowns with direct evidence quotes.</p>
       <div class="pc-tags">
-        <span class="pc-tag">Section-by-Section</span>
-        <span class="pc-tag">Evidence Quotes</span>
-        <span class="pc-tag">No Top-Line Score</span>
+        <span class="pc-tag">FastAPI</span>
+        <span class="pc-tag">Python</span>
+        <span class="pc-tag">LLMs (Gemini)</span>
+        <span class="pc-tag">Docker</span>
       </div>
       <ul class="pc-points">
-        <li>Section-by-section resume to JD matching</li>
-        <li>Extracts direct evidence quotes to back up claims</li>
-        <li>Completely eliminates the black-box top-line score</li>
+        <li>Deterministic 3-step LLM pipeline enforcing strict schemas via Instructor and Pydantic</li>
+        <li>Synchronous PDF text extraction and cleanup using pdfplumber</li>
+        <li>Multi-stage Docker container with strict resource limits (1GB RAM, 1 CPU)</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <div class="pc-top">
+        <h3 class="pc-name">Placemate</h3>
+        <a href="https://placemate-coral.vercel.app/" target="_blank" rel="noopener noreferrer" class="pc-badge" aria-label="Live demo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          Live
+        </a>
+      </div>
+      <p class="pc-sub">Campus Recruitment Backend API</p>
+      <p class="pc-desc">A scalable REST API designed to streamline campus placement drives. Provides a centralized, secure data layer for placement officers, students, and recruiters.</p>
+      <div class="pc-tags">
+        <span class="pc-tag">Django</span>
+        <span class="pc-tag">DRF</span>
+        <span class="pc-tag">PostgreSQL</span>
+        <span class="pc-tag">JWT</span>
+      </div>
+      <ul class="pc-points">
+        <li>Secure stateless authentication via HTTP-only JWT cookies</li>
+        <li>Multi-layered Role-Based Access Control and object-level permissions</li>
+        <li>Standardized JSON response formatting and global exception handling</li>
       </ul>
     </div>
 
@@ -584,7 +608,7 @@
 
       <div class="demo-card"
         data-title="Resume Ranker"
-        data-desc="AI-powered resume screening that scores a resume against a job description section by section, with evidence quotes from both — no black-box match percentage. Helps recruiters make faster, unbiased decisions."
+        data-desc="A stateless FastAPI microservice that extracts and scores candidate resumes against job descriptions, enforcing strict JSON schemas to provide verbatim evidence quotes."
         data-src="https://raw.githubusercontent.com/Kishan-Thanki/go-discord-ping/main/discord-bot-demo.mp4"
         data-type="video"
         data-href="https://resumeranker.kishanthanki.dev"
@@ -594,31 +618,31 @@
         </div>
         <div class="demo-body">
           <p class="demo-name">Resume Ranker</p>
-          <p class="demo-desc">Section-by-section scoring against JDs — no black-box percentage.</p>
+          <p class="demo-desc">Stateless AI microservice enforcing strict JSON schemas via Instructor.</p>
           <div class="demo-foot">
             <a class="demo-cta" href="https://resumeranker.kishanthanki.dev" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
               Live <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
-            <span class="demo-lang">AI</span>
+            <span class="demo-lang">API</span>
           </div>
         </div>
       </div>
 
       <div class="demo-card"
-        data-title="logprism"
+        data-title="logrefract"
         data-desc="The Universal, High-Speed JSON Log Formatter, Analyzer &amp; Observer. A bare-metal CLI utility designed to process structured JSON logs with extreme efficiency."
-        data-src="https://raw.githubusercontent.com/Kishan-Thanki/logprism/main/assets/demo.gif"
+        data-src="https://raw.githubusercontent.com/Kishan-Thanki/logrefract/main/assets/demo.gif"
         data-type="image"
-        data-href="https://pkg.go.dev/github.com/Kishan-Thanki/logprism"
+        data-href="https://pkg.go.dev/github.com/Kishan-Thanki/logrefract"
         data-cta="pkg.go.dev">
         <div class="demo-thumb">
-          <img src="https://raw.githubusercontent.com/Kishan-Thanki/logprism/main/assets/demo.gif" alt="logprism demo" loading="lazy" />
+          <img src="https://raw.githubusercontent.com/Kishan-Thanki/logrefract/main/assets/demo.gif" alt="logrefract demo" loading="lazy" />
         </div>
         <div class="demo-body">
-          <p class="demo-name">logprism</p>
+          <p class="demo-name">logrefract</p>
           <p class="demo-desc">High-speed JSON log formatter and analyzer. Bare-metal CLI.</p>
           <div class="demo-foot">
-            <a class="demo-cta" href="https://pkg.go.dev/github.com/Kishan-Thanki/logprism" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+            <a class="demo-cta" href="https://pkg.go.dev/github.com/Kishan-Thanki/logrefract" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
               pkg.go.dev <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
             <span class="demo-lang">CLI</span>
