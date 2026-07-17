@@ -23,7 +23,7 @@
 \usepackage[default]{lato}
 \usepackage{geometry}
 
-\geometry{left=1.2cm, top=0.5cm, right=1.2cm, bottom=0.5cm}
+\geometry{left=1.2cm, top=0.4cm, right=1.2cm, bottom=0.2cm}
 
 \input{glyphtounicode}
 \pdfgentounicode=1
@@ -42,7 +42,7 @@
 % Sections formatting
 \titleformat{\section}{
     \vspace{-2pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+}{}{0em}{}[\color{black}\titlerule \vspace{-8pt}]
 
 %----------CUSTOM COMMANDS----------%
 
@@ -68,7 +68,7 @@
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \vspace{4pt}
+    \vspace{2pt}
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
@@ -89,8 +89,8 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\vspace{4pt}\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7pt}}
+\newcommand{\resumeItemListStart}{\vspace{2pt}\begin{itemize}[itemsep=2pt, parsep=0pt, partopsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-8pt}}
 
 \definecolor{Black}{RGB}{0, 0, 0}
 \definecolor{PythonColor}{RGB}{55, 118, 171}
@@ -159,45 +159,45 @@
 \section{Projects}
 \resumeSubHeadingListStart
 
-   \resumeProjectHeading
-    {\textbf{Resume Ranker} $|$ \emph{FastAPI, Python, Docker, LLMs}}
-    {\href{https://resume-ranker.kishanthanki.dev}{\textcolor{GlobeColor}{\faLink}}}
+    \resumeProjectHeading
+    {\textbf{Placemate} $|$ \emph{Django, REST Framework, PostgreSQL, Cloudinary, Render}}
+    {\href{https://placemate-coral.vercel.app/}{\textcolor{GlobeColor}{\faIcon{external-link-alt}}}}
     \resumeItemListStart
-        \resumeItem{Engineered a stateless microservice that extracts and scores candidate resumes against job descriptions, eliminating black-box AI algorithms by producing side-by-side verbatim evidence quotes.}
-        \resumeItem{Designed a deterministic, three-step LLM pipeline (JD extraction → resume extraction → scoring) enforcing strict JSON schema boundaries via \textbf{instructor} and \textbf{Pydantic}.}
-        \resumeItem{Implemented robust PDF processing using \textbf{pdfplumber} to parse uploaded documents synchronously in-flight, entirely eliminating the need for persistent storage or caching.}
-        \resumeItem{Containerized the service using Docker with a multi-stage \textbf{uv}-accelerated build, enforcing hard resource limits (1GB RAM, 1 CPU core) and anti-fingerprinting configurations.}
+        \resumeItem{Architected a scalable backend for a centralized campus recruitment system using Django REST Framework, automating placement workflows for administrators, companies, and students.}
+        \resumeItem{Implemented secure, stateless authentication using HTTP-only cookies and JWTs to mitigate XSS vulnerabilities, coupled with a robust Role-Based Access Control (RBAC) and object-level permissions model.}
+        \resumeItem{Engineered a globally consistent API architecture by developing custom middleware and BaseViewSets for unified JSON responses and centralized exception handling.}
+        \resumeItem{Deployed the production-ready backend on Render, managing environment configurations, securing database connectivity, and integrating Cloudinary for optimized media storage.}
+    \resumeItemListEnd
+    
+   \resumeProjectHeading
+    {\textbf{Resume Ranker} $|$ \emph{Go, Python, gRPC, PostgreSQL, Docker, LLMs}}
+    {\href{https://resumeranker.kishanthanki.dev}{\textcolor{GlobeColor}{\faIcon{external-link-alt}}}}
+    \resumeItemListStart
+        \resumeItem{Architected an AI platform providing instant candidate evaluations by cross-referencing job requirements with resume claims, secured via JWT authentication and PostgreSQL audit logging.}
+        \resumeItem{Eliminated AI hallucinations by forcing the LLM to cite exact resume quotes for every score, utilizing \textbf{asyncio.gather} to parallelize requests and reduce latency by 50\%.}
+        \resumeItem{Engineered a dual-language architecture featuring a \textbf{Go} API gateway delegating heavy AI workloads to a \textbf{Python} \textbf{gRPC} engine via strict \textbf{Protobuf} contracts.}
+        \resumeItem{Enforced strict JSON schema boundaries using \textbf{instructor} and \textbf{Pydantic}, ensuring downstream HR systems receive deterministic, structured data every single time.}
     \resumeItemListEnd
 
-   \resumeProjectHeading
-    {\textbf{DepCycle} $|$ \emph{Python, AST, Graphviz}}
+    \resumeProjectHeading
+    {\textbf{DepCycle} $|$ \emph{Python, AST, Graphviz, Static Analysis}}
     {\href{https://pypi.org/project/depcycle/}{\textcolor{PythonColor}{\faPython}}}
     \resumeItemListStart
-        \resumeItem{Developed a CLI utility for visualizing Python project dependencies and detecting circular architectural coupling.}
-        \resumeItem{Implemented an AST-based parser to precisely extract import statements across entire codebases without executing them.}
-        \resumeItem{Engineered a cycle detection engine using depth-first search to identify dependency loops, generating interactive maps in PNG, SVG, and HTML formats.}
-    \resumeItemListEnd
-
-   \resumeProjectHeading
-    {\textbf{Placemate} $|$ \emph{Django, REST Framework, PostgreSQL, Cloudinary}}
-    {\href{https://placemate-coral.vercel.app/}{\textcolor{GlobeColor}{\faLink}}}
-    \resumeItemListStart
-        \resumeItem{Engineered the backend for a campus recruitment platform using Django REST Framework, centralizing data management and automated workflows for students, companies, and placement officers.}
-        \resumeItem{Implemented secure, stateless authentication using HTTP-only cookies and JWTs to prevent XSS attacks, alongside a robust Role-Based Access Control (RBAC) and object-level permissions system.}
-        \resumeItem{Designed a standardized, globally consistent JSON response and exception handling architecture via custom BaseViewSets and middleware.}
+        \resumeItem{Architected a Python CLI tool to analyze codebase architecture, mapping complex dependency structures and exposing circular architectural coupling.}
+        \resumeItem{Engineered a static analysis engine utilizing Python’s \texttt{ast} module to accurately resolve absolute, relative, and dotted imports without executing arbitrary code.}
+        \resumeItem{Implemented a depth-first search (DFS) algorithm to detect dependency cycles, generating isolated subgraphs and visual dependency maps via Graphviz (PNG/SVG) and HTML.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
 %-----------TECHNICAL SKILLS-----------%
 \section{Technical Skills}
-
-\listOfSkills{Languages}{Go, Python}
-\listOfSkills{Frameworks}{FastAPI, Django REST Framework}
-\listOfSkills{Cloud \& Infra}{Linux, Docker, AWS, IaC}
-\listOfSkills{Databases}{MySQL, PostgreSQL, Redis}
-\listOfSkills{Developer Tools}{Git, GitHub Actions}
-\listOfSkills{Interests}{Backend Engineering, Cloud Infrastructure, System Design}
+\listOfSkills{Languages}{Go, Python, SQL}
+\listOfSkills{Backend Frameworks}{FastAPI, Django REST Framework (DRF)}
+\listOfSkills{Cloud \& DevOps}{Linux, Docker, AWS, Terraform}
+\listOfSkills{Databases \& Caching}{PostgreSQL, MySQL, Redis}
+\listOfSkills{Tools \& CI/CD}{Git, GitHub Actions}
+\listOfSkills{Core Competencies}{Backend Engineering, System Design}
 
 \vspace{-1em}
 %-------------------------------------------%
