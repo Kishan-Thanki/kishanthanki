@@ -23,7 +23,7 @@
 \usepackage[default]{lato}
 \usepackage{geometry}
 
-\geometry{left=1.2cm, top=0.4cm, right=1.2cm, bottom=0.2cm}
+\geometry{left=1.2cm, right=1.2cm, top=0.6cm, bottom=0.6cm}
 
 \input{glyphtounicode}
 \pdfgentounicode=1
@@ -41,7 +41,7 @@
 
 % Sections formatting
 \titleformat{\section}{
-    \vspace{-2pt}\scshape\raggedright\large
+    \vspace{-1pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-8pt}]
 
 %----------CUSTOM COMMANDS----------%
@@ -68,7 +68,7 @@
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \vspace{2pt}
+    \vspace{1pt}
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
@@ -78,19 +78,16 @@
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
 \newcommand{\listOfSkills}[2]{
-    \vspace{0.1em}
-    \hspace{1em}
     \small
-    \textbf{#1}: {#2}
-    \\
+    \textbf{#1}: #2\\[-1pt]
 }
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\vspace{2pt}\begin{itemize}[itemsep=2pt, parsep=0pt, partopsep=0pt]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-8pt}}
+\newcommand{\resumeItemListStart}{\vspace{2pt} \begin{itemize}[itemsep=2pt, parsep=0pt, partopsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-9pt}}
 
 \definecolor{Black}{RGB}{0, 0, 0}
 \definecolor{PythonColor}{RGB}{55, 118, 171}
@@ -98,6 +95,7 @@
 \definecolor{LinkedInColor}{RGB}{10, 102, 194}
 \definecolor{GmailColor}{RGB}{234, 67, 53}
 \definecolor{GithubColor}{RGB}{36, 41, 46}
+\definecolor{PortfolioColor}{RGB}{14, 116, 144}
 \newcommand{\seticon}[1]{\textcolor{Black}{\csname #1\endcsname}}
 
 %-------------------------------------------%
@@ -109,11 +107,11 @@
 %----------HEADING----------%
 \begin{tabularx}{\textwidth}{@{} X r @{}}
     \begin{minipage}[t]{\linewidth}
-        \textbf{\Huge \scshape Kishan Thanki} \\[0.5em]
-        \href{mailto:kishanthankiat10@gmail.com}{\textcolor{GmailColor}{\faEnvelope} \underline{kishanthankiat10@gmail.com}} \quad
-        \href{https://www.linkedin.com/in/kishanthanki8}{\textcolor{LinkedInColor}{\faLinkedin} \underline{in/kishanthanki8}} \quad
-        \href{https://github.com/kishan-thanki}{\textcolor{GithubColor}{\faGithub} \underline{github.com/kishan-thanki}} \quad
-        \href{https://kishan-thanki.github.io/kishanthanki/}{\textcolor{blue}{\faGlobe} \underline{portfolio}}
+        \textbf{\Huge \scshape Kishan Thanki} \\[0.35em]
+        \href{mailto:kishanthankiat10@gmail.com}{\textcolor{GmailColor}{\faEnvelope} Email} \quad
+        \href{https://www.linkedin.com/in/kishanthanki8}{\textcolor{LinkedInColor}{\faLinkedin} LinkedIn} \quad
+        \href{https://github.com/kishan-thanki}{\textcolor{GithubColor}{\faGithub} GitHub} \quad
+        \href{https://kishan-thanki.github.io/kishanthanki/}{\textcolor{PortfolioColor}{\faGlobe} Portfolio}
     \end{minipage}
 \end{tabularx}
 
@@ -121,13 +119,13 @@
 \section{Education}
 \resumeSubHeadingListStart
 
-    \resumeSubheading
-        {Dhirubhai Ambani Institute of Information and Communication Technology}{2024 -- 2026}
-        {M.Sc. Information Technology \quad \textbf{CPI}: 7.23}{Gandhinagar, Gujarat}
+\resumeSubheading
+    {Dhirubhai Ambani Institute of Information and Communication Technology}{2024–2026}
+    {M.Sc. Information Technology \quad GPA: \textbf{7.23/10}}{Gandhinagar, Gujarat}
 
-    \resumeSubheading
-        {GLS University}{2021 -- 2024}
-        {Bachelor of Computer Applications \quad \textbf{CGPA}: 8.24}{Ahmedabad, Gujarat}
+\resumeSubheading
+    {GLS University}{2021–2024}
+    {Bachelor of Computer Applications \quad GPA: \textbf{8.24/10}}{Ahmedabad, Gujarat}
 
 \resumeSubHeadingListEnd
 
@@ -135,70 +133,68 @@
 \section{Experience}
 \resumeSubHeadingListStart
 
-    \resumeSubheading
-        {Software Engineer Intern}{Jan 2026 -- Apr 2026}
-        {Oizom}{Ahmedabad, India}
-        \resumeItemListStart
-            \resumeItem{Built \textbf{Envizom}, a dual-engine SVG charting library utilizing \textbf{D3.js} in \textbf{TypeScript} for interactive client-side rendering, and a pure \textbf{Go} port of D3 for generating static server-side reports and exports.}
-            \resumeItem{Architected a declarative, config-driven API that guarantees absolute pixel parity and mathematically identical SVG outputs across both the interactive frontend and the static Go backend using the exact same configuration.}
-            \resumeItem{Implemented deterministic data-reduction and downsampling algorithms to maintain rendering performance and visual fidelity for massive time-series datasets.}
-        \resumeItemListEnd
+\resumeSubheading
+    {Software Engineer Intern}{Jan 2026 -- Apr 2026}
+    {Oizom}{Ahmedabad, India}
+    \resumeItemListStart
+        \resumeItem{Built \textbf{Envizom}, a dual-engine SVG charting library using \textbf{D3.js} and \textbf{TypeScript} for interactive client-side visualizations, alongside a pure \textbf{Go} implementation for generating static server-side reports and exports.}
+        \resumeItem{Designed a declarative, configuration-driven rendering API that ensured pixel-perfect SVG parity across the TypeScript frontend and Go backend using a shared rendering specification.}
+        \resumeItem{Engineered deterministic downsampling and data-reduction algorithms to efficiently render large time-series datasets while preserving visual fidelity and responsiveness.}
+    \resumeItemListEnd
 
-    \resumeSubheading
-        {Software Development Intern}{Jul 2023 -- Feb 2024}
-        {Inexture Solutions LLP}{Ahmedabad, Gujarat}
-        \resumeItemListStart
-            \resumeItem{Developed \textbf{SoleStore}, a full-stack e-commerce footwear platform as part of a 3-member team under industry mentorship.}
-            \resumeItem{Conducted requirements gathering, system analysis, and designed UML diagrams for system architecture and workflows.}
-            \resumeItem{Implemented product catalog, authentication, and order management modules following SDLC best practices.}
-        \resumeItemListEnd
+\resumeSubheading
+    {Software Development Intern}{Jul 2023 -- Feb 2024}
+    {Inexture Solutions LLP}{Ahmedabad, Gujarat}
+    \resumeItemListStart
+        \resumeItem{Developed \textbf{SoleStore}, a full-stack e-commerce platform supporting authentication, product management, shopping cart, and order processing as part of a three-member development team.}
+        \resumeItem{Designed UML class, sequence, and activity diagrams to model application architecture, business workflows, and system interactions before implementation.}
+        \resumeItem{Implemented core backend modules including product catalog, authentication, and order management while following SDLC best practices and collaborative development workflows.}
+    \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------%
 \section{Projects}
 \resumeSubHeadingListStart
-
-    \resumeProjectHeading
-    {\textbf{Placemate} $|$ \emph{Django, REST Framework, PostgreSQL, Cloudinary, Render}}
-    {\href{https://placemate-coral.vercel.app/}{\textcolor{GlobeColor}{\faIcon{external-link-alt}}}}
-    \resumeItemListStart
-        \resumeItem{Architected a scalable backend for a centralized campus recruitment system using Django REST Framework, automating placement workflows for administrators, companies, and students.}
-        \resumeItem{Implemented secure, stateless authentication using HTTP-only cookies and JWTs to mitigate XSS vulnerabilities, coupled with a robust Role-Based Access Control (RBAC) and object-level permissions model.}
-        \resumeItem{Engineered a globally consistent API architecture by developing custom middleware and BaseViewSets for unified JSON responses and centralized exception handling.}
-        \resumeItem{Deployed the production-ready backend on Render, managing environment configurations, securing database connectivity, and integrating Cloudinary for optimized media storage.}
-    \resumeItemListEnd
     
    \resumeProjectHeading
     {\textbf{Resume Ranker} $|$ \emph{Go, Python, gRPC, PostgreSQL, Docker, LLMs}}
     {\href{}{\textcolor{GlobeColor}{\faIcon{external-link-alt}}}}
     \resumeItemListStart
-        \resumeItem{Architected an AI platform providing instant candidate evaluations by cross-referencing job requirements with resume claims, secured via JWT authentication and PostgreSQL audit logging.}
-        \resumeItem{Eliminated AI hallucinations by forcing the LLM to cite exact resume quotes for every score, utilizing \textbf{asyncio.gather} to parallelize requests and reduce latency by 50\%.}
-        \resumeItem{Engineered a dual-language architecture featuring a \textbf{Go} API gateway delegating heavy AI workloads to a \textbf{Python} \textbf{gRPC} engine via strict \textbf{Protobuf} contracts.}
-        \resumeItem{Enforced strict JSON schema boundaries using \textbf{instructor} and \textbf{Pydantic}, ensuring downstream HR systems receive deterministic, structured data every single time.}
+        \resumeItem{Built an AI-powered candidate evaluation platform using JWT authentication and PostgreSQL audit logging.}
+        \resumeItem{Reduced LLM hallucinations by requiring every evaluation score to include supporting resume citations, while parallelizing model requests with \textbf{asyncio.gather} to reduce inference latency by 50\%.}
+        \resumeItem{Designed a distributed architecture where a \textbf{Go} API gateway delegates AI workloads to a dedicated \textbf{Python} service over \textbf{gRPC} using strongly typed \textbf{Protobuf} contracts.}
+        \resumeItem{Validated structured model outputs using \textbf{Instructor} and \textbf{Pydantic}, ensuring deterministic JSON responses for downstream HR systems.}
     \resumeItemListEnd
 
     \resumeProjectHeading
     {\textbf{DepCycle} $|$ \emph{Python, AST, Graphviz, Static Analysis}}
     {\href{https://pypi.org/project/depcycle/}{\textcolor{PythonColor}{\faPython}}}
     \resumeItemListStart
-        \resumeItem{Architected a Python CLI tool to analyze codebase architecture, mapping complex dependency structures and exposing circular architectural coupling.}
-        \resumeItem{Engineered a static analysis engine utilizing Python’s \texttt{ast} module to accurately resolve absolute, relative, and dotted imports without executing arbitrary code.}
-        \resumeItem{Implemented a depth-first search (DFS) algorithm to detect dependency cycles, generating isolated subgraphs and visual dependency maps via Graphviz (PNG/SVG) and HTML.}
+        \resumeItem{Built a Python CLI for static dependency analysis, identifying circular imports and visualizing architectural coupling across large codebases.}
+        \resumeItem{Implemented a static analysis engine using Python's \texttt{ast} module to accurately resolve absolute, relative, and dotted imports without executing application code.}
+        \resumeItem{Generated interactive dependency graphs and isolated subgraphs in HTML, PNG, and SVG formats using Graphviz to simplify architecture exploration.}
+    \resumeItemListEnd
+
+    \resumeProjectHeading
+    {\textbf{Placemate} $|$ \emph{Django, Django REST Framework, PostgreSQL, Cloudinary, Render}}
+    {\href{https://placemate-coral.vercel.app/}{\textcolor{GlobeColor}{\faIcon{external-link-alt}}}}
+    \resumeItemListStart
+        \resumeItem{Built a scalable backend for a centralized campus recruitment platform using Django REST Framework, automating campus placement workflows.}
+        \resumeItem{Implemented secure JWT authentication with HTTP-only cookies, Role-Based Access Control (RBAC), and object-level permissions to enforce fine-grained authorization while mitigating XSS risks.}
+        \resumeItem{Designed reusable middleware and BaseViewSets to standardize API responses, centralize exception handling, and simplify endpoint development.}
+        \resumeItem{Deployed the backend on Render, configuring PostgreSQL, environment management, and Cloudinary integration for scalable media storage.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
 %-----------TECHNICAL SKILLS-----------%
 \section{Technical Skills}
-\listOfSkills{Languages}{Go, Python, SQL}
-\listOfSkills{Backend Frameworks}{FastAPI, Django REST Framework (DRF)}
-\listOfSkills{Cloud \& DevOps}{Linux, Docker, AWS, Terraform}
-\listOfSkills{Databases \& Caching}{PostgreSQL, MySQL, Redis}
-\listOfSkills{Tools \& CI/CD}{Git, GitHub Actions}
-\listOfSkills{Core Competencies}{Backend Engineering, System Design}
 
-\vspace{-1em}
+\listOfSkills{Languages}{Go, Python, SQL}
+\listOfSkills{Frameworks}{FastAPI, Django REST Framework}
+\listOfSkills{Cloud \& DevOps}{Linux, Docker, AWS (EC2, S3, IAM), Oracle Cloud}
+\listOfSkills{Databases}{PostgreSQL, MySQL, Redis}
+\listOfSkills{Tools}{Git, GitHub Actions, Terraform}
 %-------------------------------------------%
 \end{document}
