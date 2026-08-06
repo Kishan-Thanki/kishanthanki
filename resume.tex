@@ -23,7 +23,8 @@
 \usepackage[default]{lato}
 \usepackage{geometry}
 
-\geometry{left=1.2cm, right=1.2cm, top=0.6cm, bottom=0.6cm}
+% Tightened margins slightly to ensure perfect fit without bottom whitespace
+\geometry{left=1.2cm, right=1.2cm, top=1.0cm, bottom=1.0cm}
 
 \input{glyphtounicode}
 \pdfgentounicode=1
@@ -39,16 +40,16 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
+% Sections formatting - Adjusted spacing before/after rules
 \titleformat{\section}{
-    \vspace{-1pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-8pt}]
+  \vspace{-2pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 %----------CUSTOM COMMANDS----------%
 
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    {#1 \vspace{-1pt}}
   }
 }
 
@@ -57,37 +58,37 @@
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-10pt}
+    \end{tabular*}\vspace{-6pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-10pt}
+    \end{tabular*}\vspace{-6pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \vspace{1pt}
+    \vspace{2pt}
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{-10pt}
+    \end{tabular*}\vspace{-6pt}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-3pt}}
 
 \newcommand{\listOfSkills}[2]{
     \small
-    \textbf{#1}: #2\\[-1pt]
+    \textbf{#1}: #2\\[1pt]
 }
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\vspace{2pt} \begin{itemize}[itemsep=2pt, parsep=0pt, partopsep=0pt]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-9pt}}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-4pt}}
+\newcommand{\resumeItemListStart}{\vspace{2pt} \begin{itemize}[itemsep=2.5pt, parsep=0pt, partopsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 \definecolor{Black}{RGB}{0, 0, 0}
 \definecolor{PythonColor}{RGB}{55, 118, 171}
@@ -107,13 +108,15 @@
 %----------HEADING----------%
 \begin{tabularx}{\textwidth}{@{} X r @{}}
     \begin{minipage}[t]{\linewidth}
-        \textbf{\Huge \scshape Kishan Thanki} \\[0.35em]
+        \textbf{\Huge \scshape Kishan Thanki} \\[0.3em]
         \href{mailto:kishanthankiat10@gmail.com}{\textcolor{GmailColor}{\faEnvelope} Email} \quad
         \href{https://www.linkedin.com/in/kishanthanki8}{\textcolor{LinkedInColor}{\faLinkedin} LinkedIn} \quad
         \href{https://github.com/kishan-thanki}{\textcolor{GithubColor}{\faGithub} GitHub} \quad
         \href{https://kishan-thanki.github.io/kishanthanki/}{\textcolor{PortfolioColor}{\faGlobe} Portfolio}
     \end{minipage}
 \end{tabularx}
+
+\vspace{-4pt}
 
 %-----------EDUCATION-----------%
 \section{Education}
@@ -142,22 +145,13 @@
         \resumeItem{Engineered deterministic downsampling and data-reduction algorithms to efficiently render large time-series datasets while preserving visual fidelity and responsiveness.}
     \resumeItemListEnd
 
-\resumeSubheading
-    {Software Development Intern}{Jul 2023 -- Feb 2024}
-    {Inexture Solutions LLP}{Ahmedabad, Gujarat}
-    \resumeItemListStart
-        \resumeItem{Developed \textbf{SoleStore}, a full-stack e-commerce platform supporting authentication, product management, shopping cart, and order processing as part of a three-member development team.}
-        \resumeItem{Designed UML class, sequence, and activity diagrams to model application architecture, business workflows, and system interactions before implementation.}
-        \resumeItem{Implemented core backend modules including product catalog, authentication, and order management while following SDLC best practices and collaborative development workflows.}
-    \resumeItemListEnd
-
 \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------%
 \section{Projects}
 \resumeSubHeadingListStart
-    
-   \resumeProjectHeading
+
+    \resumeProjectHeading
     {\textbf{Resume Ranker} $|$ \emph{Go, Python, gRPC, PostgreSQL, Docker, LLMs}}
     {\href{https://}{\textcolor{GlobeColor}{\faIcon{external-link-alt}}}}
     \resumeItemListStart
@@ -190,11 +184,13 @@
 
 %-----------TECHNICAL SKILLS-----------%
 \section{Technical Skills}
+\vspace{2pt}
 
 \listOfSkills{Languages}{Go, Python, SQL}
 \listOfSkills{Frameworks}{FastAPI, Django REST Framework}
 \listOfSkills{Cloud \& DevOps}{Linux, Docker, AWS (EC2, S3, IAM), Oracle Cloud}
 \listOfSkills{Databases}{PostgreSQL, MySQL, Redis}
 \listOfSkills{Tools}{Git, GitHub Actions, Terraform}
+
 %-------------------------------------------%
 \end{document}
