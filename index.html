@@ -7,34 +7,40 @@
     <title>Kishan Thanki</title>
     <meta content="Kishan Thanki" name="title" />
     <meta
-      content="Kishan Thanki — Software Engineer based in Ahmedabad, India. Go, Python, and cloud infrastructure, with a focus on the platform layer."
+      content="Kishan Thanki — Software Engineer building backend systems, distributed services, AI-powered applications, and cloud infrastructure with Go and Python."
       name="description"
     />
     <meta
-      content="Kishan Thanki, Software Engineer, Platform Engineer, Go, Python, AWS, System Design, Distributed Systems"
+      content="Kishan Thanki, Software Engineer, Backend Engineer, Platform Engineer, Go, Python, AWS, System Design, Distributed Systems, AI"
       name="keywords"
     />
     <meta content="index, follow" name="robots" />
     <meta content="Kishan Thanki" name="author" />
     <link href="favicon.svg" rel="icon" type="image/svg+xml" />
+
     <meta content="website" property="og:type" />
     <meta content="Kishan Thanki" property="og:title" />
     <meta
-      content="Software Engineer. Go, Python, and the platform layer that products are built on."
+      content="Software Engineer building backend systems, distributed services, AI-powered applications, and cloud infrastructure with Go and Python."
       property="og:description"
     />
+
     <meta content="summary_large_image" property="twitter:card" />
     <meta content="Kishan Thanki" property="twitter:title" />
     <meta
-      content="Software Engineer. Go, Python, and the platform layer that products are built on."
+      content="Software Engineer building backend systems, distributed services, AI-powered applications, and cloud infrastructure with Go and Python."
       property="twitter:description"
     />
+
     <script>
       const s = localStorage.getItem("theme");
       const d = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (s === "dark" || (!s && d))
+
+      if (s === "dark" || (!s && d)) {
         document.documentElement.setAttribute("data-theme", "dark");
+      }
     </script>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -57,6 +63,7 @@
         }
       }
     </script>
+
     <style>
       :root {
         --bg: #ffffff;
@@ -777,9 +784,11 @@
             href="https://www.google.com/maps/place/Ahmedabad,+Gujarat,+India"
             rel="noopener noreferrer"
             target="_blank"
-            >Ahmedabad, India</a
           >
+            Ahmedabad, India
+          </a>
         </p>
+
         <div class="pill-row">
           <a class="pill email" href="mailto:kishanthankiat10@gmail.com">
             <svg
@@ -797,6 +806,7 @@
             </svg>
             email
           </a>
+
           <a
             class="pill linkedin"
             href="https://www.linkedin.com/in/kishanthanki8/"
@@ -819,6 +829,7 @@
             </svg>
             linkedin
           </a>
+
           <a
             class="pill github"
             href="https://github.com/Kishan-Thanki"
@@ -839,6 +850,7 @@
             </svg>
             github
           </a>
+
           <a
             class="pill resume"
             href="resume.pdf"
@@ -862,6 +874,7 @@
           </a>
         </div>
       </header>
+
       <nav aria-label="Section navigation" class="topnav">
         <div class="topnav-inner">
           <div class="topnav-links">
@@ -870,6 +883,7 @@
             <a href="#education">education</a>
             <a href="#demos">demos</a>
           </div>
+
           <button
             aria-label="Toggle color theme"
             class="theme-btn"
@@ -879,21 +893,31 @@
           </button>
         </div>
       </nav>
+
       <section id="about">
         <h2 class="sec-label">about</h2>
+
         <p class="prose">
           Software engineer focused on backend systems, distributed
-          applications, cloud infrastructure, and developer tooling. I enjoy
-          building reliable software in Go and Python, designing scalable APIs,
-          and building reliable platform services.
+          applications, cloud infrastructure, and developer tooling. I build
+          reliable software in Go and Python, design scalable APIs and services,
+          and work across the platform layer that supports production systems.
+        </p>
+
+        <p class="prose">
+          My work spans service architecture, infrastructure automation, and
+          applications, with an emphasis on reliable, scalable, and maintainable
+          software.
         </p>
       </section>
+
       <section id="work">
         <h2 class="sec-label">work</h2>
 
         <div class="project-card">
           <div class="pc-top">
             <h3 class="pc-name">Resume Ranker</h3>
+
             <a
               aria-label="Live demo"
               class="pc-badge"
@@ -917,36 +941,47 @@
               Live
             </a>
           </div>
-          <p class="pc-sub">AI-Powered Resume Analysis Platform</p>
+
+          <p class="pc-sub">Evidence-Backed AI Resume Analysis Platform</p>
+
           <p class="pc-desc">
-            An intelligent platform that evaluates candidate resumes against job
-            descriptions, ensuring transparent scoring by citing exact quotes
-            from the candidate's resume.
+            An AI-powered resume analysis platform that evaluates candidate
+            resumes against job descriptions through a Streamlit interface and a
+            Python gRPC analysis engine, producing structured, evidence-backed
+            match results.
           </p>
+
           <div class="pc-tags">
-            <span class="pc-tag">Go</span>
             <span class="pc-tag">Python</span>
+            <span class="pc-tag">Streamlit</span>
             <span class="pc-tag">gRPC</span>
-            <span class="pc-tag">PostgreSQL</span>
+            <span class="pc-tag">Pydantic</span>
+            <span class="pc-tag">LLM</span>
           </div>
+
           <ul class="pc-points">
             <li>
-              Provides instant candidate evaluations by extracting key job
-              requirements and cross-referencing them with resume claims.
+              Extracts structured requirements from job descriptions and claims
+              from resumes, then evaluates them requirement-by-requirement
+              across skills, experience, education, and projects.
             </li>
+
             <li>
-              Eliminates AI hallucinations by forcing the LLM to cite exact
-              quotes from the candidate's resume for every score it generates.
+              Validates exact evidence from both source documents, ensuring
+              every requirement and resume claim remains traceable to the
+              original text.
             </li>
+
             <li>
-              Built for scale using a dual-language architecture: A secure Go
-              API gateway that delegates heavy AI workloads to a high-speed
-              Python gRPC Engine.
+              Uses a protobuf-defined gRPC contract between the Streamlit UI and
+              the analysis service, with concurrent PDF processing, structured
+              LLM inference, retry handling, and explicit service error mapping.
             </li>
+
             <li>
-              Enforces strict JSON schema boundaries via Pydantic, ensuring
-              downstream HR systems receive perfectly structured data every
-              single time.
+              Enforces Pydantic schemas, server-assigned identifiers, section
+              taxonomy validation, token telemetry, and deterministic final
+              result assembly before returning the analysis to the UI.
             </li>
           </ul>
         </div>
@@ -954,6 +989,7 @@
         <div class="project-card">
           <div class="pc-top">
             <h3 class="pc-name">DepCycle</h3>
+
             <a
               aria-label="View on PyPI"
               class="pc-badge"
@@ -977,29 +1013,35 @@
               PyPI
             </a>
           </div>
+
           <p class="pc-sub">Static Analysis CLI Tool</p>
+
           <p class="pc-desc">
             A static analysis utility for mapping complex Python project
             architectures, leveraging AST to detect structural loops and
             generate visual dependency graphs.
           </p>
+
           <div class="pc-tags">
             <span class="pc-tag">Python</span>
             <span class="pc-tag">AST</span>
             <span class="pc-tag">Graphviz</span>
             <span class="pc-tag">Static Analysis</span>
           </div>
+
           <ul class="pc-points">
             <li>
               Architected a Python CLI tool to analyze codebase architecture,
               mapping complex dependency structures and exposing circular
               architectural coupling.
             </li>
+
             <li>
               Engineered a static analysis engine utilizing Python’s ast module
               to accurately resolve absolute, relative, and dotted imports
               without executing arbitrary code.
             </li>
+
             <li>
               Implemented a depth-first search (DFS) algorithm to detect
               dependency cycles, generating isolated subgraphs and visual
@@ -1011,6 +1053,7 @@
         <div class="project-card">
           <div class="pc-top">
             <h3 class="pc-name">Placemate</h3>
+
             <a
               aria-label="Live demo"
               class="pc-badge"
@@ -1034,12 +1077,15 @@
               Live
             </a>
           </div>
+
           <p class="pc-sub">Scalable Campus Recruitment Backend</p>
+
           <p class="pc-desc">
             A centralized campus recruitment system utilizing Django REST
             Framework to automate placement workflows, manage production
             configurations, and securely isolate user data.
           </p>
+
           <div class="pc-tags">
             <span class="pc-tag">Django</span>
             <span class="pc-tag">REST Framework</span>
@@ -1047,23 +1093,27 @@
             <span class="pc-tag">Cloudinary</span>
             <span class="pc-tag">Render</span>
           </div>
+
           <ul class="pc-points">
             <li>
               Architected a scalable backend for a centralized campus
               recruitment system using Django REST Framework, automating
               placement workflows for administrators, companies, and students.
             </li>
+
             <li>
               Implemented secure, stateless authentication using HTTP-only
               cookies and JWTs to mitigate XSS vulnerabilities, coupled with a
               robust Role-Based Access Control (RBAC) and object-level
               permissions model.
             </li>
+
             <li>
               Engineered a globally consistent API architecture by developing
               custom middleware and BaseViewSets for unified JSON responses and
               centralized exception handling.
             </li>
+
             <li>
               Deployed the production-ready backend on Render, managing
               environment configurations, securing database connectivity, and
@@ -1072,23 +1122,32 @@
           </ul>
         </div>
       </section>
+
       <section id="education">
         <h2 class="sec-label">education</h2>
+
         <div class="edu-row">
           <div class="edu-card">
             <p class="edu-degree">M.Sc. Information Technology</p>
+
             <p class="edu-school">DAIICT · Gandhinagar, India</p>
+
             <p class="edu-year">2024 — 2026</p>
           </div>
+
           <div class="edu-card">
             <p class="edu-degree">Bachelor of Computer Applications</p>
+
             <p class="edu-school">GLS University · Ahmedabad, India</p>
+
             <p class="edu-year">2021 — 2024</p>
           </div>
         </div>
       </section>
+
       <section id="demos">
         <h2 class="sec-label">demos</h2>
+
         <div class="demos-grid">
           <div
             class="demo-card"
@@ -1108,12 +1167,15 @@
                 src="https://raw.githubusercontent.com/Kishan-Thanki/go-discord-ping/main/discord-bot-demo.mp4"
               ></video>
             </div>
+
             <div class="demo-body">
               <p class="demo-name">Go Discord Ping</p>
+
               <p class="demo-desc">
                 Discord bot with welcome images, auto-moderation, and virtual
                 economy.
               </p>
+
               <div class="demo-foot">
                 <a
                   class="demo-cta"
@@ -1123,6 +1185,7 @@
                   target="_blank"
                 >
                   Invite
+
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -1138,14 +1201,16 @@
                     <line x1="10" x2="21" y1="14" y2="3"></line>
                   </svg>
                 </a>
-                <span class="demo-lang">Bot</span>
+
+                <span class="demo-lang"> Bot </span>
               </div>
             </div>
           </div>
+
           <div
             class="demo-card"
             data-cta="Live"
-            data-desc="An intelligent AI platform that evaluates candidate resumes against job descriptions, ensuring transparent scoring by citing exact quotes. Built on a blazing fast Go and Python architecture."
+            data-desc="AI-powered resume analysis platform with a Streamlit UI and Python gRPC analysis engine that evaluates candidate-to-job-description fit using traceable evidence."
             data-href="#"
             data-src="/light.mov"
             data-title="Resume Ranker"
@@ -1160,12 +1225,16 @@
                 src="light.mov"
               ></video>
             </div>
+
             <div class="demo-body">
               <p class="demo-name">Resume Ranker</p>
+
               <p class="demo-desc">
-                AI platform that transparently scores resumes by citing exact
-                quotes.
+                AI-powered resume analysis platform with a Streamlit UI and
+                Python gRPC analysis engine that evaluates candidate-to-JD fit
+                using traceable evidence.
               </p>
+
               <div class="demo-foot">
                 <a
                   class="demo-cta"
@@ -1175,6 +1244,7 @@
                   target="_blank"
                 >
                   Live
+
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -1190,10 +1260,12 @@
                     <line x1="10" x2="21" y1="14" y2="3"></line>
                   </svg>
                 </a>
-                <span class="demo-lang">API</span>
+
+                <span class="demo-lang"> AI / gRPC </span>
               </div>
             </div>
           </div>
+
           <div
             class="demo-card"
             data-cta="pkg.go.dev"
@@ -1210,11 +1282,14 @@
                 src="https://raw.githubusercontent.com/Kishan-Thanki/logrefract/main/assets/demo.gif"
               />
             </div>
+
             <div class="demo-body">
               <p class="demo-name">logrefract</p>
+
               <p class="demo-desc">
                 High-speed JSON log formatter and analyzer. Bare-metal CLI.
               </p>
+
               <div class="demo-foot">
                 <a
                   class="demo-cta"
@@ -1224,6 +1299,7 @@
                   target="_blank"
                 >
                   pkg.go.dev
+
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -1239,7 +1315,8 @@
                     <line x1="10" x2="21" y1="14" y2="3"></line>
                   </svg>
                 </a>
-                <span class="demo-lang">CLI</span>
+
+                <span class="demo-lang"> CLI </span>
               </div>
             </div>
           </div>
@@ -1260,12 +1337,15 @@
                 src="./linux-server-baseline.png"
               />
             </div>
+
             <div class="demo-body">
               <p class="demo-name">Linux Server Baseline</p>
+
               <p class="demo-desc">
                 Reproducible Ubuntu server provisioning and security hardening
                 with Ansible.
               </p>
+
               <div class="demo-foot">
                 <a
                   class="demo-cta"
@@ -1275,6 +1355,7 @@
                   target="_blank"
                 >
                   GitHub
+
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -1290,17 +1371,21 @@
                     <line x1="10" x2="21" y1="14" y2="3"></line>
                   </svg>
                 </a>
-                <span class="demo-lang">Ansible</span>
+
+                <span class="demo-lang"> Ansible </span>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       <footer>
-        <span>© <span id="year"></span> Kishan Thanki</span>
-        <a href="#top">back to top ↑</a>
+        <span> © <span id="year"></span> Kishan Thanki </span>
+
+        <a href="#top"> back to top ↑ </a>
       </footer>
     </main>
+
     <div
       aria-labelledby="modal-title"
       aria-modal="true"
@@ -1324,88 +1409,156 @@
             <line x1="6" x2="18" y1="6" y2="18"></line>
           </svg>
         </button>
+
         <div class="modal-media" id="modal-media"></div>
+
         <div class="modal-info">
           <p class="modal-title" id="modal-title"></p>
+
           <p class="modal-desc" id="modal-desc"></p>
+
           <div id="modal-links"></div>
         </div>
       </div>
     </div>
+
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
 
       document.getElementById("theme-toggle").addEventListener("click", () => {
         const html = document.documentElement;
+
         const dark = html.getAttribute("data-theme") === "dark";
+
         dark
           ? html.removeAttribute("data-theme")
           : html.setAttribute("data-theme", "dark");
+
         localStorage.setItem("theme", dark ? "light" : "dark");
       });
 
       const sections = document.querySelectorAll("section[id]");
+
       const navLinks = document.querySelectorAll(".topnav-links a");
+
       const obs = new IntersectionObserver(
         (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting)
-              navLinks.forEach((a) =>
-                a.classList.toggle(
-                  "active",
-                  a.getAttribute("href") === "#" + e.target.id,
-                ),
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            navLinks.forEach((link) => {
+              link.classList.toggle(
+                "active",
+                link.getAttribute("href") === "#" + entry.target.id,
               );
+            });
           });
         },
-        { rootMargin: "-20% 0px -70% 0px" },
+        {
+          rootMargin: "-20% 0px -70% 0px",
+        },
       );
-      sections.forEach((s) => obs.observe(s));
+
+      sections.forEach((section) => obs.observe(section));
 
       const modal = document.getElementById("modal");
+
       const modalMedia = document.getElementById("modal-media");
+
       const modalTitle = document.getElementById("modal-title");
+
       const modalDesc = document.getElementById("modal-desc");
+
       const modalLinks = document.getElementById("modal-links");
 
       function openModal(card) {
         const { title, desc, src, type, href, cta } = card.dataset;
-        modalTitle.textContent = title;
-        modalDesc.innerHTML = desc;
+
+        modalTitle.textContent = title || "";
+
+        modalDesc.textContent = desc || "";
+
         modalMedia.innerHTML =
           type === "video"
-            ? `<video src="${src}" controls autoplay muted playsinline style="width:100%;height:100%;object-fit:contain;display:block;"></video>`
-            : `<img src="${src}" alt="${title}" style="width:100%;height:100%;object-fit:contain;display:block;" />`;
-        modalLinks.innerHTML = `<a class="modal-link" href="${href}" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:11px;height:11px"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      ${cta}
-    </a>`;
+            ? `
+              <video
+                src="${src || ""}"
+                controls
+                autoplay
+                muted
+                playsinline
+                style="width:100%;height:100%;object-fit:contain;display:block;"
+              ></video>
+            `
+            : `
+              <img
+                src="${src || ""}"
+                alt="${title || ""}"
+                style="width:100%;height:100%;object-fit:contain;display:block;"
+              />
+            `;
+
+        modalLinks.innerHTML = "";
+
+        const link = document.createElement("a");
+
+        link.className = "modal-link";
+
+        link.href = href || "#";
+
+        link.target = "_blank";
+
+        link.rel = "noopener noreferrer";
+
+        link.textContent = cta || "Open";
+
+        modalLinks.appendChild(link);
+
         modal.classList.add("open");
+
         document.body.style.overflow = "hidden";
       }
 
       function closeModal() {
         modal.classList.remove("open");
+
         document.body.style.overflow = "";
+
         setTimeout(() => {
           modalMedia.innerHTML = "";
+
+          modalLinks.innerHTML = "";
         }, 220);
       }
 
       document.querySelectorAll(".demo-card").forEach((card) => {
-        card.addEventListener("click", (e) => {
-          if (!e.target.closest("a")) openModal(card);
+        card.addEventListener("click", (event) => {
+          const target = event.target;
+
+          if (target instanceof Element && target.closest("a")) {
+            return;
+          }
+
+          openModal(card);
         });
       });
+
       document
         .getElementById("modal-close")
         .addEventListener("click", closeModal);
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) closeModal();
-      });
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modal.classList.contains("open"))
+
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
           closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal.classList.contains("open")) {
+          closeModal();
+        }
       });
     </script>
   </body>

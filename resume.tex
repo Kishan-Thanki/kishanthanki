@@ -153,13 +153,13 @@
 \resumeSubHeadingListStart
 
     \resumeProjectHeading
-    {\textbf{Resume Ranker} $|$ \emph{Go, Python, gRPC, PostgreSQL, Docker, LLMs}}
+    {\textbf{Resume Ranker} $|$ \emph{Python, Streamlit, gRPC, Protobuf, Docker, LLMs}}
     {\href{https://}{\textcolor{GlobeColor}{\faIcon{external-link-alt}}}}
     \resumeItemListStart
-        \resumeItem{Built an AI-powered candidate evaluation platform using JWT authentication and PostgreSQL audit logging.}
-        \resumeItem{Reduced LLM hallucinations by requiring every evaluation score to include supporting resume citations, while parallelizing model requests with \textbf{asyncio.gather} to reduce inference latency by 50\%.}
-        \resumeItem{Designed a distributed architecture where a \textbf{Go} API gateway delegates AI workloads to a dedicated \textbf{Python} service over \textbf{gRPC} using strongly typed \textbf{Protobuf} contracts.}
-        \resumeItem{Validated structured model outputs using \textbf{Instructor} and \textbf{Pydantic}, ensuring deterministic JSON responses for downstream HR systems.}
+            \resumeItem{Built an AI-powered resume analysis platform that extracts structured job requirements and resume claims, then evaluates candidate fit across skills, experience, education, and projects.}
+            \resumeItem{Reduced unsupported LLM judgments by enforcing exact, verbatim evidence from both the job description and resume, with Pydantic validation and deterministic result assembly.}
+            \resumeItem{Designed a distributed architecture with a \textbf{Streamlit} client communicating with a dedicated \textbf{Python} analysis service over \textbf{gRPC} using strongly typed \textbf{Protobuf} contracts.}
+            \resumeItem{Implemented concurrent PDF processing and parallel JD/resume extraction with \textbf{asyncio}, alongside retry and rate-limit handling, structured token telemetry, and schema-validated LLM responses using \textbf{Instructor} and \textbf{Pydantic}.}
     \resumeItemListEnd
 
     \resumeProjectHeading
