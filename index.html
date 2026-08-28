@@ -46,7 +46,7 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Kishan Thanki",
-        "jobTitle": "Software Engineer",
+        "jobTitle": "Backend Engineer",
         "url": "",
         "sameAs": [
           "https://github.com/Kishan-Thanki",
@@ -346,6 +346,13 @@
         align-items: flex-start;
         gap: 12px;
         margin-bottom: 2px;
+      }
+
+      .pc-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
       }
 
       .pc-name {
@@ -704,6 +711,12 @@
         background: var(--blue-dim);
       }
 
+      #modal-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
       .modal-link svg {
         width: 11px;
         height: 11px;
@@ -778,7 +791,9 @@
     <main id="top">
       <header class="header">
         <h1 class="header-name">Kishan Thanki</h1>
-        <p class="header-role">Software Engineer</p>
+        <p class="header-role">
+          Backend Engineer (Go & Python) - working across DevOps & AI
+        </p>
         <p class="header-loc">
           <a
             href="https://www.google.com/maps/place/Ahmedabad,+Gujarat,+India"
@@ -919,7 +934,7 @@
             <h3 class="pc-name">Resume Ranker</h3>
 
             <a
-              aria-label="Live demo"
+              aria-label="Open Resume Ranker live demo"
               class="pc-badge"
               href="https://resumeranker.kishanthanki.space"
               rel="noopener noreferrer"
@@ -931,7 +946,8 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2.5"
-                viewbox="0 0 24 24"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <circle cx="12" cy="12" r="2"></circle>
                 <path
@@ -942,13 +958,12 @@
             </a>
           </div>
 
-          <p class="pc-sub">Evidence-Backed AI Resume Analysis Platform</p>
+          <p class="pc-sub">AI-Powered Candidate Matching for Hiring Teams</p>
 
           <p class="pc-desc">
-            An AI-powered resume analysis platform that evaluates candidate
-            resumes against job descriptions through a Streamlit interface and a
-            Python gRPC analysis engine, producing structured, evidence-backed
-            match results.
+            Resume Ranker helps hiring teams review candidates faster by
+            comparing resumes with job descriptions and turning unstructured
+            experience into clear, evidence-backed match insights.
           </p>
 
           <div class="pc-tags">
@@ -961,27 +976,21 @@
 
           <ul class="pc-points">
             <li>
-              Extracts structured requirements from job descriptions and claims
-              from resumes, then evaluates them requirement-by-requirement
-              across skills, experience, education, and projects.
+              Compares candidate resumes with job requirements across skills,
+              experience, education, and projects to surface the strongest
+              matches.
             </li>
 
             <li>
-              Validates exact evidence from both source documents, ensuring
-              every requirement and resume claim remains traceable to the
-              original text.
+              Connects every match assessment to evidence from the original
+              resume and job description, helping reviewers understand why a
+              candidate was ranked.
             </li>
 
             <li>
-              Uses a protobuf-defined gRPC contract between the Streamlit UI and
-              the analysis service, with concurrent PDF processing, structured
-              LLM inference, retry handling, and explicit service error mapping.
-            </li>
-
-            <li>
-              Enforces Pydantic schemas, server-assigned identifiers, section
-              taxonomy validation, token telemetry, and deterministic final
-              result assembly before returning the analysis to the UI.
+              Transforms resumes and job descriptions into structured
+              information so hiring teams can evaluate candidates consistently
+              instead of relying only on manual document review.
             </li>
           </ul>
         </div>
@@ -990,62 +999,76 @@
           <div class="pc-top">
             <h3 class="pc-name">DepCycle</h3>
 
-            <a
-              aria-label="View on PyPI"
-              class="pc-badge"
-              href="https://pypi.org/project/depcycle/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                viewbox="0 0 24 24"
+            <div class="pc-links">
+              <a
+                aria-label="View on PyPI"
+                class="pc-badge"
+                href="https://pypi.org/project/depcycle/"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                <circle cx="12" cy="12" r="2"></circle>
-                <path
-                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
-                ></path>
-              </svg>
-              PyPI
-            </a>
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.5"
+                  viewbox="0 0 24 24"
+                >
+                  <circle cx="12" cy="12" r="2"></circle>
+                  <path
+                    d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+                  ></path>
+                </svg>
+                PyPI
+              </a>
+
+              <a
+                aria-label="View source on GitHub"
+                class="pc-badge"
+                href="https://github.com/Matricess/depcycle"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <svg fill="currentColor" viewbox="0 0 24 24">
+                  <path
+                    d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.58 2.35 1.12 2.92.86.09-.67.35-1.12.64-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3-.1-2.71 0 0 .84-.28 2.75 1.05A9.2 9.2 0 0 1 12 7.16a9.2 9.2 0 0 1 2.5.35c1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.62c0 .27.18.6.69.49A10.24 10.24 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"
+                  ></path>
+                </svg>
+                GitHub
+              </a>
+            </div>
           </div>
 
-          <p class="pc-sub">Static Analysis CLI Tool</p>
+          <p class="pc-sub">Python Dependency Analysis Tool</p>
 
           <p class="pc-desc">
-            A static analysis utility for mapping complex Python project
-            architectures, leveraging AST to detect structural loops and
-            generate visual dependency graphs.
+            A Python CLI that maps project dependencies, reveals circular
+            architecture, and turns complex codebases into clear, explorable
+            dependency graphs.
           </p>
 
           <div class="pc-tags">
             <span class="pc-tag">Python</span>
-            <span class="pc-tag">AST</span>
-            <span class="pc-tag">Graphviz</span>
-            <span class="pc-tag">Static Analysis</span>
+            <span class="pc-tag">Dependency Mapping</span>
+            <span class="pc-tag">Cycle Detection</span>
+            <span class="pc-tag">CLI</span>
           </div>
 
           <ul class="pc-points">
             <li>
-              Architected a Python CLI tool to analyze codebase architecture,
-              mapping complex dependency structures and exposing circular
-              architectural coupling.
+              Scan Python projects to see local, standard-library, third-party,
+              and unresolved dependencies in one graph.
             </li>
 
             <li>
-              Engineered a static analysis engine utilizing Python’s ast module
-              to accurately resolve absolute, relative, and dotted imports
-              without executing arbitrary code.
+              Find every circular dependency and follow the exact cycle path,
+              with problem edges highlighted in generated reports.
             </li>
 
             <li>
-              Implemented a depth-first search (DFS) algorithm to detect
-              dependency cycles, generating isolated subgraphs and visual
-              dependency maps via Graphviz (PNG/SVG) and HTML.
+              Explore the architecture interactively in HTML, automate with
+              machine-readable JSON, or render the graph with DOT output.
             </li>
           </ul>
         </div>
@@ -1151,6 +1174,89 @@
         <div class="demos-grid">
           <div
             class="demo-card"
+            data-cta="GitHub"
+            data-desc="Python dependency analysis tool that maps project architecture, detects circular dependencies, and generates interactive HTML, JSON, and DOT reports."
+            data-href="https://github.com/Matricess/depcycle"
+            data-secondary-cta="PyPI"
+            data-secondary-href="https://pypi.org/project/depcycle/"
+            data-src="./messy-project.png"
+            data-title="DepCycle"
+            data-type="image"
+          >
+            <div class="demo-thumb">
+              <img
+                alt="DepCycle dependency graph showing a circular dependency"
+                loading="lazy"
+                src="./messy-project.png"
+              />
+            </div>
+
+            <div class="demo-body">
+              <p class="demo-name">DepCycle</p>
+
+              <p class="demo-desc">
+                Python dependency analysis with circular dependency detection
+                and interactive graph reports.
+              </p>
+
+              <div class="demo-foot">
+                <a
+                  class="demo-cta"
+                  href="https://github.com/Matricess/depcycle"
+                  onclick="event.stopPropagation()"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  GitHub
+
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    viewbox="0 0 24 24"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    ></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" x2="21" y1="14" y2="3"></line>
+                  </svg>
+                </a>
+
+                <a
+                  class="demo-cta"
+                  href="https://pypi.org/project/depcycle/"
+                  onclick="event.stopPropagation()"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  PyPI
+
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    viewbox="0 0 24 24"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    ></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" x2="21" y1="14" y2="3"></line>
+                  </svg>
+                </a>
+
+                <span class="demo-lang">Python</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="demo-card"
             data-cta="Invite"
             data-desc="A multi-purpose Discord utility bot featuring custom welcome images, an advanced auto-moderation system, and a complete virtual economy with interactive mini-games."
             data-href="https://discord.com/oauth2/authorize?client_id=1350135551939969114&amp;permissions=8&amp;integration_type=0&amp;scope=bot+applications.commands"
@@ -1230,18 +1336,19 @@
               <p class="demo-name">Resume Ranker</p>
 
               <p class="demo-desc">
-                AI-powered resume analysis platform with a Streamlit UI and
-                Python gRPC analysis engine that evaluates candidate-to-JD fit
-                using traceable evidence.
+                Resume Ranker helps hiring teams compare candidate resumes with
+                job descriptions and discover clear, evidence-backed match
+                insights faster.
               </p>
 
               <div class="demo-foot">
                 <a
                   class="demo-cta"
-                  href="#"
+                  href="https://resumeranker.kishanthanki.space"
                   onclick="event.stopPropagation()"
                   rel="noopener noreferrer"
                   target="_blank"
+                  aria-label="Open Resume Ranker live demo"
                 >
                   Live
 
@@ -1251,7 +1358,8 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2.5"
-                    viewbox="0 0 24 24"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
                     <path
                       d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
@@ -1261,7 +1369,7 @@
                   </svg>
                 </a>
 
-                <span class="demo-lang"> AI / gRPC </span>
+                <span class="demo-lang">AI</span>
               </div>
             </div>
           </div>
@@ -1530,7 +1638,16 @@
       const modalLinks = document.getElementById("modal-links");
 
       function openModal(card) {
-        const { title, desc, src, type, href, cta } = card.dataset;
+        const {
+          title,
+          desc,
+          src,
+          type,
+          href,
+          cta,
+          secondaryHref,
+          secondaryCta,
+        } = card.dataset;
 
         modalTitle.textContent = title || "";
 
@@ -1558,19 +1675,28 @@
 
         modalLinks.innerHTML = "";
 
-        const link = document.createElement("a");
+        [
+          { href, label: cta },
+          { href: secondaryHref, label: secondaryCta },
+        ].forEach(({ href: linkHref, label }) => {
+          if (!linkHref) {
+            return;
+          }
 
-        link.className = "modal-link";
+          const link = document.createElement("a");
 
-        link.href = href || "#";
+          link.className = "modal-link";
 
-        link.target = "_blank";
+          link.href = linkHref;
 
-        link.rel = "noopener noreferrer";
+          link.target = "_blank";
 
-        link.textContent = cta || "Open";
+          link.rel = "noopener noreferrer";
 
-        modalLinks.appendChild(link);
+          link.textContent = label || "Open";
+
+          modalLinks.appendChild(link);
+        });
 
         modal.classList.add("open");
 

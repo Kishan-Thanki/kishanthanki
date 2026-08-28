@@ -1,197 +1,253 @@
-%-------------------------
-% Resume in Latex
-% Author : Kishan Thanki
-% Inspired by: https://github.com/sb2nov/resume
-% License : MIT
-%------------------------
+% !TEX program = xelatex
+\documentclass[10pt,a4paper]{article}
 
-\documentclass[letterpaper,11pt]{article}
-
-%----------PACKAGES----------%
-\usepackage{fontawesome5}
-\usepackage{latexsym}
+% ==========================================================
+% PACKAGES
+% ==========================================================
+\usepackage[
+    top=0.48in,
+    bottom=0.55in,
+    left=0.55in,
+    right=0.55in
+]{geometry}
+\usepackage{fontspec}
+\usepackage{xcolor}
 \usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
+\usepackage{array}
 \usepackage{hyperref}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\usepackage{graphicx}
-\usepackage[default]{lato}
-\usepackage{geometry}
+\usepackage{bookmark}
+\usepackage{microtype}
 
-% Tightened margins slightly to ensure perfect fit without bottom whitespace
-\geometry{left=1.2cm, right=1.2cm, top=1.0cm, bottom=1.0cm}
+% ==========================================================
+% FONT
+% ==========================================================
+\setmainfont{Carlito}
 
-\input{glyphtounicode}
-\pdfgentounicode=1
+% ==========================================================
+% COLORS
+% ==========================================================
+\definecolor{accent}{HTML}{1F4E79}
+\definecolor{textgray}{HTML}{555555}
+\definecolor{linkblue}{HTML}{0563C1}
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-
-\urlstyle{same}
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
-
-% Sections formatting - Adjusted spacing before/after rules
-\titleformat{\section}{
-  \vspace{-2pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-%----------CUSTOM COMMANDS----------%
-
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-1pt}}
-  }
+% ==========================================================
+% HYPERREF
+% ==========================================================
+\hypersetup{
+    colorlinks=true,
+    urlcolor=linkblue,
+    linkcolor=linkblue
 }
 
-\newcommand{\resumeSubheading}[4]{
-  \vspace{1pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-6pt}
+% ==========================================================
+% PAGE
+% ==========================================================
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+
+% ==========================================================
+% SECTION HEADINGS
+% ==========================================================
+\titleformat
+    {\section}
+    {\fontsize{10.5}{12}\selectfont\bfseries\color{accent}}
+    {}
+    {0pt}
+    {\MakeUppercase}
+    [\vspace{-3pt}\color{accent}\rule{\linewidth}{0.6pt}\vspace{2pt}]
+
+\titlespacing*{\section}
+    {0pt}
+    {9pt}
+    {4pt}
+
+% ==========================================================
+% BULLETS
+% ==========================================================
+\setlist[itemize]{
+    leftmargin=16pt,
+    labelsep=4pt,
+    topsep=1.5pt,
+    itemsep=1.5pt,
+    parsep=0pt,
+    partopsep=0pt
 }
 
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-6pt}
+% ==========================================================
+% ENTRY HELPERS
+% ==========================================================
+\newcommand{\datedentry}[2]{%
+    \noindent
+    \begin{minipage}[t]{0.72\linewidth}
+        \raggedright
+        \textbf{#1}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.25\linewidth}
+        \raggedleft
+        \textit{\color{textgray}#2}
+    \end{minipage}%
+    \par
 }
 
-\newcommand{\resumeProjectHeading}[2]{
-    \vspace{2pt}
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-6pt}
+\newcommand{\projectentry}[2]{%
+    \noindent
+    \begin{minipage}[t]{0.51\linewidth}
+        \raggedright
+        #1
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.46\linewidth}
+        \raggedleft
+        \itshape\color{textgray}
+        #2
+    \end{minipage}%
+    \par
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-3pt}}
-
-\newcommand{\listOfSkills}[2]{
-    \small
-    \textbf{#1}: #2\\[1pt]
-}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-4pt}}
-\newcommand{\resumeItemListStart}{\vspace{2pt} \begin{itemize}[itemsep=2.5pt, parsep=0pt, partopsep=0pt]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-
-\definecolor{Black}{RGB}{0, 0, 0}
-\definecolor{PythonColor}{RGB}{55, 118, 171}
-\definecolor{GlobeColor}{RGB}{0, 102, 204}
-\definecolor{LinkedInColor}{RGB}{10, 102, 194}
-\definecolor{GmailColor}{RGB}{234, 67, 53}
-\definecolor{GithubColor}{RGB}{36, 41, 46}
-\definecolor{PortfolioColor}{RGB}{14, 116, 144}
-\newcommand{\seticon}[1]{\textcolor{Black}{\csname #1\endcsname}}
-
-%-------------------------------------------%
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%
-%-------------------------------------------%
-
+% ==========================================================
+% DOCUMENT
+% ==========================================================
 \begin{document}
 
-%----------HEADING----------%
-\begin{tabularx}{\textwidth}{@{} X r @{}}
-    \begin{minipage}[t]{\linewidth}
-        \textbf{\Huge \scshape Kishan Thanki} \\[0.3em]
-        % \href{tel:+919712464581}{\textcolor{Black}{\faPhone} +91 9712464581} \quad
-        \href{mailto:kishanthankiat10@gmail.com}{\textcolor{GmailColor}{\faEnvelope} Email} \quad
-        \href{https://www.linkedin.com/in/kishanthanki8}{\textcolor{LinkedInColor}{\faLinkedin} LinkedIn} \quad
-        \href{https://github.com/kishan-thanki}{\textcolor{GithubColor}{\faGithub} GitHub} \quad
-        \href{https://kishan-thanki.github.io/kishanthanki/}{\textcolor{PortfolioColor}{\faGlobe} Portfolio}
-    \end{minipage}
-\end{tabularx}
+% ==========================================================
+% HEADER
+% ==========================================================
+\begin{center}
+    {\fontsize{24}{28}\selectfont
+    \bfseries\color{accent} Kishan Thanki}
+    \par\vspace{1.5pt}
+    {\fontsize{10.5}{13}\selectfont
+    \color{textgray}
+    Backend Engineer (Go \& Python) - working across DevOps \& AI}
+    \par\vspace{2.5pt}
+    {\fontsize{10}{12}\selectfont
+    \href{mailto:kishanthankiat10@gmail.com}{Email}
+    \quad|\quad
+    \href{https://www.linkedin.com/in/kishanthanki8}{LinkedIn}
+    \quad|\quad
+    \href{https://github.com/kishan-thanki}{GitHub}
+    \quad|\quad
+    \href{https://kishan-thanki.github.io/kishanthanki/}{Portfolio}
+    }
+\end{center}
 
-\vspace{-4pt}
+% ==========================================================
+% EDUCATION
+% ==========================================================
+\section*{Education}
 
-%-----------EDUCATION-----------%
-\section{Education}
-\resumeSubHeadingListStart
+\datedentry
+    {Dhirubhai Ambani Institute of Information and Communication Technology}
+    {2024 -- 2026}
+\vspace{1.5pt}
+{\fontsize{10}{12}\selectfont
+\itshape\color{textgray}
+M.Sc. Information Technology
+\textperiodcentered\ GPA: 7.23/10
+\textperiodcentered\ Gandhinagar, Gujarat
+}
 
-\resumeSubheading
-    {Dhirubhai Ambani Institute of Information and Communication Technology}{2024–2026}
-    {M.Sc. Information Technology \quad GPA: \textbf{7.23/10}}{Gandhinagar, Gujarat}
+\vspace{4pt}
 
-\resumeSubheading
-    {GLS University}{2021–2024}
-    {Bachelor of Computer Applications \quad GPA: \textbf{8.24/10}}{Ahmedabad, Gujarat}
+\datedentry
+    {GLS University}
+    {2021 -- 2024}
+\vspace{1.5pt}
+{\fontsize{10}{12}\selectfont
+\itshape\color{textgray}
+Bachelor of Computer Applications
+\textperiodcentered\ GPA: 8.24/10
+\textperiodcentered\ Ahmedabad, Gujarat
+}
 
-\resumeSubHeadingListEnd
+% ==========================================================
+% EXPERIENCE
+% ==========================================================
+\section*{Experience}
 
-%-----------EXPERIENCE-----------%
-\section{Experience}
-\resumeSubHeadingListStart
-
-\resumeSubheading
-    {Software Engineer Intern}{Jan 2026 -- Apr 2026}
-    {Oizom}{Ahmedabad, India}
-    \resumeItemListStart
-        \resumeItem{Built \textbf{Envizom}, a dual-engine SVG charting library using \textbf{D3.js} and \textbf{TypeScript} for interactive client-side visualizations, alongside a pure \textbf{Go} implementation for generating static server-side reports and exports.}
-        \resumeItem{Designed a declarative, configuration-driven rendering API that ensured pixel-perfect SVG parity across the TypeScript frontend and Go backend using a shared rendering specification.}
-        \resumeItem{Engineered deterministic downsampling and data-reduction algorithms to efficiently render large time-series datasets while preserving visual fidelity and responsiveness.}
-    \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-%-----------PROJECTS-----------%
-\section{Projects}
-\resumeSubHeadingListStart
-
-    \resumeProjectHeading
-    {\textbf{Resume Ranker} $|$ \emph{Python, Streamlit, gRPC, Protobuf, Docker, LLMs}}
-    {\href{https://resumeranker.kishanthanki.space}{\textcolor{GlobeColor}{\faIcon{external-link-alt}}}}
-    \resumeItemListStart
-            \resumeItem{Built an AI-powered resume analysis platform that extracts structured job requirements and resume claims, then evaluates candidate fit across skills, experience, education, and projects.}
-            \resumeItem{Reduced unsupported LLM judgments by enforcing exact, verbatim evidence from both the job description and resume, with Pydantic validation and deterministic result assembly.}
-            \resumeItem{Designed a distributed architecture with a \textbf{Streamlit} client communicating with a dedicated \textbf{Python} analysis service over \textbf{gRPC} using strongly typed \textbf{Protobuf} contracts.}
-            \resumeItem{Implemented concurrent PDF processing and parallel JD/resume extraction with \textbf{asyncio}, alongside retry and rate-limit handling, structured token telemetry, and schema-validated LLM responses using \textbf{Instructor} and \textbf{Pydantic}.}
-    \resumeItemListEnd
-
-    \resumeProjectHeading
-    {\textbf{DepCycle} $|$ \emph{Python, AST, Graphviz, Static Analysis}}
-    {\href{https://pypi.org/project/depcycle/}{\textcolor{PythonColor}{\faPython}}}
-    \resumeItemListStart
-        \resumeItem{Built a Python CLI for static dependency analysis, identifying circular imports and visualizing architectural coupling across large codebases.}
-        \resumeItem{Implemented a static analysis engine using Python's \texttt{ast} module to accurately resolve absolute, relative, and dotted imports without executing application code.}
-        \resumeItem{Generated interactive dependency graphs and isolated subgraphs in HTML, PNG, and SVG formats using Graphviz to simplify architecture exploration.}
-    \resumeItemListEnd
-
-    \resumeProjectHeading
-    {\textbf{Placemate} $|$ \emph{Django, Django REST Framework, PostgreSQL, Cloudinary, Render}}
-    {\href{https://placemate-coral.vercel.app/}{\textcolor{GlobeColor}{\faIcon{external-link-alt}}}}
-    \resumeItemListStart
-        \resumeItem{Built a scalable backend for a centralized campus recruitment platform using Django REST Framework, automating campus placement workflows.}
-        \resumeItem{Implemented secure JWT authentication with HTTP-only cookies, Role-Based Access Control (RBAC), and object-level permissions to enforce fine-grained authorization while mitigating XSS risks.}
-        \resumeItem{Designed reusable middleware and BaseViewSets to standardize API responses, centralize exception handling, and simplify endpoint development.}
-        \resumeItem{Deployed the backend on Render, configuring PostgreSQL, environment management, and Cloudinary integration for scalable media storage.}
-    \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-%-----------TECHNICAL SKILLS-----------%
-\section{Technical Skills}
+\datedentry
+    {Software Engineer Intern --- Oizom}
+    {Jan 2026 -- Apr 2026}
+\vspace{1.5pt}
+{\fontsize{10}{12}\selectfont
+\itshape\color{textgray}
+Ahmedabad, India
+}
 \vspace{2pt}
+\begin{itemize}
+    \item Built \textbf{Envizom}, a dual-engine SVG charting library using \textbf{D3.js} and \textbf{TypeScript} for interactive client-side visualizations, alongside a pure \textbf{Go} implementation for generating static server-side reports and exports.
+    \item Designed a declarative, configuration-driven rendering API that ensured pixel-perfect SVG parity across the TypeScript frontend and Go backend using a shared rendering specification.
+    \item Engineered deterministic downsampling and data-reduction algorithms to efficiently render large time-series datasets while preserving visual fidelity and responsiveness.
+\end{itemize}
 
-\listOfSkills{Languages}{Go, Python, SQL}
-\listOfSkills{Frameworks}{FastAPI, Django REST Framework}
-\listOfSkills{Cloud \& DevOps}{Linux, Docker, AWS (EC2, S3, IAM), Oracle Cloud}
-\listOfSkills{Databases}{PostgreSQL, MySQL, Redis}
-\listOfSkills{Tools}{Git, GitHub Actions, Terraform}
+% ==========================================================
+% PROJECTS
+% ==========================================================
+\section*{Projects}
 
-%-------------------------------------------%
+% ----------------------------------------------------------
+% Resume Ranker
+% ----------------------------------------------------------
+\projectentry
+    {\textbf{Resume Ranker}}
+    {Python \textperiodcentered\ Streamlit \textperiodcentered\ gRPC \textperiodcentered\ Protobuf \textperiodcentered\ Docker \textperiodcentered\ LLMs}
+\vspace{2pt}
+\begin{itemize}
+    \item Built an AI-powered candidate matching product that helps hiring teams compare resumes with job descriptions and identify evidence-backed matches across skills, experience, education, and projects.
+    \item Designed an evidence-grounded analysis workflow that links requirements and candidate claims to exact source text, producing transparent match insights instead of unsupported LLM judgments.
+    \item Architected a distributed product experience with a \textbf{Streamlit} dashboard communicating with a dedicated \textbf{Python} analysis engine through strongly typed \textbf{gRPC} and \textbf{Protobuf} contracts.
+    \item Implemented concurrent PDF processing, parallel job-description and resume extraction, retry and rate-limit handling, structured token telemetry, and schema-validated LLM responses with \textbf{Instructor} and \textbf{Pydantic}.
+\end{itemize}
+
+\vspace{4pt}
+
+% ----------------------------------------------------------
+% DepCycle
+% ----------------------------------------------------------
+\projectentry
+    {\textbf{DepCycle}}
+    {Python \textperiodcentered\ Static Analysis \textperiodcentered\ CLI}
+\vspace{2pt}
+\begin{itemize}
+    \item Built a Python CLI that maps project dependencies, classifies local and external modules, and identifies circular architectural coupling.
+    \item Implemented safe import discovery with Python's \texttt{ast} module, resolving absolute, relative, and dotted imports without executing application code.
+    \item Generated interactive HTML reports with search, zoom, dependency highlighting, and cycle paths, alongside machine-readable JSON and DOT output for automation and further visualization.
+\end{itemize}
+
+\vspace{4pt}
+
+% ----------------------------------------------------------
+% Placemate
+% ----------------------------------------------------------
+\projectentry
+    {\textbf{Placemate}}
+    {Django \textperiodcentered\ DRF \textperiodcentered\ PostgreSQL \textperiodcentered\ Cloudinary \textperiodcentered\ Render}
+\vspace{2pt}
+\begin{itemize}
+    \item Built a scalable backend for a centralized campus recruitment platform using Django REST Framework, automating campus placement workflows.
+    \item Implemented secure JWT authentication with HTTP-only cookies, Role-Based Access Control (RBAC), and object-level permissions to enforce fine-grained authorization while mitigating XSS risks.
+    \item Designed reusable middleware and BaseViewSets to standardize API responses, centralize exception handling, and simplify endpoint development.
+    \item Deployed the backend on Render, configuring PostgreSQL, environment management, and Cloudinary integration for scalable media storage.
+\end{itemize}
+
+% ==========================================================
+% TECHNICAL SKILLS
+% ==========================================================
+\section*{Technical Skills}
+{\fontsize{10}{12}\selectfont
+\textbf{Languages:} Go, Python, SQL\par
+\vspace{2pt}
+\textbf{Frameworks:} FastAPI, Django REST Framework\par
+\vspace{2pt}
+\textbf{Cloud \& DevOps:} Linux, Docker, AWS (EC2, S3, IAM), Oracle Cloud\par
+\vspace{2pt}
+\textbf{Databases:} PostgreSQL, MySQL, Redis\par
+\vspace{2pt}
+\textbf{Tools:} Git, GitHub Actions, Terraform
+}
+
 \end{document}
