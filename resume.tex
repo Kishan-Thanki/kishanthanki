@@ -93,17 +93,18 @@
     \par
 }
 
-\newcommand{\projectentry}[2]{%
+\newcommand{\projectentry}[3]{%
     \noindent
-    \begin{minipage}[t]{0.51\linewidth}
+    \begin{minipage}[t]{0.62\linewidth}
         \raggedright
-        #1
+        \textbf{#1}
+        \hspace{0.7em}
+        \textit{\color{textgray}#2}
     \end{minipage}%
     \hfill
-    \begin{minipage}[t]{0.46\linewidth}
+    \begin{minipage}[t]{0.34\linewidth}
         \raggedleft
-        \itshape\color{textgray}
-        #2
+        \itshape\color{textgray}#3
     \end{minipage}%
     \par
 }
@@ -193,8 +194,9 @@ Ahmedabad, India
 % Resume Ranker
 % ----------------------------------------------------------
 \projectentry
-    {\textbf{Resume Ranker}}
+    {Resume Ranker}
     {Python \textperiodcentered\ Streamlit \textperiodcentered\ gRPC \textperiodcentered\ Protobuf \textperiodcentered\ Docker \textperiodcentered\ LLMs}
+    {\href{https://resumeranker.kishanthanki.space/}{Live}}
 \vspace{2pt}
 \begin{itemize}
     \item Built an AI-powered candidate matching product that helps hiring teams compare resumes with job descriptions and identify evidence-backed matches across skills, experience, education, and projects.
@@ -209,8 +211,9 @@ Ahmedabad, India
 % DepCycle
 % ----------------------------------------------------------
 \projectentry
-    {\textbf{DepCycle}}
+    {DepCycle}
     {Python \textperiodcentered\ Static Analysis \textperiodcentered\ CLI}
+    {\href{https://pypi.org/project/depcycle/}{PyPI} \quad \href{https://github.com/Matricess/depcycle}{GitHub}}
 \vspace{2pt}
 \begin{itemize}
     \item Built a Python CLI that maps project dependencies, classifies local and external modules, and identifies circular architectural coupling.
@@ -224,8 +227,9 @@ Ahmedabad, India
 % Placemate
 % ----------------------------------------------------------
 \projectentry
-    {\textbf{Placemate}}
+    {Placemate}
     {Django \textperiodcentered\ DRF \textperiodcentered\ PostgreSQL \textperiodcentered\ Cloudinary \textperiodcentered\ Render}
+    {\href{https://placemate-coral.vercel.app/}{Live}}
 \vspace{2pt}
 \begin{itemize}
     \item Built a scalable backend for a centralized campus recruitment platform using Django REST Framework, automating campus placement workflows.
