@@ -1,0 +1,20 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# Generated PDF can be tracked if you want it in repo; comment this out if needed.
+# resume.pdf
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
