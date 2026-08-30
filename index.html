@@ -1,109 +1,246 @@
 <!doctype html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Kishan Thanki</title>
-    <meta content="Kishan Thanki" name="title" />
+
     <meta
-      content="Kishan Thanki — Software Engineer building backend systems, distributed services, AI-powered applications, and cloud infrastructure with Go and Python."
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <meta
       name="description"
+      content="Kishan Thanki is a backend developer working with Go, Python, APIs, infrastructure, developer tooling, distributed systems, and AI-powered applications."
     />
+
     <meta
-      content="Kishan Thanki, Software Engineer, Backend Engineer, Platform Engineer, Go, Python, AWS, System Design, Distributed Systems, AI"
       name="keywords"
+      content="Kishan Thanki, backend developer, software developer, Go developer, Python developer, backend development, APIs, gRPC, Django, PostgreSQL, Redis, Linux, Docker, AWS, Ansible, developer tools, AI applications"
     />
-    <meta content="index, follow" name="robots" />
-    <meta content="Kishan Thanki" name="author" />
-    <link href="favicon.svg" rel="icon" type="image/svg+xml" />
 
-    <meta content="website" property="og:type" />
-    <meta content="Kishan Thanki" property="og:title" />
+    <meta name="author" content="Kishan Thanki" />
+    <meta name="creator" content="Kishan Thanki" />
+    <meta name="publisher" content="Kishan Thanki" />
+
     <meta
-      content="Software Engineer building backend systems, distributed services, AI-powered applications, and cloud infrastructure with Go and Python."
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <meta name="color-scheme" content="light dark" />
+
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
+
+    <meta
+      name="theme-color"
+      content="#0b0b0b"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <title>Kishan Thanki — Backend Developer</title>
+
+    <link rel="canonical" href="https://kishanthanki.space/" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kishan Thanki" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta property="og:title" content="Kishan Thanki — Backend Developer" />
+
+    <meta
       property="og:description"
+      content="Backend developer working with Go, Python, APIs, infrastructure, developer tooling, distributed systems, and AI-powered applications."
     />
 
-    <meta content="summary_large_image" property="twitter:card" />
-    <meta content="Kishan Thanki" property="twitter:title" />
+    <meta property="og:url" content="https://kishanthanki.space/" />
+
     <meta
-      content="Software Engineer building backend systems, distributed services, AI-powered applications, and cloud infrastructure with Go and Python."
-      property="twitter:description"
+      property="og:image"
+      content="https://kishanthanki.space/og-image.jpg"
     />
 
-    <script>
-      const s = localStorage.getItem("theme");
-      const d = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    <meta property="og:image:alt" content="Kishan Thanki — Backend Developer" />
 
-      if (s === "dark" || (!s && d)) {
-        document.documentElement.setAttribute("data-theme", "dark");
-      }
-    </script>
+    <meta property="og:image:type" content="image/jpeg" />
 
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="twitter:title" content="Kishan Thanki — Backend Developer" />
+
+    <meta
+      name="twitter:description"
+      content="Backend developer working with Go, Python, APIs, infrastructure, developer tooling, distributed systems, and AI-powered applications."
+    />
+
+    <meta
+      name="twitter:image"
+      content="https://kishanthanki.space/og-image.jpg"
+    />
+
+    <meta
+      name="twitter:image:alt"
+      content="Kishan Thanki — Backend Developer"
+    />
+
+    <!--
+      Basic document-level CSP.
+
+      IMPORTANT:
+      GitHub Pages should ideally provide the real CSP as an HTTP response
+      header. This meta policy is an additional browser-side safeguard.
+
+      Inline styles/scripts are required because this is intentionally a
+      single-file portfolio. The policy does not allow plugins, frames,
+      object/embed content, or form submissions.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        base-uri 'self';
+        object-src 'none';
+        frame-ancestors 'none';
+        form-action 'self';
+        img-src 'self' data: https://raw.githubusercontent.com https://opengraph.githubassets.com;
+        media-src 'self' https://raw.githubusercontent.com;
+        connect-src 'self';
+        font-src 'self';
+        style-src 'self' 'unsafe-inline';
+        script-src 'self' 'unsafe-inline';
+        frame-src 'none';
+        worker-src 'none';
+        manifest-src 'self';
+        upgrade-insecure-requests;
+        block-all-mixed-content;
+      "
+    />
+
+    <!-- Structured data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Kishan Thanki",
-        "jobTitle": "Backend Engineer",
-        "url": "",
-        "sameAs": [
-          "https://github.com/Kishan-Thanki",
-          "https://www.linkedin.com/in/kishanthanki8/"
-        ],
-        "alumniOf": {
-          "@type": "CollegeOrUniversity",
-          "name": "DA-IICT, Gandhinagar"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Ahmedabad",
-          "addressCountry": "India"
-        }
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://kishanthanki.space/#person",
+            "name": "Kishan Thanki",
+            "url": "https://kishanthanki.space/",
+            "jobTitle": "Backend Developer",
+            "description": "Backend developer working with Go, Python, APIs, infrastructure, developer tooling, distributed systems, and AI-powered applications.",
+            "email": "mailto:kishanthankiat10@gmail.com",
+            "sameAs": [
+              "https://github.com/Kishan-Thanki",
+              "https://www.linkedin.com/in/kishanthanki8/"
+            ],
+            "knowsAbout": [
+              "Backend Development",
+              "Software Development",
+              "Go",
+              "Python",
+              "REST APIs",
+              "gRPC",
+              "Django",
+              "PostgreSQL",
+              "Redis",
+              "Linux",
+              "Docker",
+              "AWS",
+              "Ansible",
+              "Distributed Systems",
+              "Developer Tooling",
+              "Artificial Intelligence",
+              "Large Language Models"
+            ],
+            "alumniOf": [
+              {
+                "@type": "CollegeOrUniversity",
+                "name": "DA-IICT"
+              },
+              {
+                "@type": "CollegeOrUniversity",
+                "name": "GLS University"
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://kishanthanki.space/#website",
+            "url": "https://kishanthanki.space/",
+            "name": "Kishan Thanki — Backend Developer",
+            "description": "Personal portfolio of Kishan Thanki, a backend developer working with Go, Python, infrastructure, developer tooling, and AI-powered applications.",
+            "publisher": {
+              "@id": "https://kishanthanki.space/#person"
+            },
+            "inLanguage": "en"
+          }
+        ]
       }
     </script>
 
     <style>
       :root {
-        --bg: #ffffff;
-        --bg-2: #f7f7f7;
-        --bg-3: #efefef;
-        --nav-bg: rgba(255, 255, 255, 0.9);
-        --ink: #111111;
-        --ink-2: #333333;
-        --sub: #666666;
-        --faint: #999999;
-        --rule: #e4e4e4;
-        --rule-2: #cccccc;
-        --blue: #1a5cf8;
-        --blue-dim: #dde8ff;
-        --blue-text: #1040c0;
-        --green: #178a45;
-        --green-dim: #d4f0e2;
-        --green-text: #0d6030;
+        --bg: #f7f7f5;
+        --surface: #ffffff;
+        --surface-2: #f0f0ed;
+
+        --text: #171717;
+        --text-soft: #444;
+        --muted: #777;
+        --faint: #9a9a96;
+
+        --border: #deded9;
+        --border-strong: #c9c9c3;
+
+        --accent: #4da3d9;
+        --accent-soft: #eaf6fd;
+
+        --green: #16794a;
+        --green-soft: #eaf7f0;
+
         --font:
-          system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, sans-serif;
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+
+        --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+        --radius: 12px;
       }
 
       html[data-theme="dark"] {
-        --bg: #0d0d0e;
-        --bg-2: #141416;
-        --bg-3: #1c1c1f;
-        --nav-bg: rgba(13, 13, 14, 0.9);
-        --ink: #f0f0f0;
-        --ink-2: #cccccc;
-        --sub: #888888;
-        --faint: #555555;
-        --rule: #242427;
-        --rule-2: #333336;
-        --blue: #4d85ff;
-        --blue-dim: #0d1e40;
-        --blue-text: #7aaaff;
-        --green: #2db86a;
-        --green-dim: #091f14;
-        --green-text: #5dd490;
+        --bg: #0b0b0b;
+        --surface: #111111;
+        --surface-2: #171717;
+
+        --text: #f1f1ef;
+        --text-soft: #c2c2bd;
+        --muted: #858580;
+        --faint: #5a5a56;
+
+        --border: #282826;
+        --border-strong: #3a3a37;
+
+        --accent: #67b9eb;
+        --accent-soft: #102532;
+
+        --green: #54c789;
+        --green-soft: #0d281b;
       }
 
       *,
@@ -113,1635 +250,2337 @@
       }
 
       html {
-        -webkit-text-size-adjust: 100%;
         scroll-behavior: smooth;
       }
 
       body {
         margin: 0;
         background: var(--bg);
-        color: var(--ink);
+        color: var(--text);
+
         font-family: var(--font);
-        font-size: 15px;
+        font-size: 16px;
         line-height: 1.7;
+
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
       }
 
-      main {
-        max-width: 660px;
+      body.modal-open {
+        overflow: hidden;
+      }
+
+      ::selection {
+        background: var(--text);
+        color: var(--bg);
+      }
+
+      img,
+      video {
+        max-width: 100%;
+      }
+
+      img {
+        height: auto;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
+      }
+
+      .page {
+        width: min(1080px, calc(100% - 40px));
         margin: 0 auto;
-        padding: 72px 24px 120px;
+        padding: 40px 0 90px;
       }
 
-      .topnav {
-        background: transparent;
-        margin-bottom: 48px;
-      }
+      /* Skip link */
 
-      .topnav-inner {
-        display: flex;
-        align-items: center;
-        gap: 0;
-      }
+      .skip-link {
+        position: absolute;
+        top: -100%;
+        left: 50%;
 
-      .topnav-links {
-        display: flex;
-        align-items: center;
-        gap: 2px;
-        flex: 1;
-        margin-left: -10px;
-      }
+        transform: translateX(-50%);
 
-      .topnav-links a {
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--sub);
-        text-decoration: none;
-        padding: 6px 10px;
-        border-radius: 6px;
-        transition:
-          color 0.15s,
-          background 0.15s;
-        letter-spacing: 0.01em;
-      }
+        background: var(--surface);
+        color: var(--text);
 
-      .topnav-links a:hover {
-        color: var(--ink);
-        background: var(--bg-2);
-      }
+        padding: 10px 16px;
 
-      .topnav-links a.active {
-        color: var(--blue);
-        background: var(--blue-dim);
-      }
+        border: 1px solid var(--border);
+        border-top: none;
+        border-radius: 0 0 8px 8px;
 
-      .theme-btn {
-        background: none;
-        border: 1px solid var(--rule);
-        border-radius: 6px;
-        padding: 6px 12px;
-        font-family: var(--font);
+        z-index: 200;
+
+        font-family: var(--mono);
         font-size: 12px;
-        font-weight: 600;
-        color: var(--sub);
-        cursor: pointer;
-        transition:
-          border-color 0.15s,
-          color 0.15s,
-          background 0.15s;
-        white-space: nowrap;
-      }
-
-      .theme-btn:hover {
-        border-color: var(--rule-2);
-        color: var(--ink);
-        background: var(--bg-2);
-      }
-
-      .header {
-        margin-bottom: 24px;
-      }
-
-      .header-name {
-        font-size: 26px;
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        color: var(--ink);
-        margin: 0 0 3px;
-      }
-
-      .header-role {
-        font-size: 15px;
-        color: var(--sub);
-        margin: 0 0 4px;
-        font-weight: 400;
-      }
-
-      .header-loc {
-        font-size: 12.5px;
-        color: var(--faint);
-        margin: 0 0 20px;
-      }
-
-      .header-loc a {
-        color: var(--faint);
         text-decoration: none;
       }
 
-      .header-loc a:hover {
-        color: var(--sub);
+      .skip-link:focus {
+        top: 0;
       }
 
-      .pill-row {
+      /* Hero */
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 250px;
+
+        gap: 60px;
+
+        padding: 85px 0 80px;
+
+        border-bottom: 1px solid var(--border);
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+
+        color: var(--muted);
+
+        font-family: var(--mono);
+        font-size: 12px;
+
+        letter-spacing: 0.04em;
+      }
+
+      .eyebrow span {
+        color: var(--accent);
+      }
+
+      .hero h1 {
+        max-width: 820px;
+
+        margin: 0;
+
+        font-size: clamp(44px, 7vw, 76px);
+        line-height: 0.99;
+
+        letter-spacing: -0.065em;
+
+        font-weight: 760;
+      }
+
+      .hero h1 em {
+        color: var(--muted);
+        font-style: normal;
+      }
+
+      .hero-copy {
+        max-width: 720px;
+
+        margin: 30px 0 0;
+
+        color: var(--text-soft);
+
+        font-size: clamp(17px, 2vw, 19px);
+        line-height: 1.7;
+
+        letter-spacing: -0.015em;
+      }
+
+      .hero-copy strong {
+        color: var(--text);
+        font-weight: 650;
+      }
+
+      .hero-links {
         display: flex;
         flex-wrap: wrap;
-        gap: 6px;
+        gap: 10px;
+
+        margin-top: 32px;
       }
 
-      .pill {
+      .hero-link {
         display: inline-flex;
         align-items: center;
-        gap: 5px;
-        font-size: 12px;
-        font-weight: 500;
-        color: var(--sub);
-        background: var(--bg-2);
-        border: 1px solid var(--rule);
-        border-radius: 20px;
-        padding: 4px 12px;
+        gap: 7px;
+
+        padding: 9px 13px;
+
+        border: 1px solid var(--border);
+        border-radius: 8px;
+
+        background: var(--surface);
+
+        color: var(--text-soft);
+
+        font-size: 13px;
         text-decoration: none;
+
         transition:
-          color 0.15s,
-          border-color 0.15s,
-          background 0.15s;
+          border-color 0.2s ease,
+          color 0.2s ease,
+          transform 0.2s ease;
       }
 
-      .pill svg {
-        width: 11px;
-        height: 11px;
-        flex-shrink: 0;
+      .hero-link:hover {
+        color: var(--text);
+        border-color: var(--border-strong);
+        transform: translateY(-1px);
       }
 
-      .pill:hover {
-        color: var(--ink);
-        border-color: var(--rule-2);
-        background: var(--bg-3);
+      .hero-link.primary {
+        background: var(--text);
+        border-color: var(--text);
+        color: var(--bg);
       }
 
-      .pill.email:hover {
-        color: #c5221f;
-        border-color: #fac7c5;
-        background: #fff5f4;
+      .hero-side {
+        align-self: end;
       }
 
-      .pill.linkedin:hover {
-        color: #0a66c2;
-        border-color: #bdd4ef;
-        background: #f0f7ff;
+      .hero-side-label {
+        margin: 0 0 10px;
+
+        color: var(--faint);
+
+        font-family: var(--mono);
+        font-size: 11px;
+
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
       }
 
-      .pill.github:hover {
-        color: var(--green);
-        border-color: color-mix(in srgb, var(--green) 30%, transparent);
-        background: var(--green-dim);
+      .hero-side p {
+        margin: 0;
+
+        color: var(--text-soft);
+
+        font-size: 14px;
+        line-height: 1.75;
       }
 
-      .pill.resume:hover {
-        color: var(--blue);
-        border-color: color-mix(in srgb, var(--blue) 30%, transparent);
-        background: var(--blue-dim);
+      /* Navigation */
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+
+        padding: 13px 0;
+
+        background: color-mix(in srgb, var(--bg) 92%, transparent);
+
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+
+        border-bottom: 1px solid var(--border);
       }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+      }
+
+      .nav a {
+        color: var(--muted);
+
+        font-family: var(--mono);
+        font-size: 11px;
+
+        text-decoration: none;
+        white-space: nowrap;
+
+        transition: color 0.2s ease;
+      }
+
+      .nav a:hover,
+      .nav a.active {
+        color: var(--text);
+      }
+
+      /* Sections */
 
       section {
-        margin-bottom: 52px;
-        scroll-margin-top: 56px;
+        scroll-margin-top: 65px;
       }
 
-      .sec-label {
-        font-size: 10.5px;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
+      .section {
+        padding: 82px 0;
+
+        border-bottom: 1px solid var(--border);
+      }
+
+      .section-head {
+        display: grid;
+
+        gap: 40px;
+
+        margin-bottom: 42px;
+      }
+
+      .section-index {
         color: var(--faint);
-        margin: 0 0 18px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--rule);
+
+        font-family: var(--mono);
+        font-size: 11px;
       }
 
-      .prose {
-        font-size: 15px;
-        line-height: 1.72;
-        color: var(--ink-2);
+      .section-index strong {
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .section-title {
         margin: 0;
+
+        font-size: clamp(25px, 3vw, 30px);
+        line-height: 1.2;
+
+        letter-spacing: -0.035em;
       }
 
-      .prose + .prose {
-        margin-top: 12px;
+      .section-description {
+        max-width: 680px;
+
+        margin: 11px 0 0;
+
+        color: var(--muted);
+
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      /* Projects */
+
+      .project-list {
+        display: grid;
+        gap: 22px;
       }
 
       .project-card {
-        border: 1px solid var(--rule);
-        border-radius: 10px;
-        padding: 20px 22px;
-        background: var(--bg);
-        transition:
-          border-color 0.18s,
-          box-shadow 0.18s;
-        margin-bottom: 10px;
+        overflow: hidden;
+
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+
+        background: var(--surface);
       }
 
-      .project-card:last-child {
-        margin-bottom: 0;
+      .project-info {
+        padding: 30px;
       }
 
-      .project-card:hover {
-        border-color: var(--blue);
-        box-shadow: 0 0 0 3px var(--blue-dim);
-      }
-
-      .pc-top {
+      .project-top {
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        align-items: flex-start;
-        gap: 12px;
-        margin-bottom: 2px;
+
+        gap: 20px;
       }
 
-      .pc-links {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 4px;
-      }
-
-      .pc-name {
-        font-size: 14.5px;
-        font-weight: 700;
-        color: var(--ink);
-        letter-spacing: -0.01em;
-        margin: 0;
-      }
-
-      .pc-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-        font-size: 10.5px;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: var(--green-text);
-        background: var(--green-dim);
-        border: 1px solid color-mix(in srgb, var(--green) 25%, transparent);
-        border-radius: 20px;
-        padding: 3px 10px;
-        text-decoration: none;
-        white-space: nowrap;
-        transition: opacity 0.15s;
-        flex-shrink: 0;
-      }
-
-      .pc-badge:hover {
-        opacity: 0.75;
-      }
-
-      .pc-badge svg {
-        width: 9px;
-        height: 9px;
-      }
-
-      .pc-sub {
-        font-size: 12px;
+      .project-number {
         color: var(--faint);
-        margin: 0 0 10px;
+
+        font-family: var(--mono);
+        font-size: 11px;
+        font-weight: bolder;
       }
 
-      .pc-desc {
-        font-size: 13.5px;
-        color: var(--ink-2);
-        line-height: 1.65;
-        margin: 0 0 14px;
+      .project-status {
+        color: var(--green);
+
+        font-family: var(--mono);
+        font-size: 10px;
+        font-weight: bolder;
       }
 
-      .pc-tags {
+      .project-name {
+        margin: 30px 0 0;
+
+        font-size: clamp(24px, 3vw, 29px);
+        line-height: 1.15;
+
+        letter-spacing: -0.04em;
+      }
+
+      .project-kind {
+        margin: 8px 0 0;
+
+        color: var(--muted);
+
+        font-family: var(--mono);
+        font-size: 10px;
+        font-weight: bold;
+      }
+
+      .project-description {
+        max-width: 760px;
+
+        margin: 20px 0 0;
+
+        color: var(--text-soft);
+
+        font-size: 14px;
+        line-height: 1.8;
+        font-weight: 500;
+      }
+
+      .project-points {
+        max-width: 790px;
+
+        margin: 19px 0 0;
+        padding-left: 19px;
+
+        color: var(--text-soft);
+
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .project-points li + li {
+        margin-top: 9px;
+      }
+
+      .project-bottom {
+        margin-top: 29px;
+      }
+
+      .project-stack {
         display: flex;
         flex-wrap: wrap;
-        gap: 5px;
-        margin-bottom: 12px;
+        gap: 7px;
+        font-weight: bolder;
       }
 
-      .pc-tag {
-        font-size: 11px;
-        font-weight: 500;
-        color: var(--blue-text);
-        background: var(--blue-dim);
-        border-radius: 4px;
-        padding: 2px 7px;
+      .project-stack span {
+        padding: 5px 8px;
+
+        border: 1px solid var(--border);
+        border-radius: 5px;
+
+        color: var(--muted);
+
+        font-family: var(--mono);
+        font-size: 10px;
       }
 
-      .pc-points {
+      .project-actions {
         display: flex;
-        flex-direction: column;
-        gap: 8px;
-        padding: 0;
-        margin: 0;
-        list-style: none;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        margin-top: 19px;
       }
 
-      .pc-points li {
-        font-size: 12px;
-        line-height: 1.5;
-        color: var(--sub);
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-      }
+      .project-action {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
 
-      .pc-points li::before {
-        content: "";
-        width: 4px;
-        height: 4px;
-        border-radius: 50%;
-        background: var(--green);
-        flex-shrink: 0;
-        margin-top: 6px;
-      }
+        color: var(--accent);
 
-      .edu-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-
-      .edu-card {
-        border: 1px solid var(--rule);
-        border-radius: 8px;
-        padding: 16px 18px;
-        background: var(--bg-2);
-      }
-
-      .edu-degree {
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--ink);
-        margin: 0 0 3px;
-        line-height: 1.3;
-      }
-
-      .edu-school {
-        font-size: 12px;
-        color: var(--sub);
-        margin: 0 0 6px;
-      }
-
-      .edu-year {
+        font-family: var(--mono);
         font-size: 11px;
-        color: var(--faint);
-        font-variant-numeric: tabular-nums;
+        font-weight: bolder;
+
+        text-decoration: none;
       }
 
-      .demos-grid {
+      .project-action:hover {
+        text-decoration: underline;
+      }
+
+      /* Experiments */
+
+      .experiment-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 18px;
       }
 
-      .demo-card {
-        border: 1px solid var(--rule);
-        border-radius: 9px;
+      .experiment {
         overflow: hidden;
-        background: var(--bg);
-        transition:
-          border-color 0.18s,
-          transform 0.18s,
-          box-shadow 0.18s;
+
+        border: 1px solid var(--border);
+        border-radius: 10px;
+
+        background: var(--surface);
+
         cursor: pointer;
-        display: flex;
-        flex-direction: column;
+
+        transition:
+          border-color 0.2s ease,
+          transform 0.2s ease;
       }
 
-      .demo-card:hover {
-        border-color: var(--rule-2);
+      .experiment:hover {
+        border-color: var(--border-strong);
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
       }
 
-      html[data-theme="dark"] .demo-card:hover {
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+      .experiment:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
       }
 
-      .demo-thumb {
-        width: 100%;
-        aspect-ratio: 16/9;
-        background: var(--bg-3);
+      .experiment-media {
+        aspect-ratio: 16 / 10;
+
         overflow: hidden;
-        border-bottom: 1px solid var(--rule);
+
+        background: var(--surface-2);
+
+        border-bottom: 1px solid var(--border);
       }
 
-      .demo-thumb video,
-      .demo-thumb img {
+      .experiment-media img,
+      .experiment-media video {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+
         display: block;
+
+        object-fit: fill;
       }
 
-      .demo-body {
-        padding: 11px 13px 13px;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
+      .experiment-body {
+        padding: 19px;
       }
 
-      .demo-name {
-        font-size: 12.5px;
-        font-weight: 700;
-        color: var(--ink);
-        margin: 0 0 3px;
-        letter-spacing: -0.01em;
+      .experiment-number {
+        color: var(--faint);
+
+        font-family: var(--mono);
+        font-size: 10px;
+        font-weight: bolder;
       }
 
-      .demo-desc {
-        font-size: 11.5px;
-        color: var(--sub);
-        line-height: 1.45;
-        margin: 0 0 9px;
-        flex: 1;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+      .experiment-title {
+        margin: 8px 0 0;
+
+        font-size: 17px;
+
+        letter-spacing: -0.02em;
       }
 
-      .demo-foot {
+      .experiment-description {
+        margin: 8px 0 0;
+
+        color: var(--muted);
+
+        font-size: 12px;
+        line-height: 1.65;
+      }
+
+      .experiment-footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        gap: 15px;
+
+        margin-top: 17px;
       }
 
-      .demo-cta {
-        font-size: 10.5px;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: var(--blue);
+      .experiment-link {
+        color: var(--accent);
+
+        font-family: var(--mono);
+        font-size: 10px;
+
         text-decoration: none;
+        font-weight: bolder;
+      }
+
+      .experiment-link:hover {
+        text-decoration: underline;
+      }
+
+      .experiment-type {
+        color: var(--faint);
+
+        font-family: var(--mono);
+        font-size: 10px;
+        font-weight: bolder;
+      }
+
+      /* Education */
+
+      .education-list {
+        border-top: 1px solid var(--border);
+      }
+
+      .education-item {
+        display: grid;
+
+        grid-template-columns: 170px minmax(0, 1fr) auto;
+
+        gap: 40px;
+
+        padding: 23px 0;
+
+        border-bottom: 1px solid var(--border);
+      }
+
+      .education-year {
+        color: var(--faint);
+
+        font-family: var(--mono);
+        font-size: 11px;
+      }
+
+      .education-degree {
+        margin: 0;
+
+        font-size: 15px;
+        font-weight: 650;
+      }
+
+      .education-school {
+        margin: 4px 0 0;
+
+        color: var(--muted);
+
+        font-size: 13px;
+      }
+
+      /* Contact */
+
+      .contact {
+        display: grid;
+
+        grid-template-columns: 170px minmax(0, 1fr);
+
+        gap: 40px;
+
+        padding: 90px 0;
+      }
+
+      .contact-label {
+        color: var(--faint);
+
+        font-family: var(--mono);
+        font-size: 11px;
+      }
+
+      .contact h2 {
+        max-width: 760px;
+
+        margin: 0;
+
+        font-size: clamp(37px, 5vw, 60px);
+        line-height: 1.05;
+
+        letter-spacing: -0.055em;
+      }
+
+      .contact p {
+        max-width: 640px;
+
+        margin: 19px 0 0;
+
+        color: var(--muted);
+
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        margin-top: 29px;
+        font-weight: bolder;
+      }
+
+      .contact-links a {
+        padding: 10px 14px;
+
+        border: 1px solid var(--border);
+        border-radius: 7px;
+
+        color: var(--text-soft);
+
+        font-family: var(--mono);
+        font-size: 11px;
+
+        text-decoration: none;
+
+        transition:
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .contact-links a:hover {
+        border-color: var(--border-strong);
+        color: var(--text);
+      }
+
+      /* Footer */
+
+      footer {
         display: flex;
         align-items: center;
-        gap: 3px;
-        transition: opacity 0.15s;
-      }
+        justify-content: space-between;
 
-      .demo-cta svg {
-        width: 10px;
-        height: 10px;
-      }
+        gap: 20px;
 
-      .demo-cta:hover {
-        opacity: 0.7;
-      }
+        padding-top: 21px;
 
-      .demo-lang {
-        font-size: 9.5px;
-        font-weight: 600;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
+        border-top: 1px solid var(--border);
+
         color: var(--faint);
-        background: var(--bg-2);
-        border: 1px solid var(--rule);
-        border-radius: 3px;
-        padding: 2px 5px;
+
+        font-family: var(--mono);
+        font-size: 10px;
       }
 
-      .modal-overlay {
+      footer a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: var(--text);
+      }
+
+      /* Back to top */
+
+      .back-to-top {
         position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.55);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        z-index: 100;
+
+        right: 28px;
+        bottom: 28px;
+
+        z-index: 50;
+
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 24px;
+
+        width: 44px;
+        height: 44px;
+
+        border: 1px solid var(--border);
+        border-radius: 50%;
+
+        background: var(--surface);
+        color: var(--text-soft);
+
+        text-decoration: none;
+
+        font-size: 20px;
+
         opacity: 0;
+        transform: translateY(18px);
+
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease,
+          background 0.2s ease;
+
         pointer-events: none;
-        transition: opacity 0.22s;
+
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       }
 
-      .modal-overlay.open {
+      .back-to-top.visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .back-to-top:hover {
+        background: var(--text);
+        color: var(--bg);
+        border-color: var(--text);
+      }
+
+      /* Reveal */
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+
+        transition:
+          opacity 0.55s ease,
+          transform 0.55s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Modal */
+
+      .modal {
+        position: fixed;
+        inset: 0;
+
+        z-index: 100;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 20px;
+
+        background: rgba(0, 0, 0, 0.74);
+
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+        opacity: 0;
+        pointer-events: none;
+
+        transition: opacity 0.2s ease;
+      }
+
+      .modal.open {
         opacity: 1;
         pointer-events: auto;
       }
 
       .modal-box {
-        background: var(--bg);
-        border: 1px solid var(--rule);
+        width: min(920px, 100%);
+        max-height: 92vh;
+
+        overflow: auto;
+
+        background: var(--surface);
+
+        border: 1px solid var(--border);
         border-radius: 12px;
-        max-width: 760px;
-        width: 100%;
-        max-height: 90vh;
-        overflow-y: auto;
-        position: relative;
-        transform: scale(0.96);
-        transition: transform 0.22s;
-        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
+
+        transform: translateY(12px);
+
+        transition: transform 0.2s ease;
       }
 
-      .modal-overlay.open .modal-box {
-        transform: scale(1);
-      }
-
-      .modal-close {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        background: var(--bg-3);
-        border: 1px solid var(--rule);
-        border-radius: 50%;
-        width: 28px;
-        height: 28px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        color: var(--sub);
-        z-index: 10;
-        transition:
-          background 0.15s,
-          color 0.15s;
-      }
-
-      .modal-close:hover {
-        background: var(--rule);
-        color: var(--ink);
+      .modal.open .modal-box {
+        transform: translateY(0);
       }
 
       .modal-media {
         width: 100%;
-        aspect-ratio: 16/9;
-        background: #000;
-        border-radius: 11px 11px 0 0;
+        aspect-ratio: 16 / 9;
+
+        display: none;
+
         overflow: hidden;
+
+        background: #050505;
       }
 
-      .modal-media video,
-      .modal-media img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+      .modal-media.visible {
         display: block;
       }
 
+      .modal-media img,
+      .modal-media video {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: contain;
+      }
+
       .modal-info {
-        padding: 18px 22px 22px;
+        position: relative;
+
+        padding: 26px;
+      }
+
+      .modal-close {
+        position: absolute;
+
+        top: 18px;
+        right: 18px;
+
+        width: 34px;
+        height: 34px;
+
+        display: grid;
+        place-items: center;
+
+        border: 1px solid var(--border);
+        border-radius: 50%;
+
+        background: var(--surface);
+        color: var(--muted);
+
+        cursor: pointer;
+
+        font-size: 18px;
+      }
+
+      .modal-close:hover {
+        color: var(--text);
+        border-color: var(--border-strong);
       }
 
       .modal-title {
-        font-size: 16px;
-        font-weight: 700;
-        color: var(--ink);
-        margin: 0 0 5px;
+        margin: 0;
+        padding-right: 50px;
+
+        font-size: 23px;
+
+        letter-spacing: -0.03em;
       }
 
-      .modal-desc {
-        font-size: 13.5px;
-        color: var(--sub);
-        line-height: 1.6;
-        margin: 0 0 14px;
+      .modal-description {
+        max-width: 720px;
+
+        margin: 10px 0 20px;
+
+        color: var(--text-soft);
+
+        font-size: 14px;
+        line-height: 1.75;
       }
 
-      .modal-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--blue);
-        text-decoration: none;
-        border: 1px solid var(--blue-dim);
-        border-radius: 6px;
-        padding: 5px 12px;
-        transition: background 0.15s;
-      }
-
-      .modal-link:hover {
-        background: var(--blue-dim);
-      }
-
-      #modal-links {
+      .modal-links {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 14px;
+        font-weight: bolder;
       }
 
-      .modal-link svg {
-        width: 11px;
-        height: 11px;
-      }
+      .modal-links a {
+        color: var(--accent);
 
-      footer {
-        margin-top: 80px;
-        padding-top: 20px;
-        border-top: 1px solid var(--rule);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 11.5px;
-        color: var(--faint);
-      }
+        font-family: var(--mono);
+        font-size: 11px;
 
-      footer a {
-        color: var(--faint);
         text-decoration: none;
-        transition: color 0.15s;
       }
 
-      footer a:hover {
-        color: var(--blue);
+      .modal-links a:hover {
+        text-decoration: underline;
       }
 
-      a:focus-visible {
-        outline: 2px solid var(--blue);
-        outline-offset: 3px;
-        border-radius: 2px;
-      }
+      /* Responsive */
 
-      ::selection {
-        background: var(--blue);
-        color: #fff;
-      }
-
-      @media (max-width: 520px) {
-        main {
-          padding: 48px 18px 96px;
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 35px;
         }
 
-        .edu-row {
+        .hero-side {
+          max-width: 650px;
+        }
+
+        .section-head,
+        .about-grid,
+        .contact {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .education-item {
+          grid-template-columns: 1fr auto;
+          gap: 8px 20px;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .experiment-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 600px) {
+        .page {
+          width: min(100% - 28px, 1080px);
+          padding-top: 20px;
+        }
+
+        .hero {
+          padding: 60px 0;
+        }
+
+        .hero h1 {
+          font-size: clamp(42px, 12vw, 54px);
+        }
+
+        .hero-copy {
+          font-size: 16px;
+        }
+
+        .nav-inner {
+          gap: 18px;
+
+          overflow-x: auto;
+
+          scrollbar-width: none;
+        }
+
+        .nav-inner::-webkit-scrollbar {
+          display: none;
+        }
+
+        .section {
+          padding: 65px 0;
+        }
+
+        .section-head {
+          margin-bottom: 30px;
+        }
+
+        .section-title {
+          font-size: 23px;
+        }
+
+        .project-info {
+          padding: 22px;
+        }
+
+        .project-name {
+          margin-top: 27px;
+          font-size: 24px;
+        }
+
+        .project-description {
+          font-size: 13px;
+        }
+
+        .project-points {
+          font-size: 12px;
+        }
+
+        .experiment-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .education-item {
           grid-template-columns: 1fr;
         }
 
-        .demos-grid {
-          grid-template-columns: 1fr 1fr;
+        .contact {
+          padding: 65px 0;
         }
 
         footer {
           flex-direction: column;
-          gap: 6px;
           align-items: flex-start;
         }
 
-        .topnav-links a {
-          padding: 4px 7px;
-          font-size: 11.5px;
+        .modal {
+          padding: 12px;
+        }
+
+        .modal-box {
+          max-height: 94vh;
+        }
+
+        .modal-info {
+          padding: 21px;
+        }
+
+        .modal-media {
+          aspect-ratio: 16 / 10;
+        }
+
+        .back-to-top {
+          right: 20px;
+          bottom: 20px;
+
+          width: 40px;
+          height: 40px;
+
+          font-size: 18px;
         }
       }
 
-      @media (max-width: 360px) {
-        .demos-grid {
-          grid-template-columns: 1fr;
+      @media (max-width: 390px) {
+        .page {
+          width: min(100% - 22px, 1080px);
+        }
+
+        .hero h1 {
+          font-size: 39px;
+        }
+
+        .hero-links {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .hero-link {
+          justify-content: center;
+        }
+
+        .project-info {
+          padding: 19px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          transition: none !important;
+          animation: none !important;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* Print */
+
+      @media print {
+        .nav,
+        .back-to-top,
+        .modal,
+        .hero-links,
+        .contact-links {
+          display: none !important;
+        }
+
+        .project-card,
+        .experiment {
+          break-inside: avoid;
+          border: 1px solid #ccc;
+        }
+
+        .hero,
+        .section {
+          padding: 30px 0;
+        }
+
+        .page {
+          width: 100%;
+          padding: 0;
         }
       }
     </style>
+
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+
+          if (
+            savedTheme === "dark" ||
+            (!savedTheme &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)
+          ) {
+            document.documentElement.dataset.theme = "dark";
+          }
+        } catch (_) {
+          /*
+           * Theme persistence is optional.
+           * The site continues working normally if localStorage is blocked.
+           */
+        }
+      })();
+    </script>
   </head>
 
   <body>
-    <main id="top">
-      <header class="header">
-        <h1 class="header-name">Kishan Thanki</h1>
-        <p class="header-role">
-          Backend Engineer (Go & Python) - working across DevOps & AI
-        </p>
-        <p class="header-loc">
-          <a
-            href="https://www.google.com/maps/place/Ahmedabad,+Gujarat,+India"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Ahmedabad, India
-          </a>
-        </p>
+    <a class="skip-link" href="#main"> Skip to main content </a>
 
-        <div class="pill-row">
-          <a class="pill email" href="mailto:kishanthankiat10@gmail.com">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              viewbox="0 0 24 24"
+    <main class="page" id="main">
+      <!-- HERO -->
+
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div>
+          <h1 id="hero-title">
+            Backend <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Developer</em>
+          </h1>
+
+          <p class="hero-copy">
+            I’m Kishan, a <strong>Backend Developer</strong> building reliable
+            backend systems with
+            <strong>Python, Go, DevOps & Cloud Infrastructure</strong>.
+          </p>
+
+          <div class="hero-links">
+            <a
+              class="hero-link primary"
+              href="mailto:kishanthankiat10@gmail.com"
+              aria-label="Send email to Kishan Thanki"
             >
-              <path
-                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-              ></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-            email
-          </a>
+              email ↗
+            </a>
 
-          <a
-            class="pill linkedin"
-            href="https://www.linkedin.com/in/kishanthanki8/"
-            rel="me noopener noreferrer"
-            target="_blank"
-          >
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              viewbox="0 0 24 24"
+            <a
+              class="hero-link"
+              href="https://github.com/Kishan-Thanki"
+              target="_blank"
+              rel="me noopener noreferrer"
+              referrerpolicy="no-referrer"
             >
-              <path
-                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-              ></path>
-              <rect height="12" width="4" x="2" y="9"></rect>
-              <circle cx="4" cy="4" r="2"></circle>
-            </svg>
-            linkedin
-          </a>
+              github ↗
+            </a>
 
-          <a
-            class="pill github"
-            href="https://github.com/Kishan-Thanki"
-            rel="me noopener noreferrer"
-            target="_blank"
-          >
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              viewbox="0 0 24 24"
+            <a
+              class="hero-link"
+              href="https://www.linkedin.com/in/kishanthanki8/"
+              target="_blank"
+              rel="me noopener noreferrer"
+              referrerpolicy="no-referrer"
             >
-              <path
-                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-              ></path>
-            </svg>
-            github
-          </a>
+              linkedin ↗
+            </a>
 
-          <a
-            class="pill resume"
-            href="resume.pdf"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              viewbox="0 0 24 24"
+            <a
+              class="hero-link"
+              href="resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <path
-                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-              ></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-            </svg>
-            resume
-          </a>
-        </div>
-      </header>
-
-      <nav aria-label="Section navigation" class="topnav">
-        <div class="topnav-inner">
-          <div class="topnav-links">
-            <a href="#about">about</a>
-            <a href="#work">work</a>
-            <a href="#education">education</a>
-            <a href="#demos">demos</a>
+              resume ↗
+            </a>
           </div>
+        </div>
+      </section>
 
-          <button
-            aria-label="Toggle color theme"
-            class="theme-btn"
-            id="theme-toggle"
-          >
-            theme
-          </button>
+      <!-- NAV -->
+
+      <nav class="nav" aria-label="Primary section navigation">
+        <div class="nav-inner">
+          <a href="#projects">projects</a>
+          <a href="#experiments">experiments</a>
+          <a href="#education">education</a>
+          <a href="#contact">contact</a>
         </div>
       </nav>
 
-      <section id="about">
-        <h2 class="sec-label">about</h2>
+      <!-- PROJECTS -->
 
-        <p class="prose">
-          Software engineer focused on backend systems, distributed
-          applications, cloud infrastructure, and developer tooling. I build
-          reliable software in Go and Python, design scalable APIs and services,
-          and work across the platform layer that supports production systems.
-        </p>
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" id="projects-title">
+              Things I've actually built.
+            </h2>
 
-        <p class="prose">
-          My work spans service architecture, infrastructure automation, and
-          applications, with an emphasis on reliable, scalable, and maintainable
-          software.
-        </p>
-      </section>
-
-      <section id="work">
-        <h2 class="sec-label">work</h2>
-
-        <div class="project-card">
-          <div class="pc-top">
-            <h3 class="pc-name">Resume Ranker</h3>
-
-            <a
-              aria-label="Open Resume Ranker live demo"
-              class="pc-badge"
-              href="https://resumeranker.kishanthanki.space"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="12" r="2"></circle>
-                <path
-                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
-                ></path>
-              </svg>
-              Live
-            </a>
-          </div>
-
-          <p class="pc-sub">AI-Powered Candidate Matching for Hiring Teams</p>
-
-          <p class="pc-desc">
-            Resume Ranker helps hiring teams review candidates faster by
-            comparing resumes with job descriptions and turning unstructured
-            experience into clear, evidence-backed match insights.
-          </p>
-
-          <div class="pc-tags">
-            <span class="pc-tag">Python</span>
-            <span class="pc-tag">Streamlit</span>
-            <span class="pc-tag">gRPC</span>
-            <span class="pc-tag">Pydantic</span>
-            <span class="pc-tag">LLM</span>
-          </div>
-
-          <ul class="pc-points">
-            <li>
-              Compares candidate resumes with job requirements across skills,
-              experience, education, and projects to surface the strongest
-              matches.
-            </li>
-
-            <li>
-              Connects every match assessment to evidence from the original
-              resume and job description, helping reviewers understand why a
-              candidate was ranked.
-            </li>
-
-            <li>
-              Transforms resumes and job descriptions into structured
-              information so hiring teams can evaluate candidates consistently
-              instead of relying only on manual document review.
-            </li>
-          </ul>
-        </div>
-
-        <div class="project-card">
-          <div class="pc-top">
-            <h3 class="pc-name">DepCycle</h3>
-
-            <div class="pc-links">
-              <a
-                aria-label="View on PyPI"
-                class="pc-badge"
-                href="https://pypi.org/project/depcycle/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2.5"
-                  viewbox="0 0 24 24"
-                >
-                  <circle cx="12" cy="12" r="2"></circle>
-                  <path
-                    d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
-                  ></path>
-                </svg>
-                PyPI
-              </a>
-
-              <a
-                aria-label="View source on GitHub"
-                class="pc-badge"
-                href="https://github.com/Matricess/depcycle"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <svg fill="currentColor" viewbox="0 0 24 24">
-                  <path
-                    d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.58 2.35 1.12 2.92.86.09-.67.35-1.12.64-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3-.1-2.71 0 0 .84-.28 2.75 1.05A9.2 9.2 0 0 1 12 7.16a9.2 9.2 0 0 1 2.5.35c1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.62c0 .27.18.6.69.49A10.24 10.24 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"
-                  ></path>
-                </svg>
-                GitHub
-              </a>
-            </div>
-          </div>
-
-          <p class="pc-sub">Python Dependency Analysis Tool</p>
-
-          <p class="pc-desc">
-            A Python CLI that maps project dependencies, reveals circular
-            architecture, and turns complex codebases into clear, explorable
-            dependency graphs.
-          </p>
-
-          <div class="pc-tags">
-            <span class="pc-tag">Python</span>
-            <span class="pc-tag">Dependency Mapping</span>
-            <span class="pc-tag">Cycle Detection</span>
-            <span class="pc-tag">CLI</span>
-          </div>
-
-          <ul class="pc-points">
-            <li>
-              Scan Python projects to see local, standard-library, third-party,
-              and unresolved dependencies in one graph.
-            </li>
-
-            <li>
-              Find every circular dependency and follow the exact cycle path,
-              with problem edges highlighted in generated reports.
-            </li>
-
-            <li>
-              Explore the architecture interactively in HTML, automate with
-              machine-readable JSON, or render the graph with DOT output.
-            </li>
-          </ul>
-        </div>
-
-        <div class="project-card">
-          <div class="pc-top">
-            <h3 class="pc-name">Placemate</h3>
-
-            <a
-              aria-label="Live demo"
-              class="pc-badge"
-              href="https://placemate-coral.vercel.app/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                viewbox="0 0 24 24"
-              >
-                <circle cx="12" cy="12" r="2"></circle>
-                <path
-                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
-                ></path>
-              </svg>
-              Live
-            </a>
-          </div>
-
-          <p class="pc-sub">Scalable Campus Recruitment Backend</p>
-
-          <p class="pc-desc">
-            A centralized campus recruitment system utilizing Django REST
-            Framework to automate placement workflows, manage production
-            configurations, and securely isolate user data.
-          </p>
-
-          <div class="pc-tags">
-            <span class="pc-tag">Django</span>
-            <span class="pc-tag">REST Framework</span>
-            <span class="pc-tag">PostgreSQL</span>
-            <span class="pc-tag">Cloudinary</span>
-            <span class="pc-tag">Render</span>
-          </div>
-
-          <ul class="pc-points">
-            <li>
-              Architected a scalable backend for a centralized campus
-              recruitment system using Django REST Framework, automating
-              placement workflows for administrators, companies, and students.
-            </li>
-
-            <li>
-              Implemented secure, stateless authentication using HTTP-only
-              cookies and JWTs to mitigate XSS vulnerabilities, coupled with a
-              robust Role-Based Access Control (RBAC) and object-level
-              permissions model.
-            </li>
-
-            <li>
-              Engineered a globally consistent API architecture by developing
-              custom middleware and BaseViewSets for unified JSON responses and
-              centralized exception handling.
-            </li>
-
-            <li>
-              Deployed the production-ready backend on Render, managing
-              environment configurations, securing database connectivity, and
-              integrating Cloudinary for optimized media storage.
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="education">
-        <h2 class="sec-label">education</h2>
-
-        <div class="edu-row">
-          <div class="edu-card">
-            <p class="edu-degree">M.Sc. Information Technology</p>
-
-            <p class="edu-school">DAIICT · Gandhinagar, India</p>
-
-            <p class="edu-year">2024 — 2026</p>
-          </div>
-
-          <div class="edu-card">
-            <p class="edu-degree">Bachelor of Computer Applications</p>
-
-            <p class="edu-school">GLS University · Ahmedabad, India</p>
-
-            <p class="edu-year">2021 — 2024</p>
+            <p class="section-description">
+              A few projects where the interesting part was the system behind
+              the product.
+            </p>
           </div>
         </div>
-      </section>
 
-      <section id="demos">
-        <h2 class="sec-label">demos</h2>
+        <div class="project-list">
+          <!-- RESUME RANKER -->
 
-        <div class="demos-grid">
-          <div
-            class="demo-card"
-            data-cta="GitHub"
-            data-desc="Python dependency analysis tool that maps project architecture, detects circular dependencies, and generates interactive HTML, JSON, and DOT reports."
-            data-href="https://github.com/Matricess/depcycle"
-            data-secondary-cta="PyPI"
-            data-secondary-href="https://pypi.org/project/depcycle/"
-            data-src="./messy-project.png"
-            data-title="DepCycle"
-            data-type="image"
-          >
-            <div class="demo-thumb">
-              <img
-                alt="DepCycle dependency graph showing a circular dependency"
-                loading="lazy"
-                src="./messy-project.png"
-              />
-            </div>
+          <article class="project-card reveal">
+            <div class="project-info">
+              <div>
+                <div class="project-top">
+                  <span class="project-number"> 01 </span>
 
-            <div class="demo-body">
-              <p class="demo-name">DepCycle</p>
+                  <span class="project-status"> LIVE </span>
+                </div>
 
-              <p class="demo-desc">
-                Python dependency analysis with circular dependency detection
-                and interactive graph reports.
-              </p>
+                <h3 class="project-name">Resume Ranker</h3>
 
-              <div class="demo-foot">
-                <a
-                  class="demo-cta"
-                  href="https://github.com/Matricess/depcycle"
-                  onclick="event.stopPropagation()"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  GitHub
+                <p class="project-kind">AI / BACKEND / gRPC</p>
 
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    viewbox="0 0 24 24"
+                <p class="project-description">
+                  Resume Ranker helps hiring teams review candidates faster by
+                  comparing resumes with job descriptions and turning
+                  unstructured experience into clear, evidence-backed match
+                  insights.
+                </p>
+
+                <ul class="project-points">
+                  <li>
+                    Compares candidate resumes with job requirements across
+                    skills, experience, education, and projects to surface the
+                    strongest matches.
+                  </li>
+
+                  <li>
+                    Connects match assessments to evidence from the original
+                    resume and job description, helping reviewers understand why
+                    a candidate was ranked.
+                  </li>
+
+                  <li>
+                    Transforms resumes and job descriptions into structured
+                    information so hiring teams can evaluate candidates
+                    consistently.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="project-bottom">
+                <div class="project-stack">
+                  <span>Python</span>
+                  <span>Streamlit</span>
+                  <span>gRPC</span>
+                  <span>Pydantic</span>
+                  <span>LLM</span>
+                </div>
+
+                <div class="project-actions">
+                  <a
+                    class="project-action"
+                    href="https://resumeranker.kishanthanki.space"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    referrerpolicy="no-referrer"
                   >
-                    <path
-                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                    ></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" x2="21" y1="14" y2="3"></line>
-                  </svg>
-                </a>
-
-                <a
-                  class="demo-cta"
-                  href="https://pypi.org/project/depcycle/"
-                  onclick="event.stopPropagation()"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  PyPI
-
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    viewbox="0 0 24 24"
-                  >
-                    <path
-                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                    ></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" x2="21" y1="14" y2="3"></line>
-                  </svg>
-                </a>
-
-                <span class="demo-lang">Python</span>
+                    live demo ↗
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div
-            class="demo-card"
-            data-cta="Invite"
-            data-desc="A multi-purpose Discord utility bot featuring custom welcome images, an advanced auto-moderation system, and a complete virtual economy with interactive mini-games."
-            data-href="https://discord.com/oauth2/authorize?client_id=1350135551939969114&amp;permissions=8&amp;integration_type=0&amp;scope=bot+applications.commands"
-            data-src="https://raw.githubusercontent.com/Kishan-Thanki/go-discord-ping/main/discord-bot-demo.mp4"
+          <!-- DEPCYCLE -->
+
+          <article class="project-card reveal">
+            <div class="project-info">
+              <div>
+                <div class="project-top">
+                  <span class="project-number"> 02 </span>
+
+                  <span class="project-status"> OPEN SOURCE </span>
+                </div>
+
+                <h3 class="project-name">DepCycle</h3>
+
+                <p class="project-kind">PYTHON / CLI / GRAPH ANALYSIS</p>
+
+                <p class="project-description">
+                  A Python CLI that maps project dependencies, reveals circular
+                  architecture, and turns complex codebases into clear,
+                  explorable dependency graphs.
+                </p>
+
+                <ul class="project-points">
+                  <li>
+                    Scans Python projects to show local, standard-library,
+                    third-party, and unresolved dependencies in one graph.
+                  </li>
+
+                  <li>
+                    Finds circular dependencies and shows the exact cycle path,
+                    with problematic edges highlighted in generated reports.
+                  </li>
+
+                  <li>
+                    Supports interactive HTML, machine-readable JSON, and DOT
+                    graph output.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="project-bottom">
+                <div class="project-stack">
+                  <span>Python</span>
+                  <span>Dependency Mapping</span>
+                  <span>Cycle Detection</span>
+                  <span>CLI</span>
+                </div>
+
+                <div class="project-actions">
+                  <a
+                    class="project-action"
+                    href="https://pypi.org/project/depcycle/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    referrerpolicy="no-referrer"
+                  >
+                    PyPI ↗
+                  </a>
+
+                  <a
+                    class="project-action"
+                    href="https://github.com/Matricess/depcycle"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    referrerpolicy="no-referrer"
+                  >
+                    GitHub ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PLACEMATE -->
+
+          <article class="project-card reveal">
+            <div class="project-info">
+              <div>
+                <div class="project-top">
+                  <span class="project-number"> 03 </span>
+
+                  <span class="project-status"> DEPLOYED </span>
+                </div>
+
+                <h3 class="project-name">Placemate</h3>
+
+                <p class="project-kind">DJANGO / REST / POSTGRESQL</p>
+
+                <p class="project-description">
+                  A centralized campus recruitment system using Django REST
+                  Framework to automate placement workflows, manage production
+                  configurations, and securely isolate user data.
+                </p>
+
+                <ul class="project-points">
+                  <li>
+                    Architected a backend for a centralized campus recruitment
+                    system using Django REST Framework.
+                  </li>
+
+                  <li>
+                    Implemented stateless authentication using HTTP-only cookies
+                    and JWTs with role-based and object-level permissions.
+                  </li>
+
+                  <li>
+                    Developed middleware and BaseViewSets for unified JSON
+                    responses and centralized exception handling.
+                  </li>
+
+                  <li>
+                    Deployed the production backend on Render and integrated
+                    Cloudinary for media storage.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="project-bottom">
+                <div class="project-stack">
+                  <span>Django</span>
+                  <span>REST Framework</span>
+                  <span>PostgreSQL</span>
+                  <span>Cloudinary</span>
+                  <span>Render</span>
+                </div>
+
+                <div class="project-actions">
+                  <a
+                    class="project-action"
+                    href="https://placemate-coral.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    referrerpolicy="no-referrer"
+                  >
+                    live demo ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- EXPERIMENTS -->
+
+      <section
+        class="section"
+        id="experiments"
+        aria-labelledby="experiments-title"
+      >
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" id="experiments-title">
+              Smaller things.
+            </h2>
+
+            <p class="section-description">
+              Side projects, utilities, and experiments that don't need a full
+              case study.
+            </p>
+          </div>
+        </div>
+
+        <div class="experiment-grid">
+          <!-- GO DISCORD PING -->
+
+          <article
+            class="experiment reveal"
             data-title="Go Discord Ping"
+            data-description="A Discord utility bot featuring welcome images, auto-moderation, a virtual economy, and interactive mini-games."
+            data-src="https://raw.githubusercontent.com/Kishan-Thanki/go-discord-ping/main/discord-bot-demo.mp4"
             data-type="video"
+            data-cta="Invite"
+            data-href="https://discord.com/oauth2/authorize?client_id=1350135551939969114&permissions=8&integration_type=0&scope=bot+applications.commands"
+            tabindex="0"
+            role="button"
+            aria-label="Open Go Discord Ping preview"
           >
-            <div class="demo-thumb">
+            <div class="experiment-media">
               <video
-                autoplay=""
-                loop=""
-                muted=""
-                playsinline=""
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="metadata"
                 src="https://raw.githubusercontent.com/Kishan-Thanki/go-discord-ping/main/discord-bot-demo.mp4"
               ></video>
             </div>
 
-            <div class="demo-body">
-              <p class="demo-name">Go Discord Ping</p>
+            <div class="experiment-body">
+              <span class="experiment-number"> 01 </span>
 
-              <p class="demo-desc">
-                Discord bot with welcome images, auto-moderation, and virtual
-                economy.
+              <h3 class="experiment-title">Go Discord Ping</h3>
+
+              <p class="experiment-description">
+                Discord bot with moderation, welcome images, economy, and
+                mini-games.
               </p>
 
-              <div class="demo-foot">
+              <div class="experiment-footer">
                 <a
-                  class="demo-cta"
-                  href="https://discord.com/oauth2/authorize?client_id=1350135551939969114"
-                  onclick="event.stopPropagation()"
-                  rel="noopener noreferrer"
+                  class="experiment-link"
+                  href="https://discord.com/oauth2/authorize?client_id=1350135551939969114&permissions=8&integration_type=0&scope=bot+applications.commands"
                   target="_blank"
+                  rel="noopener noreferrer"
+                  referrerpolicy="no-referrer"
+                  onclick="event.stopPropagation()"
                 >
-                  Invite
-
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    viewbox="0 0 24 24"
-                  >
-                    <path
-                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                    ></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" x2="21" y1="14" y2="3"></line>
-                  </svg>
+                  invite ↗
                 </a>
 
-                <span class="demo-lang"> Bot </span>
+                <span class="experiment-type"> GO </span>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div
-            class="demo-card"
-            data-cta="Live"
-            data-desc="AI-powered resume analysis platform with a Streamlit UI and Python gRPC analysis engine that evaluates candidate-to-job-description fit using traceable evidence."
-            data-href="https://resumeranker.kishanthanki.space"
-            data-src="/light.mov"
-            data-title="Resume Ranker"
-            data-type="video"
+          <!-- LOGREFRACT -->
+
+          <article
+            class="experiment reveal"
+            data-title="logrefract"
+            data-description="High-speed JSON log formatter and analyzer designed as a lightweight command-line utility."
+            data-src="https://raw.githubusercontent.com/Kishan-Thanki/logrefract/main/assets/demo.gif"
+            data-type="image"
+            data-cta="pkg.go.dev"
+            data-href="https://pkg.go.dev/github.com/kishan-thanki/logrefract"
+            tabindex="0"
+            role="button"
+            aria-label="Open logrefract preview"
           >
-            <div class="demo-thumb">
+            <div class="experiment-media">
+              <img
+                src="https://raw.githubusercontent.com/Kishan-Thanki/logrefract/main/assets/demo.gif"
+                alt="logrefract command-line JSON log formatter demonstration"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div class="experiment-body">
+              <span class="experiment-number"> 02 </span>
+
+              <h3 class="experiment-title">logrefract</h3>
+
+              <p class="experiment-description">
+                High-speed JSON log formatter and analyzer for the command line.
+              </p>
+
+              <div class="experiment-footer">
+                <a
+                  class="experiment-link"
+                  href="https://pkg.go.dev/github.com/kishan-thanki/logrefract"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  referrerpolicy="no-referrer"
+                  onclick="event.stopPropagation()"
+                >
+                  pkg.go.dev ↗
+                </a>
+
+                <span class="experiment-type"> GO / CLI </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- LINUX SERVER BASELINE -->
+
+          <article
+            class="experiment reveal"
+            data-title="Linux Server Baseline"
+            data-description="Ubuntu-focused Ansible baseline for repeatable server provisioning, security hardening, logging, auditing, and maintenance."
+            data-src="./card.gif"
+            data-type="image"
+            data-cta="GitHub"
+            data-href="https://github.com/Kishan-Thanki/linux-server-baseline"
+            tabindex="0"
+            role="button"
+            aria-label="Open Linux Server Baseline preview"
+          >
+            <div class="experiment-media">
+              <img
+                src="./card.gif"
+                alt="Linux Server Baseline Ansible provisioning demonstration"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div class="experiment-body">
+              <span class="experiment-number"> 03 </span>
+
+              <h3 class="experiment-title">Linux Server Baseline</h3>
+
+              <p class="experiment-description">
+                Repeatable Ubuntu provisioning, hardening, logging, and
+                maintenance.
+              </p>
+
+              <div class="experiment-footer">
+                <a
+                  class="experiment-link"
+                  href="https://github.com/Kishan-Thanki/linux-server-baseline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  referrerpolicy="no-referrer"
+                  onclick="event.stopPropagation()"
+                >
+                  GitHub ↗
+                </a>
+
+                <span class="experiment-type"> ANSIBLE </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- LOGGER -->
+
+          <article
+            class="experiment reveal"
+            data-title="logger"
+            data-description="Composable Go logging middleware for trace ID propagation, PII redaction, and HTTP telemetry built around the standard log/slog package."
+            data-src="https://opengraph.githubassets.com/1/Kishan-Thanki/logger"
+            data-type="image"
+            data-cta="pkg.go.dev"
+            data-href="https://pkg.go.dev/github.com/kishan-thanki/logger/v2"
+            tabindex="0"
+            role="button"
+            aria-label="Open logger preview"
+          >
+            <div class="experiment-media">
+              <img
+                src="https://opengraph.githubassets.com/1/Kishan-Thanki/logger"
+                alt="logger Go package project preview"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div class="experiment-body">
+              <span class="experiment-number"> 04 </span>
+
+              <h3 class="experiment-title">logger</h3>
+
+              <p class="experiment-description">
+                Go middleware for trace IDs, PII redaction, and HTTP telemetry.
+              </p>
+
+              <div class="experiment-footer">
+                <a
+                  class="experiment-link"
+                  href="https://pkg.go.dev/github.com/kishan-thanki/logger/v2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  referrerpolicy="no-referrer"
+                  onclick="event.stopPropagation()"
+                >
+                  pkg.go.dev ↗
+                </a>
+
+                <span class="experiment-type"> GO </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- DEPCYCLE -->
+
+          <article
+            class="experiment reveal"
+            data-title="DepCycle"
+            data-description="Python dependency analysis tool that maps project architecture, detects circular dependencies, and generates interactive HTML, JSON, and DOT reports."
+            data-href="https://github.com/Matricess/depcycle"
+            data-cta="GitHub"
+            data-secondary-cta="PyPI"
+            data-secondary-href="https://pypi.org/project/depcycle/"
+            data-src="./messy-project.png"
+            data-type="image"
+            tabindex="0"
+            role="button"
+            aria-label="Open DepCycle preview"
+          >
+            <div class="experiment-media">
+              <img
+                src="./messy-project.png"
+                alt="DepCycle dependency graph showing circular dependencies"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div class="experiment-body">
+              <span class="experiment-number"> 05 </span>
+
+              <h3 class="experiment-title">DepCycle</h3>
+
+              <p class="experiment-description">
+                Python dependency analysis with circular dependency detection
+                and interactive graph reports.
+              </p>
+
+              <div class="experiment-footer">
+                <a
+                  class="experiment-link"
+                  href="https://github.com/Matricess/depcycle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  referrerpolicy="no-referrer"
+                  onclick="event.stopPropagation()"
+                >
+                  GitHub ↗
+                </a>
+
+                <span class="experiment-type"> PYTHON </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- RESUME RANKER -->
+
+          <article
+            class="experiment reveal"
+            data-title="Resume Ranker"
+            data-description="AI-powered resume analysis platform with a Streamlit UI and Python gRPC analysis engine that evaluates candidate-to-job-description fit using traceable evidence."
+            data-href="https://resumeranker.kishanthanki.space"
+            data-cta="Live"
+            data-src="./light.mov"
+            data-type="video"
+            tabindex="0"
+            role="button"
+            aria-label="Open Resume Ranker preview"
+          >
+            <div class="experiment-media">
               <video
-                autoplay=""
-                loop=""
-                muted=""
-                playsinline=""
-                src="light.mov"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="metadata"
+                src="./light.mov"
               ></video>
             </div>
 
-            <div class="demo-body">
-              <p class="demo-name">Resume Ranker</p>
+            <div class="experiment-body">
+              <span class="experiment-number"> 06 </span>
 
-              <p class="demo-desc">
-                Resume Ranker helps hiring teams compare candidate resumes with
-                job descriptions and discover clear, evidence-backed match
-                insights faster.
+              <h3 class="experiment-title">Resume Ranker</h3>
+
+              <p class="experiment-description">
+                AI-powered resume analysis for evidence-backed candidate and
+                job-description matching.
               </p>
 
-              <div class="demo-foot">
+              <div class="experiment-footer">
                 <a
-                  class="demo-cta"
+                  class="experiment-link"
                   href="https://resumeranker.kishanthanki.space"
-                  onclick="event.stopPropagation()"
-                  rel="noopener noreferrer"
                   target="_blank"
-                  aria-label="Open Resume Ranker live demo"
+                  rel="noopener noreferrer"
+                  referrerpolicy="no-referrer"
+                  onclick="event.stopPropagation()"
                 >
-                  Live
-
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                    ></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" x2="21" y1="14" y2="3"></line>
-                  </svg>
+                  live ↗
                 </a>
 
-                <span class="demo-lang">AI</span>
+                <span class="experiment-type"> AI </span>
               </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+
+      <section class="section" id="education" aria-labelledby="education-title">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" id="education-title">Education.</h2>
+
+            <p class="section-description">The formal part of the journey.</p>
+          </div>
+        </div>
+
+        <div class="education-list">
+          <div class="education-item reveal">
+            <span class="education-year"> 2024 — 2026 </span>
+
+            <div>
+              <p class="education-degree">M.Sc. Information Technology</p>
+
+              <p class="education-school">DA-IICT</p>
             </div>
           </div>
 
-          <div
-            class="demo-card"
-            data-cta="pkg.go.dev"
-            data-desc="The Universal, High-Speed JSON Log Formatter, Analyzer &amp; Observer. A bare-metal CLI utility designed to process structured JSON logs with extreme efficiency."
-            data-href="https://pkg.go.dev/github.com/kishan-thanki/logrefract"
-            data-src="https://raw.githubusercontent.com/Kishan-Thanki/logrefract/main/assets/demo.gif"
-            data-title="logrefract"
-            data-type="image"
-          >
-            <div class="demo-thumb">
-              <img
-                alt="logrefract demo"
-                loading="lazy"
-                src="https://raw.githubusercontent.com/Kishan-Thanki/logrefract/main/assets/demo.gif"
-              />
-            </div>
+          <div class="education-item reveal">
+            <span class="education-year"> 2021 — 2024 </span>
 
-            <div class="demo-body">
-              <p class="demo-name">logrefract</p>
+            <div>
+              <p class="education-degree">Bachelor of Computer Applications</p>
 
-              <p class="demo-desc">
-                High-speed JSON log formatter and analyzer. Bare-metal CLI.
-              </p>
-
-              <div class="demo-foot">
-                <a
-                  class="demo-cta"
-                  href="https://pkg.go.dev/github.com/kishan-thanki/logrefract"
-                  onclick="event.stopPropagation()"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  pkg.go.dev
-
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    viewbox="0 0 24 24"
-                  >
-                    <path
-                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                    ></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" x2="21" y1="14" y2="3"></line>
-                  </svg>
-                </a>
-
-                <span class="demo-lang"> CLI </span>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="demo-card"
-            data-cta="GitHub"
-            data-desc="A reusable Ubuntu-focused Ansible server baseline for quick, repeatable provisioning, security, and maintenance. Includes SSH hardening, firewalld, Fail2ban, logging, auditing, kernel hardening, automatic security updates, swap, and operational tooling."
-            data-href="https://github.com/Kishan-Thanki/linux-server-baseline"
-            data-src="./card.gif"
-            data-title="Linux Server Baseline"
-            data-type="image"
-          >
-            <div class="demo-thumb">
-              <img
-                alt="Linux Server Baseline"
-                loading="lazy"
-                src="./card.gif"
-              />
-            </div>
-
-            <div class="demo-body">
-              <p class="demo-name">Linux Server Baseline</p>
-
-              <p class="demo-desc">
-                Ubuntu-focused Ansible baseline for quick, repeatable server
-                setup, security, and maintenance.
-              </p>
-
-              <div class="demo-foot">
-                <a
-                  class="demo-cta"
-                  href="https://github.com/Kishan-Thanki/linux-server-baseline"
-                  onclick="event.stopPropagation()"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  GitHub
-
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    viewbox="0 0 24 24"
-                  >
-                    <path
-                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                    ></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" x2="21" y1="14" y2="3"></line>
-                  </svg>
-                </a>
-
-                <span class="demo-lang">Ansible</span>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="demo-card"
-            data-cta="pkg.go.dev"
-            data-desc="Composable Go log middleware for trace ID propagation, PII redaction, and HTTP telemetry built on the standard log/slog package."
-            data-href="https://pkg.go.dev/github.com/kishan-thanki/logger/v2"
-            data-src="https://opengraph.githubassets.com/1/Kishan-Thanki/logger"
-            data-title="logger"
-            data-type="image"
-          >
-            <div class="demo-thumb">
-              <img
-                alt="logger Go package"
-                loading="lazy"
-                src="https://opengraph.githubassets.com/1/Kishan-Thanki/logger"
-              />
-            </div>
-
-            <div class="demo-body">
-              <p class="demo-name">logger</p>
-
-              <p class="demo-desc">
-                Go log middleware for trace IDs, PII redaction, and HTTP
-                telemetry.
-              </p>
-
-              <div class="demo-foot">
-                <a
-                  class="demo-cta"
-                  href="https://pkg.go.dev/github.com/kishan-thanki/logger/v2"
-                  onclick="event.stopPropagation()"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  pkg.go.dev
-
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    viewbox="0 0 24 24"
-                  >
-                    <path
-                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                    ></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" x2="21" y1="14" y2="3"></line>
-                  </svg>
-                </a>
-
-                <span class="demo-lang"> Go </span>
-              </div>
+              <p class="education-school">GLS University</p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- CONTACT -->
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-label"><span>06</span> / CONTACT</div>
+
+        <div>
+          <h2 id="contact-title">Have a backend problem worth solving?</h2>
+
+          <p>
+            I'm always interested in talking about backend development, systems,
+            infrastructure, developer tooling, or interesting technical
+            problems.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:kishanthankiat10@gmail.com"> email ↗ </a>
+
+            <a
+              href="https://github.com/Kishan-Thanki"
+              target="_blank"
+              rel="noopener noreferrer"
+              referrerpolicy="no-referrer"
+            >
+              github ↗
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/kishanthanki8/"
+              target="_blank"
+              rel="noopener noreferrer"
+              referrerpolicy="no-referrer"
+            >
+              linkedin ↗
+            </a>
+
+            <a href="resume.pdf" target="_blank" rel="noopener noreferrer">
+              resume ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+
       <footer>
         <span> © <span id="year"></span> Kishan Thanki </span>
 
-        <a href="#top"> back to top ↑ </a>
+        <a href="#home"> back to top ↑ </a>
       </footer>
     </main>
 
+    <!-- Floating Back To Top -->
+
+    <a
+      href="#home"
+      class="back-to-top"
+      id="back-to-top"
+      aria-label="Back to top"
+    >
+      ↑
+    </a>
+
+    <!-- Experiment Modal -->
+
     <div
-      aria-labelledby="modal-title"
-      aria-modal="true"
-      class="modal-overlay"
+      class="modal"
       id="modal"
       role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+      aria-hidden="true"
     >
-      <div class="modal-box">
-        <button aria-label="Close modal" class="modal-close" id="modal-close">
-          <svg
-            fill="none"
-            height="13"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2.5"
-            viewbox="0 0 24 24"
-            width="13"
-          >
-            <line x1="18" x2="6" y1="6" y2="18"></line>
-            <line x1="6" x2="18" y1="6" y2="18"></line>
-          </svg>
-        </button>
-
+      <div class="modal-box" role="document">
         <div class="modal-media" id="modal-media"></div>
 
         <div class="modal-info">
-          <p class="modal-title" id="modal-title"></p>
+          <button
+            class="modal-close"
+            id="modal-close"
+            type="button"
+            aria-label="Close experiment preview"
+          >
+            ×
+          </button>
 
-          <p class="modal-desc" id="modal-desc"></p>
+          <h2 class="modal-title" id="modal-title"></h2>
 
-          <div id="modal-links"></div>
+          <p class="modal-description" id="modal-description"></p>
+
+          <div class="modal-links" id="modal-links"></div>
         </div>
       </div>
     </div>
 
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
+      (() => {
+        "use strict";
 
-      document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.documentElement;
+        /* ---------------------------------------------
+           Year
+        --------------------------------------------- */
 
-        const dark = html.getAttribute("data-theme") === "dark";
+        const yearElement = document.getElementById("year");
 
-        dark
-          ? html.removeAttribute("data-theme")
-          : html.setAttribute("data-theme", "dark");
+        if (yearElement) {
+          yearElement.textContent = String(new Date().getFullYear());
+        }
 
-        localStorage.setItem("theme", dark ? "light" : "dark");
-      });
+        /* ---------------------------------------------
+           Theme
+        --------------------------------------------- */
 
-      const sections = document.querySelectorAll("section[id]");
+        function getPreferredTheme() {
+          try {
+            const saved = localStorage.getItem("theme");
 
-      const navLinks = document.querySelectorAll(".topnav-links a");
-
-      const obs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) {
-              return;
+            if (saved === "dark" || saved === "light") {
+              return saved;
             }
+          } catch (_) {}
 
-            navLinks.forEach((link) => {
-              link.classList.toggle(
-                "active",
-                link.getAttribute("href") === "#" + entry.target.id,
-              );
-            });
+          return window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+
+        function applyTheme(theme) {
+          if (theme === "dark") {
+            document.documentElement.dataset.theme = "dark";
+          } else {
+            delete document.documentElement.dataset.theme;
+          }
+        }
+
+        applyTheme(getPreferredTheme());
+
+        /* ---------------------------------------------
+           Navigation
+        --------------------------------------------- */
+
+        const sections = document.querySelectorAll("main section[id]");
+
+        const navLinks = document.querySelectorAll(".nav a[href^='#']");
+
+        if (
+          "IntersectionObserver" in window &&
+          sections.length &&
+          navLinks.length
+        ) {
+          const navigationObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                  return;
+                }
+
+                navLinks.forEach((link) => {
+                  const target = link.getAttribute("href");
+
+                  link.classList.toggle(
+                    "active",
+                    target === `#${entry.target.id}`,
+                  );
+                });
+              });
+            },
+            {
+              rootMargin: "-25% 0px -65% 0px",
+            },
+          );
+
+          sections.forEach((section) => {
+            navigationObserver.observe(section);
           });
-        },
-        {
-          rootMargin: "-20% 0px -70% 0px",
-        },
-      );
+        }
 
-      sections.forEach((section) => obs.observe(section));
+        /* ---------------------------------------------
+           Scroll reveal
+        --------------------------------------------- */
 
-      const modal = document.getElementById("modal");
+        const revealElements = document.querySelectorAll(".reveal");
 
-      const modalMedia = document.getElementById("modal-media");
+        if ("IntersectionObserver" in window && revealElements.length) {
+          const revealObserver = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                  return;
+                }
 
-      const modalTitle = document.getElementById("modal-title");
+                entry.target.classList.add("visible");
 
-      const modalDesc = document.getElementById("modal-desc");
+                observer.unobserve(entry.target);
+              });
+            },
+            {
+              threshold: 0.08,
+              rootMargin: "0px 0px -20px 0px",
+            },
+          );
 
-      const modalLinks = document.getElementById("modal-links");
+          revealElements.forEach((element) => {
+            revealObserver.observe(element);
+          });
+        } else {
+          revealElements.forEach((element) => {
+            element.classList.add("visible");
+          });
+        }
 
-      function openModal(card) {
-        const {
-          title,
-          desc,
-          src,
-          type,
-          href,
-          cta,
-          secondaryHref,
-          secondaryCta,
-        } = card.dataset;
+        /* ---------------------------------------------
+           Back to top
+        --------------------------------------------- */
 
-        modalTitle.textContent = title || "";
+        const backToTop = document.getElementById("back-to-top");
 
-        modalDesc.textContent = desc || "";
+        if (backToTop) {
+          let scrollTicking = false;
 
-        modalMedia.innerHTML =
-          type === "video"
-            ? `
-              <video
-                src="${src || ""}"
-                controls
-                autoplay
-                muted
-                playsinline
-                style="width:100%;height:100%;object-fit:contain;display:block;"
-              ></video>
-            `
-            : `
-              <img
-                src="${src || ""}"
-                alt="${title || ""}"
-                style="width:100%;height:100%;object-fit:contain;display:block;"
-              />
-            `;
+          const updateBackToTop = () => {
+            backToTop.classList.toggle("visible", window.scrollY > 400);
 
-        modalLinks.innerHTML = "";
+            scrollTicking = false;
+          };
 
-        [
-          { href, label: cta },
-          { href: secondaryHref, label: secondaryCta },
-        ].forEach(({ href: linkHref, label }) => {
-          if (!linkHref) {
-            return;
+          window.addEventListener(
+            "scroll",
+            () => {
+              if (scrollTicking) {
+                return;
+              }
+
+              scrollTicking = true;
+
+              window.requestAnimationFrame(updateBackToTop);
+            },
+            {
+              passive: true,
+            },
+          );
+
+          updateBackToTop();
+        }
+
+        /* ---------------------------------------------
+           Modal
+        --------------------------------------------- */
+
+        const modal = document.getElementById("modal");
+
+        const modalBox = modal?.querySelector(".modal-box");
+
+        const modalMedia = document.getElementById("modal-media");
+
+        const modalTitle = document.getElementById("modal-title");
+
+        const modalDescription = document.getElementById("modal-description");
+
+        const modalLinks = document.getElementById("modal-links");
+
+        const modalClose = document.getElementById("modal-close");
+
+        let lastFocusedElement = null;
+
+        function createSafeLink(href, label) {
+          if (typeof href !== "string" || !href) {
+            return null;
+          }
+
+          const isHttps = href.startsWith("https://");
+
+          if (!isHttps) {
+            return null;
           }
 
           const link = document.createElement("a");
 
-          link.className = "modal-link";
-
-          link.href = linkHref;
-
+          link.href = href;
           link.target = "_blank";
-
           link.rel = "noopener noreferrer";
+          link.referrerPolicy = "no-referrer";
 
-          link.textContent = label || "Open";
+          link.textContent = `${label || "open"} ↗`;
 
-          modalLinks.appendChild(link);
-        });
+          return link;
+        }
 
-        modal.classList.add("open");
-
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeModal() {
-        modal.classList.remove("open");
-
-        document.body.style.overflow = "";
-
-        setTimeout(() => {
-          modalMedia.innerHTML = "";
-
-          modalLinks.innerHTML = "";
-        }, 220);
-      }
-
-      document.querySelectorAll(".demo-card").forEach((card) => {
-        card.addEventListener("click", (event) => {
-          const target = event.target;
-
-          if (target instanceof Element && target.closest("a")) {
+        function clearModalMedia() {
+          if (!modalMedia) {
             return;
           }
 
-          openModal(card);
+          while (modalMedia.firstChild) {
+            const child = modalMedia.firstChild;
+
+            if (child instanceof HTMLVideoElement) {
+              child.pause();
+              child.removeAttribute("src");
+
+              try {
+                child.load();
+              } catch (_) {}
+            }
+
+            child.remove();
+          }
+
+          modalMedia.classList.remove("visible");
+        }
+
+        function loadModalMedia(src, type) {
+          clearModalMedia();
+
+          if (typeof src !== "string" || !src) {
+            return;
+          }
+
+          const isVideo = type === "video";
+
+          const allowed =
+            src.startsWith("https://") ||
+            src.startsWith("./") ||
+            src.startsWith("../");
+
+          if (!allowed) {
+            return;
+          }
+
+          let media;
+
+          if (isVideo) {
+            media = document.createElement("video");
+
+            media.controls = true;
+            media.autoplay = true;
+            media.muted = true;
+            media.playsInline = true;
+            media.preload = "metadata";
+          } else {
+            media = document.createElement("img");
+
+            media.alt = modalTitle?.textContent || "Experiment preview";
+
+            media.loading = "eager";
+            media.decoding = "async";
+          }
+
+          media.src = src;
+
+          modalMedia.appendChild(media);
+
+          modalMedia.classList.add("visible");
+
+          if (isVideo) {
+            media.play().catch(() => {});
+          }
+        }
+
+        function openModal(card) {
+          if (!modal || !modalTitle || !modalDescription || !modalLinks) {
+            return;
+          }
+
+          lastFocusedElement = document.activeElement;
+
+          const {
+            title,
+            description,
+            cta,
+            href,
+            secondaryCta,
+            secondaryHref,
+            src,
+            type,
+          } = card.dataset;
+
+          modalTitle.textContent = title || "";
+
+          modalDescription.textContent = description || "";
+
+          modalLinks.replaceChildren();
+
+          loadModalMedia(src, type);
+
+          const primary = createSafeLink(href, cta);
+
+          const secondary = createSafeLink(secondaryHref, secondaryCta);
+
+          if (primary) {
+            modalLinks.appendChild(primary);
+          }
+
+          if (secondary) {
+            modalLinks.appendChild(secondary);
+          }
+
+          modal.classList.add("open");
+
+          modal.setAttribute("aria-hidden", "false");
+
+          document.body.classList.add("modal-open");
+
+          if (modalBox) {
+            modalBox.scrollTop = 0;
+          }
+
+          modalClose?.focus();
+        }
+
+        function closeModal() {
+          if (!modal) {
+            return;
+          }
+
+          modal.classList.remove("open");
+
+          modal.setAttribute("aria-hidden", "true");
+
+          document.body.classList.remove("modal-open");
+
+          modalLinks?.replaceChildren();
+
+          clearModalMedia();
+
+          if (
+            lastFocusedElement &&
+            typeof lastFocusedElement.focus === "function"
+          ) {
+            lastFocusedElement.focus();
+          }
+
+          lastFocusedElement = null;
+        }
+
+        /*
+         * ONLY EXPERIMENTS receive click-to-open
+         * behavior.
+         *
+         * Project cards deliberately do NOT have
+         * this behavior.
+         */
+
+        document.querySelectorAll(".experiment").forEach((card) => {
+          card.addEventListener("click", (event) => {
+            if (event.target.closest("a")) {
+              return;
+            }
+
+            openModal(card);
+          });
+
+          card.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+
+              openModal(card);
+            }
+          });
         });
-      });
 
-      document
-        .getElementById("modal-close")
-        .addEventListener("click", closeModal);
+        modalClose?.addEventListener("click", closeModal);
 
-      modal.addEventListener("click", (event) => {
-        if (event.target === modal) {
-          closeModal();
-        }
-      });
+        modal?.addEventListener("click", (event) => {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
 
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && modal.classList.contains("open")) {
-          closeModal();
-        }
-      });
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && modal?.classList.contains("open")) {
+            closeModal();
+          }
+        });
+
+        /* ---------------------------------------------
+           Modal focus trap
+        --------------------------------------------- */
+
+        modal?.addEventListener("keydown", (event) => {
+          if (event.key !== "Tab") {
+            return;
+          }
+
+          const focusable = modal.querySelectorAll(
+            'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+          );
+
+          if (!focusable.length) {
+            return;
+          }
+
+          const first = focusable[0];
+
+          const last = focusable[focusable.length - 1];
+
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        });
+
+        /* ---------------------------------------------
+           System theme changes
+        --------------------------------------------- */
+
+        try {
+          const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+          mediaQuery.addEventListener("change", (event) => {
+            let hasSavedTheme = false;
+
+            try {
+              hasSavedTheme = Boolean(localStorage.getItem("theme"));
+            } catch (_) {}
+
+            if (!hasSavedTheme) {
+              applyTheme(event.matches ? "dark" : "light");
+            }
+          });
+        } catch (_) {}
+      })();
     </script>
   </body>
 </html>

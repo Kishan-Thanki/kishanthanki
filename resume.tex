@@ -61,8 +61,8 @@
 
 \titlespacing*{\section}
     {0pt}
-    {9pt}
-    {4pt}
+    {7pt}
+    {3pt}
 
 % ==========================================================
 % BULLETS
@@ -123,7 +123,7 @@
     \par\vspace{1.5pt}
     {\fontsize{10.5}{13}\selectfont
     \color{textgray}
-    Backend Engineer (Go \& Python) - working across DevOps \& AI}
+    Backend Developer | Python | DevOps | Cloud Infrastructure}
     \par\vspace{2.5pt}
     {\fontsize{10}{12}\selectfont
     \href{mailto:kishanthankiat10@gmail.com}{Email}
@@ -171,7 +171,7 @@ Bachelor of Computer Applications
 \section*{Experience}
 
 \datedentry
-    {Software Engineer Intern --- Oizom}
+    {Software Intern --- Oizom}
     {Jan 2026 -- Apr 2026}
 \vspace{1.5pt}
 {\fontsize{10}{12}\selectfont
@@ -180,9 +180,9 @@ Ahmedabad, India
 }
 \vspace{2pt}
 \begin{itemize}
-    \item Built \textbf{Envizom}, a dual-engine SVG charting library using \textbf{D3.js} and \textbf{TypeScript} for interactive client-side visualizations, alongside a pure \textbf{Go} implementation for generating static server-side reports and exports.
-    \item Designed a declarative, configuration-driven rendering API that ensured pixel-perfect SVG parity across the TypeScript frontend and Go backend using a shared rendering specification.
-    \item Engineered deterministic downsampling and data-reduction algorithms to efficiently render large time-series datasets while preserving visual fidelity and responsiveness.
+    \item Built a pure \textbf{Go} implementation of Envizom for server-side SVG report generation and exports, alongside the existing \textbf{TypeScript/D3.js} rendering engine.
+    \item Designed a shared declarative rendering specification to maintain \textbf{pixel-level visual parity} between client-side TypeScript and server-side Go implementations.
+    \item Implemented deterministic data-reduction and downsampling algorithms for large time-series datasets, and profiled rendering time and memory usage to identify performance bottlenecks.
 \end{itemize}
 
 % ==========================================================
@@ -199,13 +199,12 @@ Ahmedabad, India
     {\href{https://resumeranker.kishanthanki.space/}{Live}}
 \vspace{2pt}
 \begin{itemize}
-    \item Built an AI-powered candidate matching product that helps hiring teams compare resumes with job descriptions and identify evidence-backed matches across skills, experience, education, and projects.
-    \item Designed an evidence-grounded analysis workflow that links requirements and candidate claims to exact source text, producing transparent match insights instead of unsupported LLM judgments.
-    \item Architected a distributed product experience with a \textbf{Streamlit} dashboard communicating with a dedicated \textbf{Python} analysis engine through strongly typed \textbf{gRPC} and \textbf{Protobuf} contracts.
-    \item Implemented concurrent PDF processing, parallel job-description and resume extraction, retry and rate-limit handling, structured token telemetry, and schema-validated LLM responses with \textbf{Instructor} and \textbf{Pydantic}.
+    \item Built and deployed an AI-powered resume analysis platform that compares candidate resumes with job descriptions and produces structured, evidence-backed fit reports.
+    \item Architected independent \textbf{Python} services with a \textbf{Streamlit} dashboard communicating with an asynchronous analysis engine through strongly typed \textbf{gRPC/Protobuf} contracts.
+    \item Implemented provider-independent LLM integration, concurrent document processing, bounded execution, rate limiting, retries, cancellation handling, structured telemetry, and automated testing.
 \end{itemize}
 
-\vspace{4pt}
+\vspace{3pt}
 
 % ----------------------------------------------------------
 % DepCycle
@@ -216,12 +215,28 @@ Ahmedabad, India
     {\href{https://pypi.org/project/depcycle/}{PyPI} \quad \href{https://github.com/Matricess/depcycle}{GitHub}}
 \vspace{2pt}
 \begin{itemize}
-    \item Built a Python CLI that maps project dependencies, classifies local and external modules, and identifies circular architectural coupling.
-    \item Implemented safe import discovery with Python's \texttt{ast} module, resolving absolute, relative, and dotted imports without executing application code.
-    \item Generated interactive HTML reports with search, zoom, dependency highlighting, and cycle paths, alongside machine-readable JSON and DOT output for automation and further visualization.
+    \item Built and published a \textbf{Python CLI} for analyzing project dependencies, classifying local and external modules, and identifying circular architectural coupling.
+    \item Implemented safe import discovery using Python's \texttt{ast} module, resolving absolute, relative, and dotted imports without executing application code.
+    \item Generated interactive HTML dependency graphs and machine-readable \textbf{JSON/DOT} outputs for architecture exploration and automation.
 \end{itemize}
 
-\vspace{4pt}
+\vspace{3pt}
+
+% ----------------------------------------------------------
+% Linux Server Baseline
+% ----------------------------------------------------------
+\projectentry
+    {Linux Server Baseline}
+    {Ansible \textperiodcentered\ Ubuntu \textperiodcentered\ Linux}
+    {\href{https://github.com/Kishan-Thanki/linux-server-baseline}{GitHub}}
+\vspace{2pt}
+\begin{itemize}
+    \item Built a modular \textbf{Ansible} infrastructure-as-code baseline for repeatable \textbf{Ubuntu} server provisioning, security hardening, and system maintenance.
+    \item Automated least-privilege server access with dedicated \textbf{sysadmin}, \textbf{automation}, and non-privileged \textbf{deployer} identities, alongside hardened SSH, \textbf{firewalld}, and \textbf{Fail2ban}.
+    \item Implemented reusable, idempotent security roles covering \textbf{Auditd}, persistent journald logging, kernel/network \textbf{sysctl} hardening, automatic security updates, \textbf{Chrony}, and system monitoring.
+\end{itemize}
+
+\vspace{3pt}
 
 % ----------------------------------------------------------
 % Placemate
@@ -232,10 +247,8 @@ Ahmedabad, India
     {\href{https://placemate-coral.vercel.app/}{Live}}
 \vspace{2pt}
 \begin{itemize}
-    \item Built a scalable backend for a centralized campus recruitment platform using Django REST Framework, automating campus placement workflows.
-    \item Implemented secure JWT authentication with HTTP-only cookies, Role-Based Access Control (RBAC), and object-level permissions to enforce fine-grained authorization while mitigating XSS risks.
-    \item Designed reusable middleware and BaseViewSets to standardize API responses, centralize exception handling, and simplify endpoint development.
-    \item Deployed the backend on Render, configuring PostgreSQL, environment management, and Cloudinary integration for scalable media storage.
+    \item Built a Django REST Framework backend for a centralized campus recruitment platform, supporting placement workflows and role-specific operations.
+    \item Implemented secure JWT authentication with HTTP-only cookies, \textbf{RBAC}, and object-level permissions. Designed reusable middleware and BaseViewSets for standardized API responses and exception handling, then deployed with \textbf{PostgreSQL} and Cloudinary on Render.
 \end{itemize}
 
 % ==========================================================
@@ -243,15 +256,12 @@ Ahmedabad, India
 % ==========================================================
 \section*{Technical Skills}
 {\fontsize{10}{12}\selectfont
-\textbf{Languages:} Go, Python, SQL\par
-\vspace{2pt}
-\textbf{Frameworks:} FastAPI, Django REST Framework\par
-\vspace{2pt}
-\textbf{Cloud \& DevOps:} Linux, Docker, AWS (EC2, S3, IAM), Oracle Cloud\par
-\vspace{2pt}
-\textbf{Databases:} PostgreSQL, MySQL, Redis\par
-\vspace{2pt}
-\textbf{Tools:} Git, GitHub Actions, Terraform
+\textbf{Languages:} Python, Go
+\par\vspace{2pt}
+\textbf{Backend:} FastAPI, Django, Django REST Framework
+\par\vspace{2pt}
+\textbf{Cloud \& DevOps:} Linux, Docker, AWS (EC2, S3, IAM), Terraform, Ansible, GitHub Actions
+\par\vspace{2pt}
+\textbf{Databases \& Tools:} PostgreSQL, MySQL, Redis, Git
 }
-
 \end{document}
