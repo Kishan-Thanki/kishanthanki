@@ -14,7 +14,6 @@
 \usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage{enumitem}
-\usepackage{array}
 \usepackage{hyperref}
 \usepackage{bookmark}
 \usepackage{microtype}
@@ -207,7 +206,7 @@ Ahmedabad, India
 % ----------------------------------------------------------
 \projectentry
     {Resume Ranker}
-    {Python \textperiodcentered\ Streamlit \textperiodcentered\ gRPC \textperiodcentered\ Protobuf \textperiodcentered\ Docker \textperiodcentered\ LLMs}
+    {Python \textperiodcentered\ FastAPI \textperiodcentered\ Streamlit \textperiodcentered\ gRPC \textperiodcentered\ Protobuf \textperiodcentered\ Docker \textperiodcentered\ LLMs}
     {\href{https://resumeranker.kishanthanki.space/}{Live}}
 
 \vspace{2pt}
@@ -245,26 +244,6 @@ Ahmedabad, India
 \vspace{3pt}
 
 % ----------------------------------------------------------
-% Linux Server Baseline
-% ----------------------------------------------------------
-\projectentry
-    {Linux Server Baseline}
-    {Ansible \textperiodcentered\ Ubuntu \textperiodcentered\ Linux \textperiodcentered\ Security}
-    {\href{https://github.com/Kishan-Thanki/linux-server-baseline}{GitHub}}
-
-\vspace{2pt}
-
-\begin{itemize}
-    \item Built a modular, cloud-provider-agnostic \textbf{Ansible} infrastructure baseline for repeatable \textbf{Ubuntu} server provisioning, security hardening, and maintenance.
-
-    \item Automated server administration through reusable roles for \textbf{SSH hardening}, \textbf{firewalld}, Fail2ban, persistent journald logging, Auditd, Chrony, swap, system statistics, and automatic security updates.
-
-    \item Structured deployment with inventories, host/group variables, pinned Ansible collections, idempotent roles, and \textbf{check/diff} workflows for safer infrastructure changes.
-\end{itemize}
-
-\vspace{3pt}
-
-% ----------------------------------------------------------
 % Placemate
 % ----------------------------------------------------------
 \projectentry
@@ -282,24 +261,44 @@ Ahmedabad, India
     \item Deployed the application with \textbf{PostgreSQL} and Cloudinary on Render, integrating the backend with the full-stack application.
 \end{itemize}
 
+\vspace{3pt}
+
+% ----------------------------------------------------------
+% Linux Server Baseline
+% ----------------------------------------------------------
+\projectentry
+    {Linux Server Baseline}
+    {Ansible \textperiodcentered\ Ubuntu \textperiodcentered\ Linux \textperiodcentered\ Security}
+    {\href{https://github.com/kishan-thanki/linux-server-baseline}{GitHub}}
+
+\vspace{2pt}
+
+\begin{itemize}
+    \item Built a modular \textbf{Ansible} baseline for repeatable Ubuntu provisioning, security hardening, and maintenance across Linux servers.
+
+    \item Automated SSH hardening, firewalld, Fail2ban, journald, Auditd, Chrony, and security updates using idempotent configuration and reusable roles.
+
+    \item Structured the automation into reusable roles and configuration tasks to make server setup consistent, repeatable, and easier to maintain.
+\end{itemize}
+
 % ==========================================================
 % TECHNICAL SKILLS
 % ==========================================================
 \section*{Technical Skills}
 
-{\fontsize{10}{12}\selectfont
+{\fontsize{9.7}{11.2}\selectfont
 
 \textbf{Languages:} Python, Go
-\par\vspace{2pt}
-
-\textbf{Backend:} FastAPI, Django, Django REST Framework, gRPC, Protobuf
-\par\vspace{2pt}
-
+\par
+\textbf{Backend:} FastAPI, Django, Django REST Framework, gRPC, Protobuf, REST APIs
+\par
+\textbf{AI:} LLM Integration, Prompt Engineering
+\par
+\textbf{Databases:} PostgreSQL, MySQL, Redis
+\par
 \textbf{Cloud \& DevOps:} Linux, Docker, AWS (EC2, S3, IAM), Terraform, Ansible, GitHub Actions
-\par\vspace{2pt}
+\par
 
-\textbf{AI \& Data:} LLM Integration, Prompt Engineering, PostgreSQL, MySQL, Redis
-\par\vspace{2pt}
 }
 
 \end{document}

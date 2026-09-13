@@ -14,7 +14,6 @@
 \usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage{enumitem}
-\usepackage{array}
 \usepackage{hyperref}
 \usepackage{bookmark}
 \usepackage{microtype}
@@ -203,48 +202,6 @@ Ahmedabad, India
 \section*{Projects}
 
 % ----------------------------------------------------------
-% Resume Ranker
-% ----------------------------------------------------------
-\projectentry
-    {Resume Ranker}
-    {Python \textperiodcentered\ Streamlit \textperiodcentered\ gRPC \textperiodcentered\ Protobuf \textperiodcentered\ Docker \textperiodcentered\ LLMs}
-    {\href{https://resumeranker.kishanthanki.space/}{Live}}
-
-\vspace{2pt}
-
-\begin{itemize}
-    \item Built and deployed an AI-powered resume analysis platform that compares candidate resumes with job descriptions and generates structured, evidence-backed fit reports.
-
-    \item Architected independent \textbf{Python} services with a \textbf{Streamlit} interface communicating with an asynchronous analysis engine through strongly typed \textbf{gRPC/Protobuf} contracts.
-
-    \item Implemented concurrent document processing, bounded execution, rate limiting, retries, cancellation handling, structured telemetry, automated testing, and LLM-based analysis.
-\end{itemize}
-
-\vspace{3pt}
-
-% ----------------------------------------------------------
-% DepCycle
-% ----------------------------------------------------------
-\projectentry
-    {DepCycle}
-    {Python \textperiodcentered\ AST \textperiodcentered\ Static Analysis \textperiodcentered\ CLI}
-    {\href{https://pypi.org/project/depcycle/}{PyPI}
-    \quad
-    \href{https://github.com/Matricess/depcycle}{GitHub}}
-
-\vspace{2pt}
-
-\begin{itemize}
-    \item Built and published a \textbf{Python CLI} for analyzing project dependencies and identifying circular dependencies and architectural coupling.
-
-    \item Implemented safe import discovery using Python's \texttt{ast} module, resolving absolute, relative, and dotted imports without executing application code.
-
-    \item Generated interactive HTML dependency graphs and machine-readable \textbf{JSON/DOT} outputs for architecture analysis and automation.
-\end{itemize}
-
-\vspace{3pt}
-
-% ----------------------------------------------------------
 % Linux Server Baseline
 % ----------------------------------------------------------
 \projectentry
@@ -260,6 +217,46 @@ Ahmedabad, India
     \item Automated server administration through reusable roles for \textbf{SSH hardening}, \textbf{firewalld}, Fail2ban, persistent journald logging, Auditd, Chrony, swap, system statistics, and automatic security updates.
 
     \item Structured deployment with inventories, host/group variables, pinned Ansible collections, idempotent roles, and \textbf{check/diff} workflows for safer infrastructure changes.
+\end{itemize}
+
+\vspace{3pt}
+
+% ----------------------------------------------------------
+% LogRefract
+% ----------------------------------------------------------
+\projectentry
+    {LogRefract}
+    {Go \textperiodcentered\ CLI \textperiodcentered\ Observability \textperiodcentered\ JSON Logs}
+    {\href{https://github.com/Kishan-Thanki/logrefract}{GitHub}}
+
+\vspace{2pt}
+
+\begin{itemize}
+    \item Built a high-performance \textbf{Go CLI} for formatting, filtering, analyzing, and observing structured JSON logs from applications and infrastructure.
+
+    \item Implemented a byte-scanning engine and manual state machine designed for high-throughput log streams, with benchmarks exceeding \textbf{1M lines/second} on standard hardware.
+
+    \item Added production-oriented capabilities including status/time filtering, regex matching, sampling, contextual error inspection, trace highlighting, field mapping, and streaming analysis for \textbf{Docker/Kubernetes logs}.
+\end{itemize}
+
+\vspace{3pt}
+
+% ----------------------------------------------------------
+% Resume Ranker
+% ----------------------------------------------------------
+\projectentry
+    {Resume Ranker}
+    {Python \textperiodcentered\ Streamlit \textperiodcentered\ gRPC \textperiodcentered\ Protobuf \textperiodcentered\ Docker \textperiodcentered\ LLMs}
+    {\href{https://resumeranker.kishanthanki.space/}{Live}}
+
+\vspace{2pt}
+
+\begin{itemize}
+    \item Built and deployed an AI-powered resume analysis platform that compares candidate resumes with job descriptions and generates structured, evidence-backed fit reports.
+
+    \item Architected independent \textbf{Python} services with a \textbf{Streamlit} interface communicating with an asynchronous analysis engine through strongly typed \textbf{gRPC/Protobuf} contracts.
+
+    \item Implemented concurrent document processing, bounded execution, rate limiting, retries, cancellation handling, structured telemetry, automated testing, and LLM-based analysis.
 \end{itemize}
 
 \vspace{3pt}
@@ -290,16 +287,16 @@ Ahmedabad, India
 {\fontsize{10}{12}\selectfont
 
 \textbf{Languages:} Python, Go
-\par\vspace{2pt}
-
-\textbf{Backend:} FastAPI, Django, Django REST Framework, gRPC, Protobuf
-\par\vspace{2pt}
-
+\par
+\textbf{Backend:} FastAPI, Django, Django REST Framework, gRPC, Protobuf, REST APIs
+\par
+\textbf{AI:} LLM Integration, Prompt Engineering
+\par
+\textbf{Databases:} PostgreSQL, MySQL, Redis
+\par
 \textbf{Cloud \& DevOps:} Linux, Docker, AWS (EC2, S3, IAM), Terraform, Ansible, GitHub Actions
-\par\vspace{2pt}
+\par
 
-\textbf{AI \& Data:} LLM Integration, Prompt Engineering, PostgreSQL, MySQL, Redis
-\par\vspace{2pt}
 }
 
 \end{document}
