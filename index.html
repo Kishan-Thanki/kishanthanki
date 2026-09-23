@@ -10,12 +10,12 @@
 
     <meta
       name="description"
-      content="Kishan Thanki is a Software Engineer working on building reliable systems and scalable deployments."
+      content="Kishan Thanki is a Backend Engineer working on building reliable systems and scalable deployments."
     />
 
     <meta
       name="keywords"
-      content="Kishan Thanki, software engineer, backend engineer, devops engineer, backend development, APIs, microservices, Linux, Docker, CI/CD, cloud infrastructure, distributed systems, developer tooling"
+      content="Kishan Thanki, backend engineer, backend developer, Python developer, Go developer, backend development, APIs, microservices, Linux, Docker, CI/CD, cloud infrastructure, distributed systems, developer tooling"
     />
 
     <meta name="author" content="Kishan Thanki" />
@@ -46,7 +46,7 @@
       media="(prefers-color-scheme: dark)"
     />
 
-    <title>Kishan Thanki — Software Engineer</title>
+    <title>Kishan Thanki — Backend Engineer</title>
 
     <link rel="canonical" href="https://kishanthanki.space/" />
 
@@ -61,11 +61,11 @@
     <meta property="og:site_name" content="Kishan Thanki" />
     <meta property="og:locale" content="en_US" />
 
-    <meta property="og:title" content="Kishan Thanki — Software Engineer" />
+    <meta property="og:title" content="Kishan Thanki — Backend Engineer" />
 
     <meta
       property="og:description"
-      content="Software Engineer working on building reliable systems and scalable deployments."
+      content="Backend Engineer working on building reliable systems and scalable deployments."
     />
 
     <meta property="og:url" content="https://kishanthanki.space/" />
@@ -75,18 +75,18 @@
       content="https://kishanthanki.space/og-image.jpg"
     />
 
-    <meta property="og:image:alt" content="Kishan Thanki — Software Engineer" />
+    <meta property="og:image:alt" content="Kishan Thanki — Backend Engineer" />
 
     <meta property="og:image:type" content="image/jpeg" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
 
-    <meta name="twitter:title" content="Kishan Thanki — Software Engineer" />
+    <meta name="twitter:title" content="Kishan Thanki — Backend Engineer" />
 
     <meta
       name="twitter:description"
-      content="Software Engineer working on building reliable systems and scalable deployments."
+      content="Backend Engineer working on building reliable systems and scalable deployments."
     />
 
     <meta
@@ -94,10 +94,7 @@
       content="https://kishanthanki.space/og-image.jpg"
     />
 
-    <meta
-      name="twitter:image:alt"
-      content="Kishan Thanki — Software Engineer"
-    />
+    <meta name="twitter:image:alt" content="Kishan Thanki — Backend Engineer" />
 
     <!--
       Basic document-level CSP.
@@ -133,8 +130,8 @@
             "@id": "https://kishanthanki.space/#person",
             "name": "Kishan Thanki",
             "url": "https://kishanthanki.space/",
-            "jobTitle": "Software Engineer",
-            "description": "Software Engineer working on building reliable systems and scalable deployments.",
+            "jobTitle": "Backend Engineer",
+            "description": "Backend Engineer working on building reliable systems and scalable deployments.",
             "email": "mailto:kishanthankiat10@gmail.com",
             "sameAs": [
               "https://github.com/Kishan-Thanki",
@@ -142,15 +139,16 @@
               "https://www.upwork.com/freelancers/~01e40dde62c52c674f?mp_source=share"
             ],
             "knowsAbout": [
-              "Software Engineering",
               "Backend Development",
-              "DevOps",
+              "Python",
+              "Go",
               "REST APIs",
+              "gRPC",
               "System Architecture",
+              "Distributed Systems",
               "CI/CD Pipelines",
               "Containerization",
               "Cloud Infrastructure",
-              "Distributed Systems",
               "Database Management",
               "Linux Administration"
             ],
@@ -182,8 +180,8 @@
             "@type": "WebSite",
             "@id": "https://kishanthanki.space/#website",
             "url": "https://kishanthanki.space/",
-            "name": "Kishan Thanki — Software Engineer",
-            "description": "Personal portfolio of Kishan Thanki, a Software Engineer focused on backend development, DevOps, and cloud infrastructure.",
+            "name": "Kishan Thanki — Backend Engineer",
+            "description": "Personal portfolio of Kishan Thanki, a Backend Engineer working in Python and Go, focused on backend systems and the infrastructure they run on.",
             "publisher": {
               "@id": "https://kishanthanki.space/#person"
             },
@@ -947,18 +945,6 @@
 
       /* Certifications */
 
-      .cert-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-      }
-
-      @media (max-width: 580px) {
-        .cert-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
       .cert-card {
         display: flex;
         flex-direction: column;
@@ -977,6 +963,14 @@
           border-color 0.2s ease,
           transform 0.2s ease,
           background 0.2s ease;
+
+        /* width is derived from --cert-visible / --cert-gap, set on .cert-carousel below */
+        flex: 0 0
+          calc(
+            (100% - (var(--cert-visible) - 1) * var(--cert-gap)) /
+              var(--cert-visible)
+          );
+        box-sizing: border-box;
       }
 
       .cert-card:hover {
@@ -1020,6 +1014,51 @@
         color: var(--text-soft);
         margin: 0 0 14px;
         line-height: 1.5;
+      }
+
+      .cert-carousel {
+        /* ---- Tune the carousel here ---- */
+        --cert-scroll-duration: 18s; /* lower = faster, higher = slower */
+        --cert-scroll-direction: normal; /* normal = scrolls right→left, reverse = left→right */
+        --cert-visible: 2; /* how many cards show at once (desktop) */
+        --cert-gap: 1.5rem;
+
+        overflow: hidden;
+        width: 100%;
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 5%,
+          black 95%,
+          transparent
+        );
+        mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 5%,
+          black 95%,
+          transparent
+        );
+      }
+
+      .cert-track {
+        display: flex;
+        gap: var(--cert-gap);
+        width: max-content;
+        animation: cert-scroll var(--cert-scroll-duration) linear infinite;
+        animation-direction: var(--cert-scroll-direction);
+      }
+
+      /* Pause while hovered or keyboard-focused — delete this rule for a non-stop loop */
+      .cert-carousel:hover .cert-track,
+      .cert-carousel:focus-within .cert-track {
+        animation-play-state: paused;
+      }
+
+      @media (max-width: 580px) {
+        .cert-carousel {
+          --cert-visible: 1; /* one card at a time on small screens */
+        }
       }
 
       .cert-badge {
@@ -1465,7 +1504,14 @@
       .modal-links a:hover {
         text-decoration: underline;
       }
-
+      @keyframes cert-scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        } /* -50% because content is duplicated once */
+      }
       /* Responsive */
 
       @media (max-width: 900px) {
@@ -1697,12 +1743,12 @@
       <section class="hero" id="home" aria-labelledby="hero-title">
         <div>
           <h1 id="hero-title">
-            Software Engineer <br />
-            <em>Backend &amp; DevOps</em>
+            Backend<br />
+            <em> &nbsp;&nbsp;&nbsp;&nbsp; Engineer</em>
           </h1>
 
           <p class="hero-copy">
-            I’m Kishan, a <strong>Software Engineer</strong> working on building
+            I’m Kishan, a <strong>Backend Engineer</strong> working on building
             reliable systems and scalable deployments.
           </p>
 
@@ -1783,7 +1829,7 @@
 
         <div class="about-content reveal">
           <p class="about-text">
-            I'm a Software Engineer working on building reliable systems,
+            I'm a Backend Engineer working on building reliable systems,
             automation, and scalable deployments. My work tends to sit behind
             the scenes — the systems, infrastructure, and pipelines that need to
             keep working long after the demo is over.
@@ -2418,7 +2464,6 @@
       </section>
 
       <!-- CERTIFICATIONS -->
-
       <section
         class="section"
         id="certifications"
@@ -2429,36 +2474,47 @@
             <h2 class="section-title" id="certifications-title">
               Making it official.
             </h2>
-
             <p class="section-description">
               Certifications I've completed, with links to verify them.
             </p>
           </div>
         </div>
 
-        <div class="cert-grid">
-          <a
-            class="cert-card reveal"
-            href="./certificates/d17aae51-ab72-4cfb-81cb-51dc82bbf319.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="cert-card-header">
-              <span class="cert-card-title">
-                AWS Cloud Practitioner Essentials
-              </span>
-              <span class="cert-arrow">↗</span>
-            </div>
+        <div class="cert-carousel">
+          <div class="cert-track">
+            <!-- ORIGINAL CARDS -->
+            <a
+              class="cert-card reveal"
+              href="./certificates/d17aae51-ab72-4cfb-81cb-51dc82bbf319.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="cert-card-header">
+                <span class="cert-card-title"
+                  >AWS Cloud Practitioner Essentials</span
+                >
+                <span class="cert-arrow">↗</span>
+              </div>
+              <p class="cert-card-desc">AWS Training &amp; Certification</p>
+              <span class="cert-badge">View Certificate ↗</span>
+            </a>
 
-            <p class="cert-card-desc">AWS Training &amp; Certification</p>
-
-            <span class="cert-badge">View Certificate ↗</span>
-          </a>
-
-          <!--
-            To add another certificate, copy the card above and edit
-            the title, issuer/date line, and href.
-          -->
+            <a
+              class="cert-card reveal"
+              href="https://www.credly.com/badges/ae87a0ad-3529-420f-a379-086e57b72c4a/public_url"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="cert-card-header">
+                <span class="cert-card-title"
+                  >AWS Cloud Quest: Cloud Practitioner - Training Badge</span
+                >
+                <span class="cert-arrow">↗</span>
+              </div>
+              <p class="cert-card-desc">AWS Training &amp; Certification</p>
+              <span class="cert-badge">View Certificate ↗</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -2605,18 +2661,18 @@
 
           <div class="freelance-grid">
             <a
+              class="freelance-card"
               href="https://www.upwork.com/freelancers/~01e40dde62c52c674f?mp_source=share"
               target="_blank"
               rel="noopener noreferrer"
-              class="freelance-card"
             >
               <div class="freelance-card-header">
                 <span class="freelance-platform-name">Upwork</span>
                 <span class="freelance-arrow">↗</span>
               </div>
               <p class="freelance-card-desc">
-                Hire me for backend development, DevOps, infrastructure,
-                automation, or any interesting technical problems.
+                Hire me for backend development, infrastructure, automation, or
+                any interesting technical problem.
               </p>
               <span class="freelance-badge primary">View Upwork Profile ↗</span>
             </a>

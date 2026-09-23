@@ -5,10 +5,10 @@
 % PACKAGES
 % ==========================================================
 \usepackage[
-    top=0.48in,
-    bottom=0.55in,
-    left=0.55in,
-    right=0.55in
+    top=0.28in,
+    bottom=0.22in,
+    left=0.5in,
+    right=0.5in
 ]{geometry}
 \usepackage{fontspec}
 \usepackage{xcolor}
@@ -61,8 +61,8 @@
 
 \titlespacing*{\section}
     {0pt}
-    {7pt}
-    {3pt}
+    {5pt}
+    {2pt}
 
 % ==========================================================
 % BULLETS
@@ -70,8 +70,8 @@
 \setlist[itemize]{
     leftmargin=16pt,
     labelsep=4pt,
-    topsep=1.5pt,
-    itemsep=1.5pt,
+    topsep=1pt,
+    itemsep=1pt,
     parsep=0pt,
     partopsep=0pt
 }
@@ -120,12 +120,12 @@
 \begin{center}
     {\fontsize{24}{28}\selectfont
     \bfseries\color{accent} Kishan Thanki}
-    \par\vspace{1.5pt}
+    \par\vspace{1pt}
 
     {\fontsize{10.5}{13}\selectfont
     \color{textgray}
-    Software Engineer | Backend \& DevOps}
-    \par\vspace{2.5pt}
+    Backend Engineer}
+    \par\vspace{1.5pt}
 
     {\fontsize{10}{12}\selectfont
     \href{mailto:kishanthankiat10@gmail.com}{Email}
@@ -134,7 +134,7 @@
     \quad|\quad
     \href{https://github.com/kishan-thanki}{GitHub}
     \quad|\quad
-    \href{https://kishan-thanki.github.io/kishanthanki/}{Portfolio}
+    \href{https://kishanthanki.space/}{Portfolio}
     }
 \end{center}
 
@@ -147,7 +147,7 @@
     {Dhirubhai Ambani Institute of Information and Communication Technology}
     {2024 -- 2026}
 
-\vspace{1.5pt}
+\vspace{1pt}
 
 {\fontsize{10}{12}\selectfont
 \itshape\color{textgray}
@@ -156,13 +156,13 @@ M.Sc. Information Technology
 \textperiodcentered\ Gandhinagar, Gujarat
 }
 
-\vspace{4pt}
+\vspace{2pt}
 
 \datedentry
     {GLS University}
     {2021 -- 2024}
 
-\vspace{1.5pt}
+\vspace{1pt}
 
 {\fontsize{10}{12}\selectfont
 \itshape\color{textgray}
@@ -180,14 +180,14 @@ Bachelor of Computer Applications
     {Software Intern --- Oizom}
     {Jan 2026 -- Apr 2026}
 
-\vspace{1.5pt}
+\vspace{1pt}
 
 {\fontsize{10}{12}\selectfont
 \itshape\color{textgray}
 Ahmedabad, India
 }
 
-\vspace{2pt}
+\vspace{1pt}
 
 \begin{itemize}
     \item Built a production-ready \textbf{Go} implementation of Envizom for server-side SVG report generation and exports, complementing the existing \textbf{TypeScript/D3.js} rendering engine.
@@ -210,17 +210,37 @@ Ahmedabad, India
     {Python \textperiodcentered\ Streamlit \textperiodcentered\ gRPC \textperiodcentered\ Protobuf \textperiodcentered\ Docker \textperiodcentered\ LLMs}
     {\href{https://resumeranker.kishanthanki.space/}{Live}}
 
-\vspace{2pt}
+\vspace{1pt}
 
 \begin{itemize}
     \item Built and deployed an AI-powered resume analysis platform that compares candidate resumes with job descriptions and generates structured, evidence-backed fit reports.
 
     \item Architected independent \textbf{Python} services with a \textbf{Streamlit} interface communicating with an asynchronous analysis engine through strongly typed \textbf{gRPC/Protobuf} contracts.
 
-    \item Implemented concurrent document processing, bounded execution, rate limiting, retries, cancellation handling, structured telemetry, automated testing, and LLM-based analysis.
+    \item Implemented concurrent document processing, bounded execution, rate limiting, retries, cancellation handling, structured telemetry, and automated testing.
 \end{itemize}
 
-\vspace{3pt}
+\vspace{1pt}
+
+% ----------------------------------------------------------
+% Placemate
+% ----------------------------------------------------------
+\projectentry
+    {Placemate}
+    {Django \textperiodcentered\ DRF \textperiodcentered\ PostgreSQL \textperiodcentered\ Cloudinary \textperiodcentered\ Render}
+    {\href{https://placemate-coral.vercel.app/}{Live}}
+
+\vspace{1pt}
+
+\begin{itemize}
+    \item Built a \textbf{Django REST Framework} backend for a centralized campus recruitment platform supporting placement workflows and role-specific operations.
+
+    \item Implemented JWT authentication with HTTP-only cookies, \textbf{RBAC}, and object-level permissions, with reusable middleware and BaseViewSets for consistent API responses.
+
+    \item Deployed the application with \textbf{PostgreSQL} and Cloudinary on Render, integrating the backend with the full-stack application.
+\end{itemize}
+
+\vspace{1pt}
 
 % ----------------------------------------------------------
 % DepCycle
@@ -232,7 +252,7 @@ Ahmedabad, India
     \quad
     \href{https://github.com/Matricess/depcycle}{GitHub}}
 
-\vspace{2pt}
+\vspace{1pt}
 
 \begin{itemize}
     \item Built and published a \textbf{Python CLI} for analyzing project dependencies and identifying circular dependencies and architectural coupling.
@@ -242,7 +262,7 @@ Ahmedabad, India
     \item Generated interactive HTML dependency graphs and machine-readable \textbf{JSON/DOT} outputs for architecture analysis and automation.
 \end{itemize}
 
-\vspace{3pt}
+\vspace{1pt}
 
 % ----------------------------------------------------------
 % Linux Server Baseline
@@ -252,34 +272,14 @@ Ahmedabad, India
     {Ansible \textperiodcentered\ Ubuntu \textperiodcentered\ Linux \textperiodcentered\ Security}
     {\href{https://github.com/Kishan-Thanki/linux-server-baseline}{GitHub}}
 
-\vspace{2pt}
+\vspace{1pt}
 
 \begin{itemize}
     \item Built a modular, cloud-provider-agnostic \textbf{Ansible} infrastructure baseline for repeatable \textbf{Ubuntu} server provisioning, security hardening, and maintenance.
 
-    \item Automated server administration through reusable roles for \textbf{SSH hardening}, \textbf{firewalld}, Fail2ban, persistent journald logging, Auditd, Chrony, swap, system statistics, and automatic security updates.
+    \item Automated server administration through reusable roles for \textbf{SSH hardening}, \textbf{firewalld}, Fail2ban, persistent journald logging, Auditd, Chrony, and automatic security updates.
 
     \item Structured deployment with inventories, host/group variables, pinned Ansible collections, idempotent roles, and \textbf{check/diff} workflows for safer infrastructure changes.
-\end{itemize}
-
-\vspace{3pt}
-
-% ----------------------------------------------------------
-% Placemate
-% ----------------------------------------------------------
-\projectentry
-    {Placemate}
-    {Django \textperiodcentered\ DRF \textperiodcentered\ PostgreSQL \textperiodcentered\ Cloudinary \textperiodcentered\ Render}
-    {\href{https://placemate-coral.vercel.app/}{Live}}
-
-\vspace{2pt}
-
-\begin{itemize}
-    \item Built a \textbf{Django REST Framework} backend for a centralized campus recruitment platform supporting placement workflows and role-specific operations.
-
-    \item Implemented JWT authentication with HTTP-only cookies, \textbf{RBAC}, and object-level permissions, with reusable middleware and BaseViewSets for consistent API responses and exception handling.
-
-    \item Deployed the application with \textbf{PostgreSQL} and Cloudinary on Render, integrating the backend with the full-stack application.
 \end{itemize}
 
 % ==========================================================
@@ -287,19 +287,17 @@ Ahmedabad, India
 % ==========================================================
 \section*{Technical Skills}
 
-{\fontsize{10}{12}\selectfont
+{\fontsize{9.7}{11.2}\selectfont
 
 \textbf{Languages:} Python, Go
-\par\vspace{2pt}
-
-\textbf{Backend:} FastAPI, Django, Django REST Framework, gRPC, Protobuf
-\par\vspace{2pt}
-
+\par
+\textbf{Backend:} FastAPI, Django, Django REST Framework, gRPC, Protobuf, REST APIs, LLM Integration
+\par
+\textbf{Databases:} PostgreSQL, MySQL, Redis
+\par
 \textbf{Cloud \& DevOps:} Linux, Docker, AWS (EC2, S3, IAM), Terraform, Ansible, GitHub Actions
-\par\vspace{2pt}
+\par
 
-\textbf{AI \& Data:} LLM Integration, Prompt Engineering, PostgreSQL, MySQL, Redis
-\par\vspace{2pt}
 }
 
 \end{document}
