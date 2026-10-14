@@ -5,10 +5,10 @@
 % PACKAGES
 % ==========================================================
 \usepackage[
-    top=0.28in,
-    bottom=0.22in,
-    left=0.5in,
-    right=0.5in
+    top=0.36in,
+    bottom=0.32in,
+    left=0.55in,
+    right=0.55in
 ]{geometry}
 \usepackage{fontspec}
 \usepackage{xcolor}
@@ -37,8 +37,12 @@
 \hypersetup{
     colorlinks=true,
     urlcolor=linkblue,
-    linkcolor=linkblue
+    linkcolor=linkblue,
+    pdftitle={Kishan Thanki - Backend Engineer Resume},
+    pdfauthor={Kishan Thanki}
 }
+
+\urlstyle{same}
 
 % ==========================================================
 % PAGE
@@ -53,7 +57,7 @@
 % ==========================================================
 \titleformat
     {\section}
-    {\fontsize{10.5}{12}\selectfont\bfseries\color{accent}}
+    {\fontsize{11}{12.5}\selectfont\bfseries\color{accent}}
     {}
     {0pt}
     {\MakeUppercase}
@@ -61,8 +65,8 @@
 
 \titlespacing*{\section}
     {0pt}
-    {5pt}
-    {2pt}
+    {14pt}
+    {3pt}
 
 % ==========================================================
 % BULLETS
@@ -70,8 +74,8 @@
 \setlist[itemize]{
     leftmargin=16pt,
     labelsep=4pt,
-    topsep=1pt,
-    itemsep=1pt,
+    topsep=1.2pt,
+    itemsep=1.5pt,
     parsep=0pt,
     partopsep=0pt
 }
@@ -79,30 +83,34 @@
 % ==========================================================
 % ENTRY HELPERS
 % ==========================================================
+
+\newcommand{\bulletsep}{\hspace{0.35em}\textbullet\hspace{0.35em}}
+
 \newcommand{\datedentry}[2]{%
     \noindent
-    \begin{minipage}[t]{0.72\linewidth}
-        \raggedright
-        \textbf{#1}
-    \end{minipage}%
-    \hfill
-    \begin{minipage}[t]{0.25\linewidth}
-        \raggedleft
-        \textit{\color{textgray}#2}
-    \end{minipage}%
-    \par
+    \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+        \textbf{#1} & \textit{\color{textgray}#2}
+    \end{tabular*}%
+}
+
+\newcommand{\datedentrywithsub}[3]{%
+    \noindent
+    \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+        \textbf{#1} & \textit{\color{textgray}#2} \\
+        {\itshape\color{textgray}\fontsize{10}{12}\selectfont #3} & \\[-1.5pt]
+    \end{tabular*}%
 }
 
 \newcommand{\projectentry}[3]{%
     \noindent
-    \begin{minipage}[t]{0.62\linewidth}
+    \begin{minipage}[t]{0.66\linewidth}
         \raggedright
         \textbf{#1}
         \hspace{0.7em}
         \textit{\color{textgray}#2}
     \end{minipage}%
     \hfill
-    \begin{minipage}[t]{0.34\linewidth}
+    \begin{minipage}[t]{0.30\linewidth}
         \raggedleft
         \itshape\color{textgray}#3
     \end{minipage}%
@@ -114,27 +122,29 @@
 % ==========================================================
 \begin{document}
 
+\fontsize{10}{12.4}\selectfont
+
 % ==========================================================
 % HEADER
 % ==========================================================
 \begin{center}
-    {\fontsize{24}{28}\selectfont
+    {\fontsize{25}{29}\selectfont
     \bfseries\color{accent} Kishan Thanki}
-    \par\vspace{1pt}
+    \par\vspace{2pt}
 
-    {\fontsize{10.5}{13}\selectfont
+    {\fontsize{11}{13.5}\selectfont
     \color{textgray}
     Backend Engineer}
-    \par\vspace{1.5pt}
+    \par\vspace{2pt}
 
-    {\fontsize{10}{12}\selectfont
+    {\fontsize{10.3}{12.2}\selectfont
     \href{mailto:kishanthankiat10@gmail.com}{Email}
     \quad|\quad
     \href{https://www.linkedin.com/in/kishanthanki8}{LinkedIn}
     \quad|\quad
     \href{https://github.com/kishan-thanki}{GitHub}
     \quad|\quad
-    \href{https://kishanthanki.space/}{Portfolio}
+    \href{https://kishan-thanki.github.io/kishanthanki/}{Portfolio}
     }
 \end{center}
 
@@ -143,58 +153,42 @@
 % ==========================================================
 \section*{Education}
 
-\datedentry
+\datedentrywithsub
     {Dhirubhai Ambani Institute of Information and Communication Technology}
     {2024 -- 2026}
+    {M.Sc. Information Technology
+    \bulletsep GPA: 7.23/10
+    \bulletsep Gandhinagar, Gujarat}
 
-\vspace{1pt}
+\vspace{3pt}
 
-{\fontsize{10}{12}\selectfont
-\itshape\color{textgray}
-M.Sc. Information Technology
-\textperiodcentered\ GPA: 7.23/10
-\textperiodcentered\ Gandhinagar, Gujarat
-}
-
-\vspace{2pt}
-
-\datedentry
+\datedentrywithsub
     {GLS University}
     {2021 -- 2024}
-
-\vspace{1pt}
-
-{\fontsize{10}{12}\selectfont
-\itshape\color{textgray}
-Bachelor of Computer Applications
-\textperiodcentered\ GPA: 8.24/10
-\textperiodcentered\ Ahmedabad, Gujarat
-}
+    {Bachelor of Computer Applications
+    \bulletsep GPA: 8.24/10
+    \bulletsep Ahmedabad, Gujarat}
 
 % ==========================================================
 % EXPERIENCE
 % ==========================================================
 \section*{Experience}
 
-\datedentry
+\datedentrywithsub
     {Software Intern --- Oizom}
     {Jan 2026 -- Apr 2026}
-
-\vspace{1pt}
-
-{\fontsize{10}{12}\selectfont
-\itshape\color{textgray}
-Ahmedabad, India
-}
+    {Ahmedabad, India}
 
 \vspace{1pt}
 
 \begin{itemize}
-    \item Built a production-ready \textbf{Go} implementation of Envizom for server-side SVG report generation and exports, complementing the existing \textbf{TypeScript/D3.js} rendering engine.
 
-    \item Designed a shared declarative rendering specification to achieve \textbf{pixel-level visual parity} between client-side TypeScript and server-side Go renderers.
+    \item Built and integrated a production-ready \textbf{Go} implementation of Envizom for server-side SVG report generation and exports, extending an existing \textbf{TypeScript/D3.js} rendering system.
 
-    \item Implemented deterministic data-reduction and downsampling algorithms for large time-series datasets, and profiled rendering time and memory usage to identify performance bottlenecks.
+    \item Designed a shared declarative rendering specification consumed by both Go and TypeScript implementations, maintaining \textbf{pixel-level visual parity} while avoiding duplicated rendering logic.
+
+    \item Implemented deterministic time-series data reduction and downsampling for large datasets, using CPU and memory profiling to identify rendering bottlenecks and guide optimization.
+
 \end{itemize}
 
 % ==========================================================
@@ -203,51 +197,58 @@ Ahmedabad, India
 \section*{Projects}
 
 % ----------------------------------------------------------
-% Resume Ranker
+% ResumeRanker
 % ----------------------------------------------------------
 \projectentry
-    {Resume Ranker}
-    {Python \textperiodcentered\ Streamlit \textperiodcentered\ gRPC \textperiodcentered\ Protobuf \textperiodcentered\ Docker \textperiodcentered\ LLMs}
-    {\href{https://resumeranker.kishanthanki.space/}{Live}}
+    {ResumeRanker}
+    {Python \textperiodcentered\ gRPC \textperiodcentered\ Protobuf \textperiodcentered\ Docker}
+    {\href{https://resumeranker.kishanthanki.space/}{Live}
+    \quad
+    \href{https://github.com/Kishan-Thanki/ResumeRanker}{GitHub}}
 
 \vspace{1pt}
 
 \begin{itemize}
-    \item Built and deployed an AI-powered resume analysis platform that compares candidate resumes with job descriptions and generates structured, evidence-backed fit reports.
 
-    \item Architected independent \textbf{Python} services with a \textbf{Streamlit} interface communicating with an asynchronous analysis engine through strongly typed \textbf{gRPC/Protobuf} contracts.
+    \item Built and deployed an evidence-based hiring intelligence tool that compares resumes with job descriptions and produces structured fit assessments with supporting evidence, skill gaps, and experience alignment.
 
-    \item Implemented concurrent document processing, bounded execution, rate limiting, retries, cancellation handling, structured telemetry, and automated testing.
+    \item Architected a \textbf{Streamlit} dashboard over an independent analysis backend using typed \textbf{gRPC/Protobuf} contracts, with a reverse-proxy layer for secure public routing.
+
+    \item Structured the analysis pipeline around modular extraction, requirement matching, scoring, and evidence generation, keeping the service extensible and independently testable.
+
 \end{itemize}
 
-\vspace{1pt}
+\vspace{2pt}
 
-% ----------------------------------------------------------
-% Placemate
-% ----------------------------------------------------------
 \projectentry
-    {Placemate}
-    {Django \textperiodcentered\ DRF \textperiodcentered\ PostgreSQL \textperiodcentered\ Cloudinary \textperiodcentered\ Render}
-    {\href{https://placemate-coral.vercel.app/}{Live}}
+    {Proofrun}
+    {Python \textperiodcentered\ asyncio \textperiodcentered\ Docker \textperiodcentered\ Prometheus}
+    {\href{https://pypi.org/project/proofrun/}{PyPI}
+    \quad
+    \href{https://github.com/Kishan-Thanki/proofrun}{GitHub}}
 
 \vspace{1pt}
 
 \begin{itemize}
-    \item Built a \textbf{Django REST Framework} backend for a centralized campus recruitment platform supporting placement workflows and role-specific operations.
 
-    \item Implemented JWT authentication with HTTP-only cookies, \textbf{RBAC}, and object-level permissions, with reusable middleware and BaseViewSets for consistent API responses.
+    \item Built and published \textbf{Proofrun} on PyPI, a self-hosted API monitor that checks whether a complete user journey works (log in, reuse the token, fetch data), not just whether one endpoint returns 200.
 
-    \item Deployed the application with \textbf{PostgreSQL} and Cloudinary on Render, integrating the backend with the full-stack application.
+    \item Workflows are plain YAML in Git; they run locally, in CI, or as a daemon, and failures name the exact step.
+
+    \item Designed an \textbf{asyncio} daemon with per-scenario schedules, retries, and failure thresholds so alerts fire only when health changes; config hot-reloads and keeps the last working version.
+
+    \item Deployment-ready: env-var secrets, Prometheus-format metrics, a non-root \textbf{Docker} image, and a hardened \textbf{\mbox{systemd}} unit; 286 tests at 100\% coverage and CI/CD with PyPI trusted publishing.
+
 \end{itemize}
 
-\vspace{1pt}
+\vspace{2pt}
 
 % ----------------------------------------------------------
 % DepCycle
 % ----------------------------------------------------------
 \projectentry
     {DepCycle}
-    {Python \textperiodcentered\ AST \textperiodcentered\ Static Analysis \textperiodcentered\ CLI}
+    {Python \textperiodcentered\ AST \textperiodcentered\ Static Analysis \textperiodcentered\ Graphviz}
     {\href{https://pypi.org/project/depcycle/}{PyPI}
     \quad
     \href{https://github.com/Matricess/depcycle}{GitHub}}
@@ -255,48 +256,33 @@ Ahmedabad, India
 \vspace{1pt}
 
 \begin{itemize}
-    \item Built and published a \textbf{Python CLI} for analyzing project dependencies and identifying circular dependencies and architectural coupling.
 
-    \item Implemented safe import discovery using Python's \texttt{ast} module, resolving absolute, relative, and dotted imports without executing application code.
+    \item Built and published a \textbf{Python CLI} that statically analyzes project dependencies, detects circular imports, and maps architectural coupling across codebases.
 
-    \item Generated interactive HTML dependency graphs and machine-readable \textbf{JSON/DOT} outputs for architecture analysis and automation.
-\end{itemize}
+    \item Implemented AST-based import discovery and resolution for absolute, relative, and dotted imports without executing application code, ignoring type-checking blocks.
 
-\vspace{1pt}
+    \item Added graph filtering to classify local, standard-library, and third-party modules, with a CLI JSON inspection interface for querying specific module dependencies and cycles.
 
-% ----------------------------------------------------------
-% Linux Server Baseline
-% ----------------------------------------------------------
-\projectentry
-    {Linux Server Baseline}
-    {Ansible \textperiodcentered\ Ubuntu \textperiodcentered\ Linux \textperiodcentered\ Security}
-    {\href{https://github.com/Kishan-Thanki/linux-server-baseline}{GitHub}}
+    \item Engineered multiple report generators (interactive HTML with D3/ELK, JSON, and Graphviz DOT), accompanied by a comprehensive test suite (97\% coverage) and automated CI/CD releases.
 
-\vspace{1pt}
-
-\begin{itemize}
-    \item Built a modular, cloud-provider-agnostic \textbf{Ansible} infrastructure baseline for repeatable \textbf{Ubuntu} server provisioning, security hardening, and maintenance.
-
-    \item Automated server administration through reusable roles for \textbf{SSH hardening}, \textbf{firewalld}, Fail2ban, persistent journald logging, Auditd, Chrony, and automatic security updates.
-
-    \item Structured deployment with inventories, host/group variables, pinned Ansible collections, idempotent roles, and \textbf{check/diff} workflows for safer infrastructure changes.
 \end{itemize}
 
 % ==========================================================
-% TECHNICAL SKILLS
+% SKILLS
 % ==========================================================
-\section*{Technical Skills}
+\section*{Skills}
 
-{\fontsize{9.7}{11.2}\selectfont
+{\fontsize{10.3}{12.2}\selectfont
 
 \textbf{Languages:} Python, Go
 \par
-\textbf{Backend:} FastAPI, Django, Django REST Framework, gRPC, Protobuf, REST APIs, LLM Integration
+\textbf{Backend:} FastAPI, Django, Django REST Framework, REST APIs, gRPC, Protobuf
 \par
 \textbf{Databases:} PostgreSQL, MySQL, Redis
 \par
-\textbf{Cloud \& DevOps:} Linux, Docker, AWS (EC2, S3, IAM), Terraform, Ansible, GitHub Actions
+\textbf{Infrastructure:} Linux, systemd, Docker, AWS (EC2, S3, IAM), Terraform, Ansible, GitHub Actions
 \par
+\textbf{Engineering:} Distributed Services, Concurrency, Observability, Static Analysis, Authentication/RBAC
 
 }
 
