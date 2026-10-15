@@ -212,17 +212,22 @@
 
     \item Built and deployed an evidence-based hiring intelligence tool that compares resumes with job descriptions and produces structured fit assessments with supporting evidence, skill gaps, and experience alignment.
 
-    \item Architected a \textbf{Streamlit} dashboard over an independent analysis backend using typed \textbf{gRPC/Protobuf} contracts, with a reverse-proxy layer for secure public routing.
+    \item Architected a \textbf{Streamlit} dashboard over an independent analysis backend using typed \textbf{gRPC/Protobuf} contracts, with a Caddy reverse proxy for secure public routing.
 
     \item Structured the analysis pipeline around modular extraction, requirement matching, scoring, and evidence generation, keeping the service extensible and independently testable.
+
+    \item Containerized the full stack with \textbf{Docker Compose} and enforced code quality with pre-commit hooks across 100+ commits.
 
 \end{itemize}
 
 \vspace{2pt}
 
+% ----------------------------------------------------------
+% Proofrun
+% ----------------------------------------------------------
 \projectentry
     {Proofrun}
-    {Python \textperiodcentered\ asyncio \textperiodcentered\ Docker \textperiodcentered\ Prometheus}
+    {Python \textperiodcentered\ asyncio \textperiodcentered\ Docker \textperiodcentered}
     {\href{https://pypi.org/project/proofrun/}{PyPI}
     \quad
     \href{https://github.com/Kishan-Thanki/proofrun}{GitHub}}
@@ -231,13 +236,13 @@
 
 \begin{itemize}
 
-    \item Built and published \textbf{Proofrun} on PyPI, a self-hosted API monitor that checks whether a complete user journey works (log in, reuse the token, fetch data), not just whether one endpoint returns 200.
+    \item Built and published \textbf{Proofrun} on PyPI, a self-hosted API monitor that verifies a complete user journey works (log in, reuse the token, fetch data), not just whether one endpoint returns 200.
 
-    \item Workflows are plain YAML in Git; they run locally, in CI, or as a daemon, and failures name the exact step.
+    \item Defined workflows as declarative YAML in Git, with JSONPath value extraction between steps and status, latency, header, and JSON Schema assertions; runs stop at the first failure and name the exact step.
 
-    \item Designed an \textbf{asyncio} daemon with per-scenario schedules, retries, and failure thresholds so alerts fire only when health changes; config hot-reloads and keeps the last working version.
+    \item Designed an \textbf{asyncio} daemon with per-scenario schedules, retries, and failure thresholds so webhook alerts fire only when health changes; config hot-reloads and keeps the last working version.
 
-    \item Deployment-ready: env-var secrets, Prometheus-format metrics, a non-root \textbf{Docker} image, and a hardened \textbf{\mbox{systemd}} unit; 286 tests at 100\% coverage and CI/CD with PyPI trusted publishing.
+    \item Made it deployment-ready with env-var secrets, metrics, a non-root \textbf{Docker} image, and a hardened \textbf{\mbox{systemd}} unit, backed by tests and CI/CD with PyPI trusted publishing.
 
 \end{itemize}
 
@@ -263,7 +268,7 @@
 
     \item Added graph filtering to classify local, standard-library, and third-party modules, with a CLI JSON inspection interface for querying specific module dependencies and cycles.
 
-    \item Engineered multiple report generators (interactive HTML with D3/ELK, JSON, and Graphviz DOT), accompanied by a comprehensive test suite (97\% coverage) and automated CI/CD releases.
+    \item Engineered multiple report generators (interactive HTML with D3/ELK, JSON, and Graphviz DOT), backed by a comprehensive test suite and automated releases via PyPI trusted publishing.
 
 \end{itemize}
 
@@ -281,8 +286,6 @@
 \textbf{Databases:} PostgreSQL, MySQL, Redis
 \par
 \textbf{Infrastructure:} Linux, systemd, Docker, AWS (EC2, S3, IAM), Terraform, Ansible, GitHub Actions
-\par
-\textbf{Engineering:} Distributed Services, Concurrency, Observability, Static Analysis, Authentication/RBAC
 
 }
 

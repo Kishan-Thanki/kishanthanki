@@ -1853,15 +1853,17 @@
                 <p class="project-kind">PYTHON / CLI / GRAPH ANALYSIS</p>
 
                 <p class="project-description">
-                  A Python CLI that maps project dependencies, reveals circular
-                  architecture, and turns complex codebases into clear,
-                  explorable dependency graphs.
+                  A Python CLI that statically maps project dependencies,
+                  reveals circular architecture, and turns complex codebases
+                  into clear, explorable dependency graphs.
                 </p>
 
                 <ul class="project-points">
                   <li>
-                    Scans Python projects to show local, standard-library,
-                    third-party, and unresolved dependencies in one graph.
+                    Parses imports with Python's AST, so absolute, relative, and
+                    dotted imports resolve without executing any application
+                    code, and each module is classified as local,
+                    standard-library, third-party, or unresolved.
                   </li>
 
                   <li>
@@ -1870,8 +1872,9 @@
                   </li>
 
                   <li>
-                    Supports interactive HTML, machine-readable JSON, and DOT
-                    graph output.
+                    Generates interactive HTML, machine-readable JSON, and DOT
+                    graph output, plus a JSON inspection interface for querying
+                    a module's dependencies and cycles.
                   </li>
                 </ul>
               </div>
@@ -1879,8 +1882,9 @@
               <div class="project-bottom">
                 <div class="project-stack">
                   <span>Python</span>
-                  <span>Dependency Mapping</span>
+                  <span>AST Parsing</span>
                   <span>Cycle Detection</span>
+                  <span>Graphviz</span>
                   <span>CLI</span>
                 </div>
 
@@ -1925,29 +1929,29 @@
                 <p class="project-kind">PYTHON / CLI / API MONITORING</p>
 
                 <p class="project-description">
-                  A declarative API monitoring tool that turns multi-step HTTP
-                  workflows into reproducible checks that can run locally, in
-                  CI, or continuously as a daemon.
+                  A declarative API monitor that checks whether a complete user
+                  journey works, not just whether one endpoint returns 200, and
+                  runs locally, in CI, or continuously as a daemon.
                 </p>
 
                 <ul class="project-points">
                   <li>
-                    Defines complete API workflows in YAML, supporting ordered
-                    multi-step requests where values extracted from one response
-                    can be reused in subsequent requests.
+                    Defines complete API workflows as YAML in Git, where values
+                    extracted from one response with JSONPath are reused in
+                    later requests.
                   </li>
 
                   <li>
-                    Validates real API behavior with status-code, latency,
-                    header, and JSON Schema assertions, while stopping at the
-                    first failing step to identify exactly where a workflow
-                    broke.
+                    Validates status code, latency, headers, and JSON Schema,
+                    stopping at the first failing step so the report names
+                    exactly where a workflow broke.
                   </li>
 
                   <li>
-                    Runs the same scenarios locally or in CI, with daemon mode
-                    providing health-change detection and webhook alerts without
-                    requiring a database or external monitoring service.
+                    Runs the same scenarios in CI or as an asyncio daemon that
+                    sends webhook alerts only when health changes, hot-reloads
+                    its config, and needs no database or external monitoring
+                    service.
                   </li>
                 </ul>
               </div>
@@ -1955,11 +1959,11 @@
               <div class="project-bottom">
                 <div class="project-stack">
                   <span>Python</span>
+                  <span>asyncio</span>
                   <span>HTTPX</span>
                   <span>Pydantic</span>
                   <span>JSONPath</span>
                   <span>YAML</span>
-                  <span>CLI</span>
                 </div>
 
                 <div class="project-actions">
@@ -2216,16 +2220,15 @@
             </article>
 
             <!-- DEPCYCLE -->
-
             <article
               class="experiment reveal"
               data-title="DepCycle"
-              data-description="Python dependency analysis tool that maps project architecture, detects circular dependencies, and generates interactive HTML, JSON, and DOT reports."
+              data-description="Python CLI that statically maps project dependencies, detects circular imports with the exact cycle path, and generates interactive HTML, JSON, and DOT reports."
               data-href="https://github.com/Matricess/depcycle"
               data-cta="GitHub"
               data-secondary-cta="PyPI"
               data-secondary-href="https://pypi.org/project/depcycle/"
-              data-src="https://raw.githubusercontent.com/Matricess/depcycle/main/docs/generated/realistic_app_html_screenshot.png"
+              data-src="./assets/images/depcycle.png"
               data-type="image"
               tabindex="0"
               role="button"
@@ -2233,8 +2236,8 @@
             >
               <div class="experiment-media">
                 <img
-                  src="https://raw.githubusercontent.com/Matricess/depcycle/main/docs/generated/realistic_app_html_screenshot.png"
-                  alt="DepCycle dependency graph showing circular dependencies"
+                  src="./assets/images/depcycle.png"
+                  alt="DepCycle Thumbnail"
                   loading="lazy"
                   decoding="async"
                 />
@@ -2246,8 +2249,8 @@
                 <h3 class="experiment-title">DepCycle</h3>
 
                 <p class="experiment-description">
-                  Python dependency analysis with circular dependency detection
-                  and interactive graph reports.
+                  Python CLI that finds circular imports and maps project
+                  architecture as interactive dependency graphs.
                 </p>
 
                 <div class="experiment-footer">
@@ -2262,7 +2265,7 @@
                     GitHub ↗
                   </a>
 
-                  <span class="experiment-type"> PYTHON </span>
+                  <span class="experiment-type"> PYTHON / CLI </span>
                 </div>
               </div>
             </article>
@@ -2372,12 +2375,11 @@
             </article>
 
             <!-- WHOISUSING -->
-
             <article
               class="experiment reveal"
               data-title="whoisusing"
               data-description="Lightweight Go command-line tool to quickly find which process is occupying a specific port and optionally terminate it gracefully."
-              data-src="https://opengraph.githubassets.com/1/Kishan-Thanki/whoisusing"
+              data-src="https://raw.githubusercontent.com/Kishan-Thanki/whoisusing/main/docs/image/thumbnail.svg"
               data-type="image"
               data-cta="GitHub"
               data-href="https://github.com/Kishan-Thanki/whoisusing"
@@ -2389,8 +2391,8 @@
             >
               <div class="experiment-media">
                 <img
-                  src="https://opengraph.githubassets.com/1/Kishan-Thanki/whoisusing"
-                  alt="whoisusing CLI port inspector repository preview"
+                  src="https://raw.githubusercontent.com/Kishan-Thanki/whoisusing/main/docs/image/thumbnail.svg"
+                  alt="whoisusing CLI port inspector in action showing a port already in use"
                   loading="lazy"
                   decoding="async"
                 />
@@ -2428,7 +2430,7 @@
             <article
               class="experiment reveal"
               data-title="ProofRun"
-              data-description="Declarative API monitoring tool for defining multi-step HTTP workflows in YAML, validating responses, propagating extracted values, and running checks locally, in CI, or continuously as a daemon."
+              data-description="Declarative API monitor that checks whether a complete user journey works. Define multi-step HTTP workflows in YAML, reuse extracted values between steps, validate status, latency, headers, and JSON Schema, and run locally, in CI, or as a daemon that alerts only when health changes."
               data-src="https://raw.githubusercontent.com/Kishan-Thanki/proofrun/main/docs/demo-pass.svg"
               data-type="image"
               data-cta="GitHub"
@@ -2442,7 +2444,7 @@
               <div class="experiment-media">
                 <img
                   src="https://raw.githubusercontent.com/Kishan-Thanki/proofrun/main/docs/demo-pass.svg"
-                  alt="ProofRun declarative API monitoring workflow demonstration"
+                  alt="ProofRun reporting a passing multi-step API scenario"
                   loading="lazy"
                   decoding="async"
                 />
@@ -2454,8 +2456,8 @@
                 <h3 class="experiment-title">ProofRun</h3>
 
                 <p class="experiment-description">
-                  Declarative API monitoring with multi-step workflows, response
-                  assertions, value extraction, and CI or daemon execution.
+                  Declarative API monitoring that verifies full user journeys
+                  with multi-step workflows, assertions, and change-only alerts.
                 </p>
 
                 <div class="experiment-footer">
@@ -2693,7 +2695,7 @@
               data-cta="GitHub"
               data-secondary-cta="PyPI"
               data-secondary-href="https://pypi.org/project/depcycle/"
-              data-src="https://raw.githubusercontent.com/Matricess/depcycle/main/docs/generated/realistic_app_html_screenshot.png"
+              data-src="./assets/images/depcycle.png"
               data-type="image"
               tabindex="0"
               role="button"
@@ -2702,7 +2704,7 @@
             >
               <div class="experiment-media">
                 <img
-                  src="https://raw.githubusercontent.com/Matricess/depcycle/main/docs/generated/realistic_app_html_screenshot.png"
+                  src="./assets/images/depcycle.png"
                   alt="DepCycle dependency graph showing circular dependencies"
                   loading="lazy"
                   decoding="async"
@@ -2848,7 +2850,7 @@
               class="experiment reveal"
               data-title="whoisusing"
               data-description="Lightweight Go command-line tool to quickly find which process is occupying a specific port and optionally terminate it gracefully."
-              data-src="https://opengraph.githubassets.com/1/Kishan-Thanki/whoisusing"
+              data-src="https://raw.githubusercontent.com/Kishan-Thanki/whoisusing/main/docs/image/thumbnail.svg"
               data-type="image"
               data-cta="GitHub"
               data-href="https://github.com/Kishan-Thanki/whoisusing"
@@ -2861,7 +2863,7 @@
             >
               <div class="experiment-media">
                 <img
-                  src="https://opengraph.githubassets.com/1/Kishan-Thanki/whoisusing"
+                  src="https://raw.githubusercontent.com/Kishan-Thanki/whoisusing/main/docs/image/thumbnail.svg"
                   alt="whoisusing CLI port inspector repository preview"
                   loading="lazy"
                   decoding="async"
