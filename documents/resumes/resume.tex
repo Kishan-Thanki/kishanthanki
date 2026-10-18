@@ -183,11 +183,13 @@
 
 \begin{itemize}
 
-    \item Built and integrated a production-ready \textbf{Go} implementation of Envizom for server-side SVG report generation and exports, extending an existing \textbf{TypeScript/D3.js} rendering system.
+    \item Built a production-ready \textbf{Go} renderer for Envizom, a \textbf{TypeScript/D3.js} charting library, generating server-side SVG and PNG exports for six chart types (line, bar, scatter, heatmap, whisker, wind rose).
 
-    \item Designed a shared declarative rendering specification consumed by both Go and TypeScript implementations, maintaining \textbf{pixel-level visual parity} while avoiding duplicated rendering logic.
+    \item Designed a shared declarative rendering spec consumed by both the Go and TypeScript implementations, keeping output \textbf{visually identical} without duplicating chart logic.
 
-    \item Implemented deterministic time-series data reduction and downsampling for large datasets, using CPU and memory profiling to identify rendering bottlenecks and guide optimization.
+    \item Built a deterministic data-reduction pipeline (LTTB downsampling, binning, top-N) that picks a render strategy per chart, handling large datasets.
+
+    \item Used \textbf{pprof} profiling and \textbf{sync.Pool} buffer pooling to cut allocations, and rasterized PNGs in pure Go via resvg.
 
 \end{itemize}
 
@@ -197,37 +199,11 @@
 \section*{Projects}
 
 % ----------------------------------------------------------
-% ResumeRanker
-% ----------------------------------------------------------
-\projectentry
-    {ResumeRanker}
-    {Python \textperiodcentered\ gRPC \textperiodcentered\ Protobuf \textperiodcentered\ Docker}
-    {\href{https://resumeranker.kishanthanki.space/}{Live}
-    \quad
-    \href{https://github.com/Kishan-Thanki/ResumeRanker}{GitHub}}
-
-\vspace{1pt}
-
-\begin{itemize}
-
-    \item Built and deployed an evidence-based hiring intelligence tool that compares resumes with job descriptions and produces structured fit assessments with supporting evidence, skill gaps, and experience alignment.
-
-    \item Architected a \textbf{Streamlit} dashboard over an independent analysis backend using typed \textbf{gRPC/Protobuf} contracts, with a Caddy reverse proxy for secure public routing.
-
-    \item Structured the analysis pipeline around modular extraction, requirement matching, scoring, and evidence generation, keeping the service extensible and independently testable.
-
-    \item Containerized the full stack with \textbf{Docker Compose} and enforced code quality with pre-commit hooks across 100+ commits.
-
-\end{itemize}
-
-\vspace{2pt}
-
-% ----------------------------------------------------------
 % Proofrun
 % ----------------------------------------------------------
 \projectentry
     {Proofrun}
-    {Python \textperiodcentered\ asyncio \textperiodcentered\ Docker \textperiodcentered}
+    {Python \textperiodcentered\ asyncio \textperiodcentered\ Docker}
     {\href{https://pypi.org/project/proofrun/}{PyPI}
     \quad
     \href{https://github.com/Kishan-Thanki/proofrun}{GitHub}}
@@ -272,6 +248,30 @@
 
 \end{itemize}
 
+% ----------------------------------------------------------
+% ResumeRanker
+% ----------------------------------------------------------
+\projectentry
+    {ResumeRanker}
+    {Python \textperiodcentered\ Streamlit \textperiodcentered\ gRPC \textperiodcentered\ Docker}
+    {\href{https://resumeranker.kishanthanki.space/}{Live}
+    \quad
+    \href{https://github.com/Kishan-Thanki/ResumeRanker}{GitHub}}
+
+\vspace{1pt}
+
+\begin{itemize}
+
+    \item Built and deployed an evidence-based hiring intelligence tool that compares resumes with job descriptions and produces structured fit assessments with supporting evidence, skill gaps, and experience alignment.
+
+    \item Architected a \textbf{Streamlit} dashboard over an independent analysis backend using typed \textbf{gRPC/Protobuf} contracts, with a Caddy reverse proxy for secure public routing.
+
+    \item Structured the analysis pipeline around modular extraction, requirement matching, scoring, and evidence generation, keeping the service extensible and independently testable.
+
+    \item Containerized the full stack with \textbf{Docker Compose} and enforced code quality.
+
+\end{itemize}
+
 % ==========================================================
 % SKILLS
 % ==========================================================
@@ -279,13 +279,13 @@
 
 {\fontsize{10.3}{12.2}\selectfont
 
-\textbf{Languages:} Python, Go
+\textbf{Languages:} Python, Go, SQL
 \par
 \textbf{Backend:} FastAPI, Django, Django REST Framework, REST APIs, gRPC, Protobuf
 \par
 \textbf{Databases:} PostgreSQL, MySQL, Redis
 \par
-\textbf{Infrastructure:} Linux, systemd, Docker, AWS (EC2, S3, IAM), Terraform, Ansible, GitHub Actions
+\textbf{Infrastructure:} Linux, Docker, AWS (EC2, S3, IAM), OCI, Terraform, Ansible, GitHub Actions
 
 }
 
