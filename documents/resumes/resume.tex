@@ -203,7 +203,7 @@
 % ----------------------------------------------------------
 \projectentry
     {Proofrun}
-    {Python \textperiodcentered\ asyncio \textperiodcentered\ Docker}
+    {Python \textperiodcentered\ asyncio \textperiodcentered\ Docker \textperiodcentered\ CI/CD}
     {\href{https://pypi.org/project/proofrun/}{PyPI}
     \quad
     \href{https://github.com/Kishan-Thanki/proofrun}{GitHub}}
@@ -212,13 +212,13 @@
 
 \begin{itemize}
 
-    \item Built and published \textbf{Proofrun} on PyPI, a self-hosted API monitor that verifies a complete user journey works (log in, reuse the token, fetch data), not just whether one endpoint returns 200.
+    \item Built and published \textbf{Proofrun}, a self-hosted API testing and synthetic monitoring CLI that verifies complete API workflows, including authenticated, dependent requests---not just HTTP status codes.
 
-    \item Defined workflows as declarative YAML in Git, with JSONPath value extraction between steps and status, latency, header, and JSON Schema assertions; runs stop at the first failure and name the exact step.
+    \item Implemented declarative YAML scenarios with JSONPath extraction, variable reuse, and status, latency, header, and JSON Schema assertions; failures identify the exact step.
 
-    \item Designed an \textbf{asyncio} daemon with per-scenario schedules, retries, and failure thresholds so webhook alerts fire only when health changes; config hot-reloads and keeps the last working version.
+    \item Designed an \textbf{asyncio-based monitoring daemon} with per-scenario scheduling, retries, health thresholds, transition-based webhook alerts, and last-known-good configuration hot reload.
 
-    \item Made it deployment-ready with env-var secrets, metrics, a non-root \textbf{Docker} image, and a hardened \textbf{\mbox{systemd}} unit, backed by tests and CI/CD with PyPI trusted publishing.
+    \item Packaged the tool in a non-root Docker image and provided systemd and Docker Compose deployment examples; automated quality checks, integration tests, and PyPI publishing through GitHub Actions using trusted publishing.
 
 \end{itemize}
 
