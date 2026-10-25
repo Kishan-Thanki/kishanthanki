@@ -203,7 +203,7 @@
 % ----------------------------------------------------------
 \projectentry
     {Proofrun}
-    {Python \textperiodcentered\ asyncio \textperiodcentered\ Docker \textperiodcentered\ CI/CD}
+    {Python \textperiodcentered\ asyncio \textperiodcentered\ YAML \textperiodcentered\ HTTPX \textperiodcentered\ Docker}
     {\href{https://pypi.org/project/proofrun/}{PyPI}
     \quad
     \href{https://github.com/Kishan-Thanki/proofrun}{GitHub}}
@@ -212,13 +212,11 @@
 
 \begin{itemize}
 
-    \item Built and published \textbf{Proofrun}, a self-hosted API testing and synthetic monitoring CLI that verifies complete API workflows, including authenticated, dependent requests---not just HTTP status codes.
+    \item Built and published \textbf{Proofrun}, a self-hosted API testing and synthetic-monitoring CLI supporting individual endpoint checks and multi-step workflows with authenticated, dependent requests.
 
-    \item Implemented declarative YAML scenarios with JSONPath extraction, variable reuse, and status, latency, header, and JSON Schema assertions; failures identify the exact step.
+    \item Implemented declarative YAML scenarios with JSONPath extraction and variable reuse across requests; added status, latency, header, and JSON Schema assertions with step-level failure reporting.
 
-    \item Designed an \textbf{asyncio-based monitoring daemon} with per-scenario scheduling, retries, health thresholds, transition-based webhook alerts, and last-known-good configuration hot reload.
-
-    \item Packaged the tool in a non-root Docker image and provided systemd and Docker Compose deployment examples; automated quality checks, integration tests, and PyPI publishing through GitHub Actions using trusted publishing.
+    \item Built an \textbf{asyncio-based monitoring daemon} with per-scenario scheduling, retries, health thresholds, transition-based webhook alerts, and last-known-good configuration reloads.
 
 \end{itemize}
 
