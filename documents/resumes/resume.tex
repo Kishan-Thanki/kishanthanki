@@ -1,0 +1,292 @@
+% !TEX program = xelatex
+\documentclass[10pt,a4paper]{article}
+
+% ==========================================================
+% PACKAGES
+% ==========================================================
+\usepackage[
+    top=0.36in,
+    bottom=0.32in,
+    left=0.55in,
+    right=0.55in
+]{geometry}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{microtype}
+
+% ==========================================================
+% FONT
+% ==========================================================
+\setmainfont{Carlito}
+
+% ==========================================================
+% COLORS
+% ==========================================================
+\definecolor{accent}{HTML}{1F4E79}
+\definecolor{textgray}{HTML}{555555}
+\definecolor{linkblue}{HTML}{0563C1}
+
+% ==========================================================
+% HYPERREF
+% ==========================================================
+\hypersetup{
+    colorlinks=true,
+    urlcolor=linkblue,
+    linkcolor=linkblue,
+    pdftitle={Kishan Thanki - Backend Engineer Resume},
+    pdfauthor={Kishan Thanki}
+}
+
+\urlstyle{same}
+
+% ==========================================================
+% PAGE
+% ==========================================================
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+
+% ==========================================================
+% SECTION HEADINGS
+% ==========================================================
+\titleformat
+    {\section}
+    {\fontsize{11}{12.5}\selectfont\bfseries\color{accent}}
+    {}
+    {0pt}
+    {\MakeUppercase}
+    [\vspace{-3pt}\color{accent}\rule{\linewidth}{0.6pt}\vspace{2pt}]
+
+\titlespacing*{\section}
+    {0pt}
+    {14pt}
+    {3pt}
+
+% ==========================================================
+% BULLETS
+% ==========================================================
+\setlist[itemize]{
+    leftmargin=16pt,
+    labelsep=4pt,
+    topsep=1.2pt,
+    itemsep=1.5pt,
+    parsep=0pt,
+    partopsep=0pt
+}
+
+% ==========================================================
+% ENTRY HELPERS
+% ==========================================================
+
+\newcommand{\bulletsep}{\hspace{0.35em}\textbullet\hspace{0.35em}}
+
+\newcommand{\datedentry}[2]{%
+    \noindent
+    \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+        \textbf{#1} & \textit{\color{textgray}#2}
+    \end{tabular*}%
+}
+
+\newcommand{\datedentrywithsub}[3]{%
+    \noindent
+    \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+        \textbf{#1} & \textit{\color{textgray}#2} \\
+        {\itshape\color{textgray}\fontsize{10}{12}\selectfont #3} & \\[-1.5pt]
+    \end{tabular*}%
+}
+
+\newcommand{\projectentry}[3]{%
+    \noindent
+    \begin{minipage}[t]{0.66\linewidth}
+        \raggedright
+        \textbf{#1}
+        \hspace{0.7em}
+        \textit{\color{textgray}#2}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.30\linewidth}
+        \raggedleft
+        \itshape\color{textgray}#3
+    \end{minipage}%
+    \par
+}
+
+% ==========================================================
+% DOCUMENT
+% ==========================================================
+\begin{document}
+
+\fontsize{10}{12.4}\selectfont
+
+% ==========================================================
+% HEADER
+% ==========================================================
+\begin{center}
+    {\fontsize{25}{29}\selectfont
+    \bfseries\color{accent} Kishan Thanki}
+    \par\vspace{2pt}
+
+    {\fontsize{11}{13.5}\selectfont
+    \color{textgray}
+    Backend Engineer}
+    \par\vspace{2pt}
+
+    {\fontsize{10.3}{12.2}\selectfont
+    \href{mailto:kishanthankiat10@gmail.com}{Email}
+    \quad|\quad
+    \href{https://www.linkedin.com/in/kishanthanki8}{LinkedIn}
+    \quad|\quad
+    \href{https://github.com/kishan-thanki}{GitHub}
+    \quad|\quad
+    \href{https://kishan-thanki.github.io/kishanthanki/}{Portfolio}
+    }
+\end{center}
+
+% ==========================================================
+% EDUCATION
+% ==========================================================
+\section*{Education}
+
+\datedentrywithsub
+    {Dhirubhai Ambani Institute of Information and Communication Technology}
+    {2024 -- 2026}
+    {M.Sc. Information Technology
+    \bulletsep GPA: 7.23/10
+    \bulletsep Gandhinagar, Gujarat}
+
+\vspace{3pt}
+
+\datedentrywithsub
+    {GLS University}
+    {2021 -- 2024}
+    {Bachelor of Computer Applications
+    \bulletsep GPA: 8.24/10
+    \bulletsep Ahmedabad, Gujarat}
+
+% ==========================================================
+% EXPERIENCE
+% ==========================================================
+\section*{Experience}
+
+\datedentrywithsub
+    {Software Intern --- Oizom}
+    {Jan 2026 -- Apr 2026}
+    {Ahmedabad, India}
+
+\vspace{1pt}
+
+\begin{itemize}
+
+    \item Built a production-ready \textbf{Go} renderer for Envizom, a \textbf{TypeScript/D3.js} charting library, generating server-side SVG and PNG exports for six chart types (line, bar, scatter, heatmap, whisker, wind rose).
+
+    \item Designed a shared declarative rendering spec consumed by both the Go and TypeScript implementations, keeping output \textbf{visually identical} without duplicating chart logic.
+
+    \item Built a deterministic data-reduction pipeline (LTTB downsampling, binning, top-N) that picks a render strategy per chart, handling large datasets.
+
+    \item Used \textbf{pprof} profiling and \textbf{sync.Pool} buffer pooling to cut allocations, and rasterized PNGs in pure Go via resvg.
+
+\end{itemize}
+
+% ==========================================================
+% PROJECTS
+% ==========================================================
+\section*{Projects}
+
+% ----------------------------------------------------------
+% Proofrun
+% ----------------------------------------------------------
+\projectentry
+    {Proofrun}
+    {Python \textperiodcentered\ asyncio \textperiodcentered\ Docker \textperiodcentered\ CI/CD}
+    {\href{https://pypi.org/project/proofrun/}{PyPI}
+    \quad
+    \href{https://github.com/Kishan-Thanki/proofrun}{GitHub}}
+
+\vspace{1pt}
+
+\begin{itemize}
+
+    \item Built and published \textbf{Proofrun}, a self-hosted API testing and synthetic monitoring CLI that verifies complete API workflows, including authenticated, dependent requests---not just HTTP status codes.
+
+    \item Implemented declarative YAML scenarios with JSONPath extraction, variable reuse, and status, latency, header, and JSON Schema assertions; failures identify the exact step.
+
+    \item Designed an \textbf{asyncio-based monitoring daemon} with per-scenario scheduling, retries, health thresholds, transition-based webhook alerts, and last-known-good configuration hot reload.
+
+    \item Packaged the tool in a non-root Docker image and provided systemd and Docker Compose deployment examples; automated quality checks, integration tests, and PyPI publishing through GitHub Actions using trusted publishing.
+
+\end{itemize}
+
+\vspace{2pt}
+
+% ----------------------------------------------------------
+% DepCycle
+% ----------------------------------------------------------
+\projectentry
+    {DepCycle}
+    {Python \textperiodcentered\ AST \textperiodcentered\ Static Analysis \textperiodcentered\ Graphviz}
+    {\href{https://pypi.org/project/depcycle/}{PyPI}
+    \quad
+    \href{https://github.com/Matricess/depcycle}{GitHub}}
+
+\vspace{1pt}
+
+\begin{itemize}
+
+    \item Built and published a \textbf{Python CLI} that statically analyzes project dependencies, detects circular imports, and maps architectural coupling across codebases.
+
+    \item Implemented AST-based import discovery and resolution for absolute, relative, and dotted imports without executing application code, ignoring type-checking blocks.
+
+    \item Added graph filtering to classify local, standard-library, and third-party modules, with a CLI JSON inspection interface for querying specific module dependencies and cycles.
+
+    \item Engineered multiple report generators (interactive HTML with D3/ELK, JSON, and Graphviz DOT), backed by a comprehensive test suite and automated releases via PyPI trusted publishing.
+
+\end{itemize}
+
+% ----------------------------------------------------------
+% ResumeRanker
+% ----------------------------------------------------------
+\projectentry
+    {ResumeRanker}
+    {Python \textperiodcentered\ Streamlit \textperiodcentered\ gRPC \textperiodcentered\ Docker}
+    {\href{https://resumeranker.kishanthanki.space/}{Live}
+    \quad
+    \href{https://github.com/Kishan-Thanki/ResumeRanker}{GitHub}}
+
+\vspace{1pt}
+
+\begin{itemize}
+
+    \item Built and deployed an evidence-based hiring intelligence tool that compares resumes with job descriptions and produces structured fit assessments with supporting evidence, skill gaps, and experience alignment.
+
+    \item Architected a \textbf{Streamlit} dashboard over an independent analysis backend using typed \textbf{gRPC/Protobuf} contracts, with a Caddy reverse proxy for secure public routing.
+
+    \item Structured the analysis pipeline around modular extraction, requirement matching, scoring, and evidence generation, keeping the service extensible and independently testable.
+
+    \item Containerized the full stack with \textbf{Docker Compose} and enforced code quality.
+
+\end{itemize}
+
+% ==========================================================
+% SKILLS
+% ==========================================================
+\section*{Skills}
+
+{\fontsize{10.3}{12.2}\selectfont
+
+\textbf{Languages:} Python, Go, SQL
+\par
+\textbf{Backend:} FastAPI, Django, Django REST Framework, REST APIs, gRPC, Protobuf
+\par
+\textbf{Databases:} PostgreSQL, MySQL, Redis
+\par
+\textbf{Infrastructure:} Linux, Docker, AWS (EC2, S3, IAM), OCI, Terraform, Ansible, GitHub Actions
+
+}
+
+\end{document}
